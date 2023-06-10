@@ -24,10 +24,10 @@ function Dashboard() {
       <Container className="dashboard-content">
         <h1>Welcome {`${user.name}`} to your Dashboard!</h1>
         <div>
-        <Username>{`${user.username}`}</Username>
-          <FavoriteGenre>{`${user.genre}`}</FavoriteGenre>
-          <Bio>generate info</Bio>
-          <UpdateProfile>Update Profile</UpdateProfile>
+        <h2 className="card-header">{`${user.username}`}</h2>
+        <h2 className="card-header">{`${user.genre}`}</h2>
+        <h2 className="card-header">{`${user.bio}`}</h2>
+        <button>Update Profile</button>
         </div>
       </Container>
     </Container>) : (
