@@ -9,7 +9,7 @@ export const QUERY_USER = gql`
       email
       genre
       bio
-      watched {
+      myList {
         _id
         posterImg
         title
@@ -29,7 +29,7 @@ query me {
     email
     genre
     bio
-    watched {
+    myList {
       _id
       posterImg
       title
