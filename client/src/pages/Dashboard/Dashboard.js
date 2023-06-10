@@ -23,6 +23,12 @@ function Dashboard() {
     <Container className="dashboard-body" id="dashboard">
       <Container className="dashboard-content">
         <h1>Dashboard</h1>
+        <div>
+        <Username>{`${user.username}`}</Username>
+          <FavoriteGenre>{`${user.firstname}`}</FavoriteGenre>
+          <Bio>generate info</Bio>
+          <UpdateProfile>Update Profile</UpdateProfile>
+        </div>
       </Container>
     </Container>) : (
       <h4>
