@@ -22,10 +22,10 @@ function Dashboard() {
     {Auth.loggedIn() ? (
     <Container className="dashboard-body" id="dashboard">
       <Container className="dashboard-content">
-        <h1>Dashboard</h1>
+        <h1>Welcome {`${user.name}`} to your Dashboard!</h1>
         <div>
         <Username>{`${user.username}`}</Username>
-          <FavoriteGenre>{`${user.firstname}`}</FavoriteGenre>
+          <FavoriteGenre>{`${user.genre}`}</FavoriteGenre>
           <Bio>generate info</Bio>
           <UpdateProfile>Update Profile</UpdateProfile>
         </div>
