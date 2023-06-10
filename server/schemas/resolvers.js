@@ -22,7 +22,7 @@ const resolvers = {
           },
           me: async (parent, args, context) => {
             if (context.user) {
-              return User.findOne({ username: context.user.username}).populate('watched');
+              return User.findOne({ username: context.user.username}).populate('myList');
             }
             throw new AuthenticationError('You need to be logged in!');
           },
