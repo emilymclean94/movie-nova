@@ -50,30 +50,46 @@ const Signup = () => {
             <div class="form-group">
                     <label for="nameInput">Name</label>
                     <input 
-                    name="email"
-                    value={formState.email}
+                    name="name"
+                    value={formState.name}
                     onChange={handleChange}
                     type="text" class="form-control" id="nameInput" aria-describedby="name" placeholder="Jane Doe"/>
                 </div>
                 <div class="form-group">
                     <label for="emailInput">Email address</label>
-                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="janeDoe86@mail.com"/>
+                    <input
+                    value={formState.email}
+                    type="email" 
+                    onChange={handleChange}
+                    name="email" class="form-control" id="emailInput" aria-describedby="email" placeholder="janeDoe86@mail.com"/>
                 </div>
                 <div class="form-group">
                     <label for="usernameInput">Username</label>
-                    <input type="text" class="form-control" id="usernameInput" aria-describedby="name" placeholder="janedoe86"/>
+                    <input
+                    value={formState.username}
+                    onChange={handleChange}
+                    name="username" type="text" class="form-control" id="usernameInput" aria-describedby="name" placeholder="janedoe86"/>
                 </div>
                 <div class="form-group">
                     <label for="passwordInput">Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Password"/>
+                    <input 
+                    value={formState.password}
+                    onChange={handleChange}
+                    name="password" type="password" class="form-control" id="passwordInput" placeholder="Password"/>
                 </div>
                 <div class="form-group">
                     <label for="genreInput">Favorite Genre</label>
-                    <input type="text" class="form-control" id="genreInput" placeholder="Horror"/>
+                    <input
+                    value={formState.genre}
+                    onChange={handleChange} 
+                    name="genre" type="text" class="form-control" id="genreInput" placeholder="Horror"/>
                 </div>
                 <div class="form-group">
                     <label for="bioInput">Bio</label>
-                    <input type="text" class="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
+                    <input
+                    value={formState.bio}
+                    onChange={handleChange} 
+                    name="bio" type="text" class="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
