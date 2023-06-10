@@ -40,7 +40,26 @@ const Login = () => {
     return (
 
         <Container className='login'>
-            <h1>Login.</h1>
+            <h1>Login</h1>
+            <form className='mt-4' onSubmit={handleFormSubmit}>
+            <div class="form-group">
+                    <label for="usernameInput">Username</label>
+                    <input 
+                    name="username"
+                    value={formState.username}
+                    onChange={handleChange}
+                    type="text" class="form-control" id="usernameInput" aria-describedby="username" placeholder="janedoe86"/>
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">Password</label>
+                    <input
+                    value={formState.email}
+                    type="password" 
+                    onChange={handleChange}
+                    name="password" class="form-control" id="passwordInput" aria-describedby="password" placeholder="password"/>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Login</button>
+            </form> 
         </Container>
   
     )
