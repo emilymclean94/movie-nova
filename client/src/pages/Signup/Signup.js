@@ -7,7 +7,7 @@ import Auth from '../../utils/auth';
 
 //Temporary comment
 
-function Signup() {
+const Signup = () => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -69,11 +69,11 @@ function Signup() {
                 </div>
                 <div class="form-group">
                     <label for="genreInput">Favorite Genre</label>
-                    <input type="password" class="form-control" id="genreInput" placeholder="Horror"/>
+                    <input type="text" class="form-control" id="genreInput" placeholder="Horror"/>
                 </div>
                 <div class="form-group">
                     <label for="bioInput">Bio</label>
-                    <input type="password" class="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
+                    <input type="text" class="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
