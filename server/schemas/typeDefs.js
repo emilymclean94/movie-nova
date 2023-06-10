@@ -9,7 +9,7 @@ const typeDefs = gql`
     name: String
     email: String
     username: String
-    favorite_genre: String
+    genre: String
     bio: String
     myList:[Movie]
   }
@@ -50,7 +50,7 @@ type Auth {
 
   type Mutation {
     login(username: String!, password: String!): Auth
-    addUser(name: String!, email: String!, username: String!, password: String!, favorite_genre: String, bio: String): Auth
+    addUser(name: String!, email: String!, username: String!, password: String!, genre: String, bio: String): Auth
     addMovie(username: String!): User
     removeMovie(movieId: ID!): User
     addFriend(friendId: ID!): User

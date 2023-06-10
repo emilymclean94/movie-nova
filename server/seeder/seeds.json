@@ -4,7 +4,7 @@
       "email": "john.smith@example.com",
       "username": "jsmith",
       "password": "p@ssw0rd",
-      "favorite_genre": "Action",
+      "genre": "Action",
       "bio": "I'm a movie enthusiast who loves action-packed films!"
     },
     {
@@ -12,7 +12,7 @@
       "email": "emily.johnson@example.com",
       "username": "emilyj",
       "password": "secure123",
-      "favorite_genre": "Romance",
+      "genre": "Romance",
       "bio": "Hopeless romantic looking for love in all the movies!"
     },
     {
@@ -20,7 +20,7 @@
       "email": "michael.brown@example.com",
       "username": "mikeb",
       "password": "brownie33",
-      "favorite_genre": "Comedy",
+      "genre": "Comedy",
       "bio": "Laughter is the best medicine, and comedy movies provide the dosage!"
     },
     {
@@ -28,7 +28,7 @@
       "email": "emma.davis@example.com",
       "username": "emmad",
       "password": "password123",
-      "favorite_genre": "Drama",
+      "genre": "Drama",
       "bio": "I enjoy thought-provoking dramas that touch the depths of human emotions."
     },
     {
@@ -36,7 +36,7 @@
       "email": "christopher.wilson@example.com",
       "username": "chrisw",
       "password": "wilson87",
-      "favorite_genre": "Sci-Fi",
+      "genre": "Sci-Fi",
       "bio": "Fascinated by futuristic worlds and mind-bending concepts!"
     },
     {
@@ -44,7 +44,7 @@
       "email": "olivia.taylor@example.com",
       "username": "oliviat",
       "password": "taylor22",
-      "favorite_genre": "Fantasy",
+      "genre": "Fantasy",
       "bio": "Let me escape to magical realms and embark on epic adventures!"
     },
     {
@@ -52,7 +52,7 @@
       "email": "matthew.anderson@example.com",
       "username": "matt.a",
       "password": "andersonmatt",
-      "favorite_genre": "Mystery",
+      "genre": "Mystery",
       "bio": "There's nothing like a good mystery to keep me on the edge of my seat!"
     },
     {
@@ -60,7 +60,7 @@
       "email": "ava.martinez@example.com",
       "username": "avam",
       "password": "martinez99",
-      "favorite_genre": "Thriller",
+      "genre": "Thriller",
       "bio": "Thrilling stories with unexpected twists? Count me in!"
     },
     {
@@ -68,7 +68,7 @@
       "email": "william.thompson@example.com",
       "username": "willt",
       "password": "thompson007",
-      "favorite_genre": "Action",
+      "genre": "Action",
       "bio": "I'm a fan of high-octane action films that keep the adrenaline pumping!"
     },
     {
@@ -76,7 +76,7 @@
       "email": "sophia.garcia@example.com",
       "username": "sophiag",
       "password": "garciasoph",
-      "favorite_genre": "Romance",
+      "genre": "Romance",
       "bio": "Love stories that make me believe in happily ever afters!"
     },
     {
@@ -84,7 +84,7 @@
         "email": "isabella.johnson@example.com",
         "username": "isabellaj",
         "password": "sunshine12",
-        "favorite_genre": "Comedy",
+        "genre": "Comedy",
         "bio": "Laughter is contagious, and comedy movies are my go-to source of joy!"
       }
 ]
