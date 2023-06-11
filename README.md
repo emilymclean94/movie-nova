@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Movie Nova
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+The StreamVerse app allows the user to access, rate, and add movies to different lists (e.g., watched movies and movies to watch). After login, users can view their bio, saved movie list, and to be watched lists on their own dashboard. When a user searches a movie, they can rate it and save it to their watched list or just add it to their want to watch list. Users can add view friends' recent updates by clicking on their profile in in their friend list. 
 
-In the project directory, you can run:
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshots](#screenshots)
+* [Technologies-Used](#technologies-used)
+* [Credits](#credits)
+* [License](#license)
+* [Questions](#questions)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you want to clone this repository make sure to npm install all of our amazing packages! Some of the packages included, but not limited to: mongoose, graphQL, apollo server, material UI.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+To use our app follow [Heroku](this link) to our deployed page on Heroku.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screenshot]() (to be filled in later)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Technologies-Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Mongo DB
+Express
+React
+Node
 
-### `npm run eject`
+## Credits
+Thanks to this amazing group for making this app possible!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[Ashley](https://github.com/Ashleyg5),
+[Emily](https://github.com/emilymclean94),
+[Ethan](https://github.com/EGARRISXN),
+[Keely](https://github.com/keelyybug),
+[Sami](https://github.com/sweetkloid)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
+none
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Questions
+If you have any questions don't hesitate to contact us with the information listed below.
 
-## Learn More
+You can find our GitHub here: [GitHub](https://github.com/emilymclean94/stream_verse)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can email us here: 
