@@ -36,29 +36,22 @@ const resolvers = {
       return { token, user };
     },
 
-    updateUser: async (_, {input}, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('Not authenticated');
+    updateUser: async (_, { userId, name, username, genre, bio}) => {
+     return User.findOneAndUpdate(
+      { _id: userId},
+      {
+        $set: {
+        name: name,
+        username: username,
+        genre: genre,
+        bio: bio
+        } 
+      },
+      {
+        new: true,
+        runValidators: true,
       }
-
-      try {
-        const { _id, name, username, genre, bio } = input;
-        // Find the user in the database by ID
-        const user = await User.findByIdAndUpdate(
-          _id,
-          {name, username, genre, bio },
-          { new: true } // Return the updated user object
-        );
-
-        if (!user) {
-          throw new Error('User not found');
-        }
-
-        return user;
-      } catch (error) {
-        console.error('Error updating user:', error);
-        throw new Error('Failed to update user');
-      }
+     )
     },
 
     login: async (parent, { username, password }) => {

@@ -100,7 +100,7 @@ const EditForm = () => {
           handleInput={handleInput}
         />
         <br />
-        <input type="submit" value="Update" />
+        <input className='btn btn-dark' type="submit" value="Update" />
       </form>
     </>
   );
