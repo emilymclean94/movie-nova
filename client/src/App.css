@@ -152,10 +152,6 @@
     flex-direction: column;
   }
 
-
-  /* --------- */
-  /* Dashboard */
-  /* --------- */
   #dashboard {
     background-color: black;
     height: 100vh;
