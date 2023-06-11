@@ -73,8 +73,8 @@ const [showModal, setShowModal] = useState(false);
             {Auth.loggedIn() ? (
                 <>
                 {/* Might have to change this path when saved list is added */}
-                  <Nav.Link as={Link} to='/movies'>
-                    See Your Movies
+                  <Nav.Link as={Link} to='/dashboard'>
+                    Dashboard
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
