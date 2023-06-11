@@ -27,8 +27,7 @@ const EditForm = () => {
     });
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const handleFormSubmit = async () => {
     console.log(editUser);
 
     try {
@@ -36,7 +35,8 @@ const EditForm = () => {
         variables: { ...editUser },
       });
       
-      Auth.login(data.addUser.token);
+      const token = data.login.token
+      Auth.login(token);
     } catch (e) {
         console.error(e);
     }
