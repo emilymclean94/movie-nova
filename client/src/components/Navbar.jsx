@@ -108,7 +108,7 @@ const [showModal, setShowModal] = useState(false);
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body className="p-0">
+          <Modal.Body className="p-1">
             <Tab.Content>
               <Tab.Pane className="rounded" eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
