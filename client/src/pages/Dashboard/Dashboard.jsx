@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
+import WatchList from "../../components/MyMovieList";
 
 
 const Dashboard = () => {
@@ -42,6 +43,7 @@ const Dashboard = () => {
               <div id="dash3" className="col-6">
                 <div className="m-3">
                   <h2 className="card-header">My Watched list</h2>
+                  <WatchList/>
                 </div>
               </div>
             </div>
