@@ -32,6 +32,13 @@ type movieInput {
     updatedAt: String
 }
 
+input userInput{
+  _id: ID
+  name: String
+  username: String
+  genre: String
+  bio: String
+}
 
 type Auth {
   token: ID!
@@ -51,7 +58,7 @@ type Auth {
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(name: String!, email: String!, username: String!, password: String!, genre: String, bio: String): Auth
-    updateUser(name: String, username: String, genre: String, bio: String): User
+    updateUser(input: userInput): User
     addMovie(username: String!): User
     removeMovie(movieId: ID!): User
     addFriend(friendId: ID!): User

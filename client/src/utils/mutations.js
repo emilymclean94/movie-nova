@@ -26,16 +26,13 @@ mutation Mutation($name: String!, $username: String!, $email: String!, $password
 `;
 
 export const UPDATE_USER = gql`
-mutation updateUser($name: String, $username: String, $genre: String, $bio: String) {
-  updateUser(name: $name, username: $username, genre: $genre, bio: $bio) {
-    token
-    user {
+mutation updateUser($input: userInput!) {
+  updateUser(input: $input) {
       _id
       name
       username
       genre
       bio
-    }
   }
 }
 `

@@ -6,67 +6,93 @@ const { signToken } = require('../utils/auth');
 
 
 const resolvers = {
-    Query: {
-        users: async () => {
-          return await User.find() ;
-          },
-          user: async (parent, { username }) => {
-            return User.findOne({ username: username });
-          },
-          movies: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Movie.find({});
-          },
-          movie: async (parent) => {
-            return Movie.find(); 
-          },
-          me: async (parent, args, context) => {
-            if (context.user) {
-              return User.findOne({ username: context.user.username}).populate('myList');
-            }
-            throw new AuthenticationError('You need to be logged in!');
-          },
-        
+  Query: {
+    users: async () => {
+      return await User.find();
     },
-    Mutation: {
-        addUser: async (parent, input) => {
-          const { name, username, email, password, genre, bio } = input;
-          const user = await User.create({ name, username, email, password, genre, bio });
-          const token = signToken(user);
-          return { token, user };
-        },
-        login: async (parent, { username, password }) => {
-          const user = await User.findOne({ username });
+    user: async (parent, { username }) => {
+      return User.findOne({ username: username });
+    },
+    movies: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return Movie.find({});
+    },
+    movie: async (parent) => {
+      return Movie.find();
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ username: context.user.username }).populate('myList');
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
 
-          if (!user) {
-            throw new AuthenticationError('No user found with this username');
-          }
-    
-          const correctPw = await user.isCorrectPassword(password);
-    
-          if (!correctPw) {
-            throw new AuthenticationError('Incorrect credentials');
-          }
-    
-          const token = signToken(user);
-    
-          return { token, user };
-        },
-        
-        addMovie: async (parent, { username }) => {
-          const movie = await Movie.create({ posterImg, title, releaseDate, description, updatedAt });
-    
-          await User.findOneAndUpdate(
-            { username },
-            { $addToSet: { watched: movieId } }
-          );
-    
-          return thought;
-        },
-        removeMovie: async (parent, { movieId }) => {
-          return Movie.findOneAndDelete({ _id: movieId });
-        },
-      },
+  },
+  Mutation: {
+    addUser: async (parent, input) => {
+      const { name, username, email, password, genre, bio } = input;
+      const user = await User.create({ name, username, email, password, genre, bio });
+      const token = signToken(user);
+      return { token, user };
+    },
+
+    updateUser: async (_, {input}, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('Not authenticated');
+      }
+
+      try {
+        const { _id, name, username, genre, bio } = input;
+        // Find the user in the database by ID
+        const user = await User.findByIdAndUpdate(
+          _id,
+          {name, username, genre, bio },
+          { new: true } // Return the updated user object
+        );
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        return user;
+      } catch (error) {
+        console.error('Error updating user:', error);
+        throw new Error('Failed to update user');
+      }
+    },
+
+    login: async (parent, { username, password }) => {
+      const user = await User.findOne({ username });
+
+      if (!user) {
+        throw new AuthenticationError('No user found with this username');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
+      }
+
+      const token = signToken(user);
+
+      return { token, user };
+    },
+
+    addMovie: async (parent, { username }) => {
+      const movie = await Movie.create({ posterImg, title, releaseDate, description, updatedAt });
+
+      await User.findOneAndUpdate(
+        { username },
+        { $addToSet: { watched: movieId } }
+      );
+
+      return thought;
+    },
+    removeMovie: async (parent, { movieId }) => {
+      return Movie.findOneAndDelete({ _id: movieId });
+    },
+  },
 };
 
 module.exports = resolvers;
