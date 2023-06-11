@@ -8,8 +8,7 @@ import NavBar from "./components/Navbar";
 import Home from "./pages/Home/Home";
 import Feed from "./pages/Feed/Feed";
 import Dashboard from "./pages/Dashboard/Dashboard";
-// import Login from "./pages/Login/Login";
-// import Signup from "./pages/Signup/Signup";
+import Movies from "./pages/Movies/Movies";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -58,6 +57,8 @@ function App() {
             <Route path="" element={<Home />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         <Footer />
       </Container>
