@@ -1,0 +1,14 @@
+.title{
+    text-align: right;
+    color: white;
+    margin: 0;
+    /* font-size: 6rem; */
+  }
+
+  .sub-title{
+    text-align: right;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    margin: 0;
+    /* font-size: 2rem; */
+}

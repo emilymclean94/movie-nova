@@ -5,6 +5,9 @@
     padding: auto;
   }
 
+body {
+  background: black;
+}
 
   /* --------- */
   /* Preloader */
@@ -30,6 +33,7 @@
     overflow: hidden;
     height: 100vh;
   }
+  
 
 
   /* --------- */
@@ -108,7 +112,7 @@
   /* Home */
   /* ---- */
   #home {
-    background-color:  #fff1ea;
+    background-color:  black;
     height: 100vh;
     width: 100%;
     display: flex;
