@@ -46,7 +46,7 @@ const [showModal, setShowModal] = useState(false);
               height="50"
               className="d-inline-block"
             />{" "}
-            Movienova
+            StreamVerse
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => { updateExpanded(expand ? false : "expanded") }}>

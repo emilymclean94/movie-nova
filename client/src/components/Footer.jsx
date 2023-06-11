@@ -1,6 +1,14 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
+import {BsGithub } from "react-icons/bs";
+import { TiHeartOutline } from "react-icons/ti"
 
+const styles = {
+  icons: {
+      color: '#de82ebe8',
+      margin: '0px',
+  } 
+}
 
 const Footer = () => {
   
@@ -8,9 +16,17 @@ const Footer = () => {
 
     <Navbar bg="dark" variant="dark" className="footer">
 
-      <h1>1</h1>
-      <h1>2</h1>
-      <h1>3</h1>
+      <p className="dark bold mx-2 my-2">
+        Made with <TiHeartOutline /> by the Caffeine Coders
+      </p>
+
+      <a 
+      className="display-6 me-4 my-2" 
+      href="https://github.com/emilymclean94/movie-nova" 
+      style={styles.icons}>
+        <BsGithub />
+      </a>
+
 
     </Navbar>
   )
