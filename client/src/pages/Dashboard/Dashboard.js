@@ -6,7 +6,7 @@ import Auth from '../../utils/auth';
 import { Container } from "react-bootstrap";
 
 
-function Dashboard() {
+const Dashboard = () =>  {
     const { username: userParam } = useParams();
   
     const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -15,6 +15,10 @@ function Dashboard() {
   
     const user = data?.me || data?.user || {};
     // navigate to personal profile page if username is yours
+
+    const handleUpdate = async () =>{
+      
+    }
 
   return (
     <>
