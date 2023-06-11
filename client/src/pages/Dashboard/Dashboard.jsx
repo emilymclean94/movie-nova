@@ -3,11 +3,8 @@ import { useParams } from 'react-router';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
-import { Container } from "react-bootstrap";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import EditFormButton from "../../components/EditFormButton";
-// import "../Dashboard/dash.css"
+
 const Dashboard = () => {
 
   const { username: userParam } = useParams();
