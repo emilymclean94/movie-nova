@@ -41,6 +41,7 @@ const Signup = () => {
         } catch (e) {
             console.error(e);
         }
+        window.location.assign('/dashboard');
     };
     return (
 
