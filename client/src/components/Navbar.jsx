@@ -6,6 +6,7 @@ import LoginForm from './Login';
 import Auth from '../utils/auth';
 import Logogo from '../Assets/Logogo.png'
 
+
 const NavBar = () => {
 //set modal display state
 const [showModal, setShowModal] = useState(false);
@@ -56,8 +57,14 @@ const [showModal, setShowModal] = useState(false);
           <Nav className="ms-auto" defaultActiveKey="#home">
             
             <Nav.Item>
-              <Nav.Link as={Link} to="" onClick={() => updateExpanded(false)}
+              <Nav.Link as={Link} to="/"
               >Home
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link} to="/movies"
+              >Search Movies
               </Nav.Link>
             </Nav.Item>
 
