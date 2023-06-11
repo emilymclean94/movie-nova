@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 
-function Feed() {
+const Feed = () => {
   return (
 
     <Container className="feed-body" id="feed">

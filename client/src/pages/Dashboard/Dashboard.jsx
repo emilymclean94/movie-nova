@@ -8,7 +8,7 @@ import EditFormButton from "../../components/EditFormButton";
 
 const Dashboard = () =>  {
     const { _id: userParam } = useParams();
-  
+
     const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
       variables: { _id: userParam },
     }); 

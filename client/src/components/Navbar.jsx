@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import SignUpForm from '../components/Signup';
-import LoginForm from '../components/Login';
+import SignUpForm from './Signup';
+import LoginForm from './Login';
 import Auth from '../utils/auth';
-import '../components/components.css';
+import Logogo from '../Assets/Logogo.png'
 
-function NavBar() {
+const NavBar = () => {
 //set modal display state
 const [showModal, setShowModal] = useState(false);
 
@@ -31,12 +31,19 @@ const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    <Navbar expanded={expand} fixed="top" expand="md" className={navColor ? "sticky" : "navbar"}>
+    <Navbar bg="dark" variant="dark" expanded={expand} expand="md" className={navColor ? "sticky" : "navbar"}>
 
       <Container>
 
-        <Navbar.Brand href="/" className="d-flex" aria-label="navbar-logo">
-        <h1>Hi</h1>
+        <Navbar.Brand href="/" aria-label="navbar-logo">
+          <img
+              alt=""
+              src= { Logogo }
+              width="50"
+              height="50"
+              className="d-inline-block"
+            />{" "}
+            Movienova
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => { updateExpanded(expand ? false : "expanded") }}>
@@ -49,8 +56,8 @@ const [showModal, setShowModal] = useState(false);
           <Nav className="ms-auto" defaultActiveKey="#home">
             
             <Nav.Item>
-              <Nav.Link as={Link} to="" onClick={() => updateExpanded(false)}>
-                <div style={{ marginBottom: "2px" }} aria-labelledby="Home" /> Home
+              <Nav.Link as={Link} to="" onClick={() => updateExpanded(false)}
+              >Home
               </Nav.Link>
             </Nav.Item>
 
@@ -63,12 +70,8 @@ const [showModal, setShowModal] = useState(false);
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>
-                  <div className="button-div">
-                    <button className="signup-button">Signup</button>
-                    <button className="login-button">Login</button>
-                  </div>
-                </Nav.Link>
+                  <Nav.Link onClick={() => setShowModal(true)}
+                  >Login | Sign Up</Nav.Link>
               )}
 
           </Nav>

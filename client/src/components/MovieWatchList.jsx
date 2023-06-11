@@ -4,7 +4,7 @@ import { Card, Button } from 'react-bootstrap';
 // import MovieModal from './MovieModal';
 
 
-function MovieWatchList() {
+const MovieWatchList = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState([]);
