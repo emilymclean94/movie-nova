@@ -45,8 +45,8 @@ const EditForm = (props) => {
 
   return (
     <>
-      <h1>Update Your Information</h1>
-      <form onSubmit={handleFormSubmit}>
+      <h1 className='updateForm'>Update Your Information</h1>
+      <form className='updateForm' onSubmit={handleFormSubmit}>
         <Form.Group>
           <input
           name="name"
@@ -83,7 +83,7 @@ const EditForm = (props) => {
           value={editUser.bio}
           />
         </Form.Group>
-        <input className='btn btn-dark my-3' type="submit" value="Update" />
+        <input className='btn btn-dark my-3 ' type="submit" value="Update" />
       </form>
     </>
   );

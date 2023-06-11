@@ -17,33 +17,34 @@ const Dashboard = () => {
   const user = data?.me || data?.user || {};
 
 
-
   return (
     <div>
       {Auth.loggedIn() ? (
         <section className="dashboard-body" id="dashboard">
-          <div className="row dashtitle">
-            <h1>
-              Welcome to your Dashboard, {`${user.name}`}!
-            </h1>
-          </div>
-          <div className="row">
-            <div className="col-6">
-              <div className="m-3">
-                <h2 className="card-header">Username is: {`${user.username}`}</h2>
-                <h2 className="card-header">Favorite Genre is: {`${user.genre}`}</h2>
-                <h2 className="card-header">Your Bio: {`${user.bio}`}</h2>
+          
+            <div id="dash2" className="row dashtitle">
+              <h1>
+                Welcome to your Dashboard, {`${user.name}`}!
+              </h1>
+            </div>
+            <div className="row">
+              <div className="col-6">
+                <div id="dash" className="m-3">
+                  <h2 className="card-header">Username is: {`${user.username}`}</h2>
+                  <h2 className="card-header">Favorite Genre is: {`${user.genre}`}</h2>
+                  <h2 className="card-header">Your Bio: {`${user.bio}`}</h2>
+                </div>
+            
+                <div className="m-3">
+                  <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}  />
+                </div>
               </div>
-              <div className="m-3">
-                <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio} />
+              <div id="dash3" className="col-6">
+                <div className="m-3">
+                  <h2 className="card-header">My Watched list</h2>
+                </div>
               </div>
             </div>
-            <div className="col-6">
-              <div className="m-3">
-              <h2 className="card-header">My Watched list</h2>
-              </div>
-            </div>
-          </div>
         </section>) : (
         <h4>
           You need to be logged in to see this. Use the navigation links above to
