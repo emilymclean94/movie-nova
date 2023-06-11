@@ -21,7 +21,6 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   const token = Auth.getToken();
 
-
   return {
     headers: {
       ...headers,
@@ -35,8 +34,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
-function App() {
+const App = () => {
+  
   const [load, upadateLoad] = useState(true);
 
   useEffect(() => {
@@ -48,23 +47,24 @@ function App() {
   }, []);
 
   return (
-<ApolloProvider client={client}>
-    <Router>
-      <Preloader load={load} />
-      <Container className="App" id={load ? "no-scroll" : "scroll"}>
-        <NavBar /> 
-          <Routes>
-            <Route path="" element={<Home />} />
-            <Route path="/feed" element={<Feed />} />
-            <Route path="/dashboard" element={<Dashboard />} />
 
-            <Route path="/movies" element={<Movies />} />
-            {/* <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} /> */}
-          </Routes>
-        <Footer />
-      </Container>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <Preloader load={load} />
+        <Container className="App" id={load ? "no-scroll" : "scroll"}>
+          <NavBar /> 
+            <Routes>
+              <Route path="" element={<Home />} />
+              <Route path="/feed" element={<Feed />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+
+              <Route path="/movies" element={<Movies />} />
+              {/* <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} /> */}
+            </Routes>
+          <Footer />
+        </Container>
+      </Router>
     </ApolloProvider>
   )
 }

@@ -4,7 +4,7 @@ import axios from 'axios';
 import MovieItem from '../../components/MovieItem';
 import MovieModal from '../../components/MovieModal';
 
-function Movies() {
+const Movies = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
