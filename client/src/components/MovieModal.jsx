@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import MovieItem from './MovieItem';
 
-function MovieModal({ movie, onClose }) {
+const MovieModal = ({ movie, onClose }) => {
 
   return (
 

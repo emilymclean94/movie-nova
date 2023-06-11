@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 
 
-function Footer() {
+const Footer = () => {
   
   return (
     <Container className="footer">

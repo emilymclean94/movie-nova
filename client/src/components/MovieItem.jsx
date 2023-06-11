@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import MovieModal from './MovieModal';
 
-function MovieItem ({ movie }) {
+const MovieItem = ({ movie }) => {
 
   const { id, title, poster_path, release_date } = movie;
 
