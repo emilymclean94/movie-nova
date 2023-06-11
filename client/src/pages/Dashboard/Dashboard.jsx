@@ -4,41 +4,54 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import { Container } from "react-bootstrap";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import EditFormButton from "../../components/EditFormButton";
+// import "../Dashboard/dash.css"
+const Dashboard = () => {
 
-const Dashboard = () =>  {
-  
-    const { username: userParam } = useParams();
-  
-    const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-      variables: { username: userParam },
-    }); //loading was next to data
-  
-    const user = data?.me || data?.user || {};
-  
+  const { username: userParam } = useParams();
 
-    
+  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam },
+  }); //loading was next to data
+
+  const user = data?.me || data?.user || {};
+
+
+
   return (
-    <>
-    {Auth.loggedIn() ? (
-    <Container className="dashboard-body" id="dashboard">
-      <Container className="dashboard-content">
-        <h1>Welcome to your Dashboard, {`${user.name}`}!</h1>
-        <div>
-        <h2 className="card-header">{`${user.username}`}</h2>
-        <h2 className="card-header">{`${user.genre}`}</h2>
-        <h2 className="card-header">{`${user.bio}`}</h2>
-        </div>
-        <div className="m-3">
-        <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}/>
-        </div>
-      </Container>
-    </Container>) : (
-      <h4>
-      You need to be logged in to see this. Use the navigation links above to
-      sign up or log in!
-    </h4>)}
-</>
+    <div>
+      {Auth.loggedIn() ? (
+        <section className="dashboard-body" id="dashboard">
+          <div className="row dashtitle">
+            <h1>
+              Welcome to your Dashboard, {`${user.name}`}!
+            </h1>
+          </div>
+          <div className="row">
+            <div className="col-6">
+              <div className="m-3">
+                <h2 className="card-header">Username is: {`${user.username}`}</h2>
+                <h2 className="card-header">Favorite Genre is: {`${user.genre}`}</h2>
+                <h2 className="card-header">Your Bio: {`${user.bio}`}</h2>
+              </div>
+              <div className="m-3">
+                <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio} />
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="m-3">
+              <h2 className="card-header">My Watched list</h2>
+              </div>
+            </div>
+          </div>
+        </section>) : (
+        <h4>
+          You need to be logged in to see this. Use the navigation links above to
+          sign up or log in!
+        </h4>)}
+    </div>
   );
 }
 
