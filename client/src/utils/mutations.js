@@ -25,6 +25,18 @@ mutation Mutation($name: String!, $username: String!, $email: String!, $password
 }
 `;
 
+export const UPDATE_USER = gql`
+mutation updateUser($input: userInput!) {
+  updateUser(input: $input) {
+      _id
+      name
+      username
+      genre
+      bio
+  }
+}
+`
+
 export const ADD_MOVIE = gql`
   mutation addMovie($posterImg: String, $title: String, $releaseDate: String, $description: String, $rating: String, $updatedAt: String) {
     addMovie(posterImg: $posterImg, title: $title, releaseDate: $releaseDate, description: $description, updatedAt: $updatedAt) {
