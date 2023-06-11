@@ -1,0 +1,117 @@
+h1 {
+    width: 100%;
+    display: flex;
+    color: white;
+    font-size: 4em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.one{
+    padding-top: 2em;
+}
+
+.fade {
+    scroll-behavior: smooth;
+    position:relative;
+    background-color: #1e0876;
+}
+
+.last{
+    padding-bottom: 2em;
+}
+
+.custom-shape-divider-top-1686412855 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1686412855 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 231px;
+}
+
+.custom-shape-divider-top-1686412855 .shape-fill {
+    fill: #000000;
+}
+
+.custom-shape-divider-top-1686416324 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1686416324 svg {
+    position: relative;
+    display: block;
+    width: calc(147% + 1.3px);
+    height: 183px;
+}
+
+.custom-shape-divider-top-1686416324 .shape-fill {
+    fill: #1E0876;
+}
+.marquee {
+    position:relative;
+    padding-top: 10em;
+}
+
+.review-img{
+-moz-animation: marquee 10s linear infinite;
+-webkit-animation: marquee 10s linear infinite;
+animation: marquee 10s linear infinite;}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100);
+    }
+    100% {
+        transform: translateX(-100%);
+    }}
+    @-webkit-keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      @keyframes marquee {
+        0% {
+          -moz-transform: translateX(100%);
+          -webkit-transform: translateX(100%);
+          transform: translateX(100%)
+        }
+        100% {
+          -moz-transform: translateX(-100%);
+          -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+        }
+      }
+.marquee-container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+height: 25rem;
+gap: 1rem;
+}
+h7{
+    font-size: 5rem;
+font-weight: bold;
+color: #1e0876;
+padding-bottom: 1em;
+}
