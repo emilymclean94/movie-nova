@@ -50,7 +50,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(178, 121, 216, 0.959);
+    background: #b279d8f5;
     border-radius: 12px;
   }
 
@@ -70,6 +70,19 @@
 
   }
 
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #b279d8f5;
+    padding: 5px;
+    font-size: large;
+  }
+
+  .nav-pills .nav-link {
+    border-radius: var(--bs-nav-pills-border-radius);
+    color: #b279d8f5;
+    font-size: large;
+  }
 
   /* ------ */
   /* Footer */
@@ -85,7 +98,7 @@
   /* Login */
   /* ----- */
   .login {
-    background-color: #fff1ea;
+    background-color: #343a40;
     height: 75vh;
     width: 100%;
     display: flex;
@@ -93,14 +106,36 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    color: #b279d8f5;
   }
 
+  .modal {
+    fill: #343a40;
+  }
+
+  .modal-header {
+    padding: 7px;
+    background-color: black;
+  }
+
+  [type=button]:not(:disabled),
+  [type=reset]:not(:disabled),
+  [type=submit]:not(:disabled),
+  button:not(:disabled) {
+    cursor: pointer;
+    background-color: #b279d8f5;
+    margin-right: 5px;
+  }
+
+  .btn:hover {
+    background-color: #de82ebe8;
+  }
 
   /* ------ */
   /* Signup */
   /* ------ */
   .signup {
-    background-color: #fff1ea;
+    background-color: #343a40;
     height: 80vh;
     width: 100%;
     display: flex;
@@ -108,6 +143,7 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    color: #b279d8f5;
   }
 
   /* ---- */
@@ -128,12 +164,12 @@
     color: #fff;
     text-shadow:
       0 0 7px #fff,
-      0 0 0px #fff, 
-      0 0 21px #001c99, 
-      0 0 20px #001c99, 
-      0 0 15px #001c99, 
-      0 0 15px #001c99, 
-      0 0 20px #041669, 
+      0 0 0px #fff,
+      0 0 21px #001c99,
+      0 0 20px #001c99,
+      0 0 15px #001c99,
+      0 0 15px #001c99,
+      0 0 20px #041669,
       0 0 0px #0b1b64;
   }
 

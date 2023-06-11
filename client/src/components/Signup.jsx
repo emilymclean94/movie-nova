@@ -46,7 +46,7 @@ const Signup = () => {
     return (
 
         <div className='signup rounded'>
-            <h1>Signup.</h1>
+            <h1>Signup</h1>
             <form onSubmit={handleFormSubmit}>
             <Form.Group className="mb-2">
                     <label className='mb-1' for="nameInput">Name</label>
