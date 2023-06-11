@@ -7,6 +7,7 @@ import { Container } from "react-bootstrap";
 import EditFormButton from "../../components/EditFormButton";
 
 const Dashboard = () =>  {
+  
     const { username: userParam } = useParams();
   
     const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {

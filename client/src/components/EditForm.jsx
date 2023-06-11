@@ -28,7 +28,9 @@ const EditForm = () => {
     });
   };
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
     console.log(editUser);
 
     try {
@@ -38,6 +40,7 @@ const EditForm = () => {
     
       const token = data.updateUser.token
            Auth.updateUser(token);
+
     } catch (e) {
         console.error(e);
     }
