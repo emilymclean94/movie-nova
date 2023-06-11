@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import SignUpForm from '../components/Signup';
+import LoginForm from '../components/Login';
+import Auth from '../utils/auth';
 
 function NavBar() {
+//set modal display state
+const [showModal, setShowModal] = useState(false);
 
   const [expand, updateExpanded] = useState(false);
   const [navColor, updateNavbar] = useState(false);
@@ -26,7 +29,7 @@ function NavBar() {
   }, []); 
 
   return (
-
+    <>
     <Navbar expanded={expand} fixed="top" expand="md" className={navColor ? "sticky" : "navbar"}>
 
       <Container>
@@ -50,17 +53,17 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link as={Link} to="/login" onClick={() => updateExpanded(false)}>
-                <div style={{ marginBottom: "2px" }} aria-labelledby="login" /> Login
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/signup" onClick={() => updateExpanded(false)}>
-                <div style={{ marginBottom: "2px" }} aria-labelledby="Projects" /> Signup
-              </Nav.Link>
-            </Nav.Item>
+            {Auth.loggedIn() ? (
+                <>
+                {/* Might have to change this path when saved list is added */}
+                  <Nav.Link as={Link} to='/saved'>
+                    See Your Movies
+                  </Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                </>
+              ) : (
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign-Up</Nav.Link>
+              )}
 
           </Nav>
         </Navbar.Collapse>
@@ -69,6 +72,38 @@ function NavBar() {
 
     </Navbar>
 
+    <Modal 
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby='signup-modal'>
+        {/* tab container to do either signup or login component */}
+        <Tab.Container defaultActiveKey='login'>
+          <Modal.Header closeButton>
+            <Modal.Title id='signup-modal'>
+              <Nav variant='pills' className="nav-pills">
+                <Nav.Item className="pill-one">
+                  <Nav.Link className="login-pill" eventKey='login'>Login</Nav.Link>
+                </Nav.Item>
+                <Nav.Item className="pill-two">
+                  <Nav.Link className="signup-pill" eventKey='signup'>Sign Up</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="p-0">
+            <Tab.Content>
+              <Tab.Pane className="rounded" eventKey='login'>
+                <LoginForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey='signup'>
+                <SignUpForm handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+            </Tab.Content>
+          </Modal.Body>
+        </Tab.Container>
+      </Modal>
+
+    </>
   )
 }
 

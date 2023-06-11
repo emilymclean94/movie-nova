@@ -1,8 +1,8 @@
-import { Container } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const Login = () => {
 
@@ -39,28 +39,28 @@ const Login = () => {
 
     return (
 
-        <Container className='login'>
+        <div className='login rounded'>
             <h1>Login</h1>
-            <form className='mt-4' onSubmit={handleFormSubmit}>
-            <div class="form-group">
-                    <label for="usernameInput">Username</label>
+            <Form className='mt-4' onSubmit={handleFormSubmit}>
+            <Form.Group className="mb-3">
+                    <label className='mb-1' for="usernameInput">Username</label>
                     <input 
                     name="username"
                     value={formState.username}
                     onChange={handleChange}
-                    type="text" class="form-control" id="usernameInput" aria-describedby="username" placeholder="janedoe86"/>
-                </div>
-                <div class="form-group">
-                    <label for="passwordInput">Password</label>
+                    type="text" className="form-control" id="usernameInput" aria-describedby="username" placeholder="janedoe86"/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <label className='mb-1' for="passwordInput">Password</label>
                     <input
                     value={formState.email}
                     type="password" 
                     onChange={handleChange}
-                    name="password" class="form-control" id="passwordInput" aria-describedby="password" placeholder="password"/>
-                </div>
-                <button type="submit" class="btn btn-primary mt-3">Login</button>
-            </form> 
-        </Container>
+                    name="password" className="form-control" id="passwordInput" aria-describedby="password" placeholder="password"/>
+                </Form.Group>
+                <button type="submit" className="btn btn-dark">Login</button>
+            </Form> 
+        </div>
   
     )
   }
