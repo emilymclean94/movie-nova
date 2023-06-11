@@ -1,18 +1,18 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 
 const Footer = () => {
   
   return (
 
-    <Container className="footer">
+    <Navbar bg="dark" variant="dark" className="footer">
 
       <h1>1</h1>
       <h1>2</h1>
       <h1>3</h1>
 
-    </Container>
+    </Navbar>
   )
 }
 
