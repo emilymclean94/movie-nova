@@ -57,12 +57,12 @@ const [showModal, setShowModal] = useState(false);
                 <>
                 {/* Might have to change this path when saved list is added */}
                   <Nav.Link as={Link} to='/saved'>
-                    See Your Movie
+                    See Your Movies
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign-Up</Nav.Link>
               )}
 
           </Nav>
@@ -72,8 +72,7 @@ const [showModal, setShowModal] = useState(false);
 
     </Navbar>
 
-    <Modal
-        size='lg'
+    <Modal 
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
@@ -81,19 +80,19 @@ const [showModal, setShowModal] = useState(false);
         <Tab.Container defaultActiveKey='login'>
           <Modal.Header closeButton>
             <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+              <Nav variant='pills' className="nav-pills">
+                <Nav.Item className="pill-one">
+                  <Nav.Link className="login-pill" eventKey='login'>Login</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                <Nav.Item className="pill-two">
+                  <Nav.Link className="signup-pill" eventKey='signup'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="p-0">
             <Tab.Content>
-              <Tab.Pane eventKey='login'>
+              <Tab.Pane className="rounded" eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey='signup'>

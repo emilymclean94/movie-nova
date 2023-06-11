@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
@@ -44,56 +44,56 @@ const Signup = () => {
     };
     return (
 
-        <Container className='signup'>
+        <div className='signup rounded'>
             <h1>Signup.</h1>
             <form onSubmit={handleFormSubmit}>
-            <div class="form-group">
-                    <label for="nameInput">Name</label>
+            <Form.Group className="mb-2">
+                    <label className='mb-1' for="nameInput">Name</label>
                     <input 
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    type="text" class="form-control" id="nameInput" aria-describedby="name" placeholder="Jane Doe"/>
-                </div>
-                <div class="form-group">
-                    <label for="emailInput">Email address</label>
+                    type="text" className="form-control" id="nameInput" aria-describedby="name" placeholder="Jane Doe"/>
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <label className='mb-1' for="emailInput">Email address</label>
                     <input
                     value={formState.email}
                     type="email" 
                     onChange={handleChange}
-                    name="email" class="form-control" id="emailInput" aria-describedby="email" placeholder="janeDoe86@mail.com"/>
-                </div>
-                <div class="form-group">
-                    <label for="usernameInput">Username</label>
+                    name="email" className="form-control" id="emailInput" aria-describedby="email" placeholder="janeDoe86@mail.com"/>
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <label className='mb-1' for="usernameInput">Username</label>
                     <input
                     value={formState.username}
                     onChange={handleChange}
-                    name="username" type="text" class="form-control" id="usernameInput" aria-describedby="name" placeholder="janedoe86"/>
-                </div>
-                <div class="form-group">
-                    <label for="passwordInput">Password</label>
+                    name="username" type="text" className="form-control" id="usernameInput" aria-describedby="name" placeholder="janedoe86"/>
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <label className='mb-1' for="passwordInput">Password</label>
                     <input 
                     value={formState.password}
                     onChange={handleChange}
-                    name="password" type="password" class="form-control" id="passwordInput" placeholder="Password"/>
-                </div>
-                <div class="form-group">
-                    <label for="genreInput">Favorite Genre</label>
+                    name="password" type="password" className="form-control" id="passwordInput" placeholder="Password"/>
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <label className='mb-1' for="genreInput">Favorite Genre</label>
                     <input
                     value={formState.genre}
                     onChange={handleChange} 
-                    name="genre" type="text" class="form-control" id="genreInput" placeholder="Horror"/>
-                </div>
-                <div class="form-group">
-                    <label for="bioInput">Bio</label>
+                    name="genre" type="text" className="form-control" id="genreInput" placeholder="Horror"/>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <label className='mb-1' for="bioInput">Bio</label>
                     <input
                     value={formState.bio}
                     onChange={handleChange} 
-                    name="bio" type="text" class="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                    name="bio" type="text" className="form-control" id="bioInput" placeholder="Tell us about yourself!"/>
+                </Form.Group>
+                <button type="submit" className="btn btn-dark mb-3">Submit</button>
             </form>
-        </Container>
+        </div>
 
     )
 }
