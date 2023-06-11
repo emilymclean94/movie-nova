@@ -57,7 +57,10 @@ function App() {
             <Route path="" element={<Home />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/dashboard" element={<Dashboard />} />
+
             <Route path="/movies" element={<Movies />} />
+            {/* <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} /> */}
           </Routes>
         <Footer />
       </Container>
