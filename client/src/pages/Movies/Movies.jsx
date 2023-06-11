@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
-import axios from 'axios';
+import React from 'react';
 import MovieSearchBar from '../../components/MovieSearchBar';
-import PopularMovies from '../../components/PopularMovies';
+import PopularMovies from './PopularMovies';
 
 const Movies = () => {
 
