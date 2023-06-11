@@ -5,9 +5,9 @@
     padding: auto;
   }
 
-body {
-  background: black;
-}
+  body {
+    background: black;
+  }
 
   /* --------- */
   /* Preloader */
@@ -24,16 +24,16 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
-  
+
   #preloader-none {
     opacity: 0;
   }
-  
+
   #no-scroll {
     overflow: hidden;
     height: 100vh;
   }
-  
+
 
 
   /* --------- */
@@ -42,12 +42,12 @@ body {
   ::-webkit-scrollbar {
     width: 7px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
     background: #2d1950;
   }
-  
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: rgba(178, 121, 216, 0.959);
@@ -85,7 +85,7 @@ body {
   /* Login */
   /* ----- */
   .login {
-    background-color:  #fff1ea;
+    background-color: #fff1ea;
     height: 75vh;
     width: 100%;
     display: flex;
@@ -93,14 +93,14 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-  } 
+  }
 
 
   /* ------ */
   /* Signup */
   /* ------ */
   .signup {
-    background-color:  #fff1ea;
+    background-color: #fff1ea;
     height: 80vh;
     width: 100%;
     display: flex;
@@ -108,12 +108,13 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-  } 
+  }
+
   /* ---- */
   /* Home */
   /* ---- */
   #home {
-    background-color:  black;
+    background-color: black;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -122,18 +123,18 @@ body {
     text-align: center;
     flex-direction: column;
   }
-  
+
   .title {
     color: #fff;
     text-shadow:
       0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 35px #de82ebe8,
-      0 0 40px #de82ebe8,
-      0 0 60px #de82ebe8,
-      0 0 80px #de82ebe8,
-      0 0 80px #de82ebe8;
+      0 0 0px #fff, 
+      0 0 21px #001c99, 
+      0 0 20px #001c99, 
+      0 0 15px #001c99, 
+      0 0 15px #001c99, 
+      0 0 20px #041669, 
+      0 0 0px #0b1b64;
   }
 
 
@@ -149,11 +150,45 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-  } 
+  }
 
+  #dashboard {
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex: wrap;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: azure;
+  }
+
+  .dashtitle {
+    color: #de82ebe8;
+    ;
+    margin-top: -5%;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content {
+    background-color: rgb(222, 199, 250);
+    border-radius: 15px;
+  }
+
+  .content2 {
+    background-color: rgb(222, 199, 250);
+    border-radius: 15px;
+  }
 
   .hidden {
-    display: none!important;
+    display: none !important;
   }
 
   .movies-grid {
@@ -161,11 +196,11 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
-  
+
   .popular-movies {
     padding: 1rem;
   }
-  
+
   .MovieItem {
     margin: 1rem;
   }
