@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SignUpForm from '../components/Signup';
 import LoginForm from '../components/Login';
 import Auth from '../utils/auth';
+import '../components/components.css';
 
 function NavBar() {
 //set modal display state
@@ -62,7 +63,12 @@ const [showModal, setShowModal] = useState(false);
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign-Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>
+                  <div className="button-div">
+                    <button className="signup-button">Signup</button>
+                    <button className="login-button">Login</button>
+                  </div>
+                </Nav.Link>
               )}
 
           </Nav>
