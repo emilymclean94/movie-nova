@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import EditForm from './EditForm';
 
 
-const EditFormButton = () => {
+const EditFormButton = (props) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
@@ -16,7 +16,7 @@ const EditFormButton = () => {
        {isButtonVisible && (
       <button className='btn btn-dark' onClick={handleButtonClick}>Open Edit Form</button>
       )}
-      {isFormVisible && <EditForm />}
+      {isFormVisible && <EditForm username={props.username} name={props.name} genre={props.genre} bio={props.bio} />}
     </div>
   );
 };

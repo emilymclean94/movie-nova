@@ -15,7 +15,7 @@ const Dashboard = () =>  {
     }); //loading was next to data
   
     const user = data?.me || data?.user || {};
-    // navigate to personal profile page if username is yours
+  
 
     
   return (
@@ -30,7 +30,7 @@ const Dashboard = () =>  {
         <h2 className="card-header">{`${user.bio}`}</h2>
         </div>
         <div className="m-3">
-        <EditFormButton/>
+        <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}/>
         </div>
       </Container>
     </Container>) : (

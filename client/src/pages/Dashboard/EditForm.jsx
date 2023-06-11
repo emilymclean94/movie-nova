@@ -7,12 +7,13 @@ import Auth from '../../utils/auth';
 // import { useParams } from 'react-router';
 // import { useQuery } from '@apollo/client';
 
-const EditForm = () => {
+
+const EditForm = (props) => {
   const [editUser, setEditUser] = useState({
-    name: '',
-    username: '',
-    genre: '',
-    bio: '',
+    name: props.name,
+    username: props.username,
+    genre: props.genre,
+    bio: props.bio,
 });
 
   const [updateUser] = useMutation(UPDATE_USER);
@@ -59,7 +60,7 @@ const EditForm = () => {
           <input 
           name="username"
           type="text"
-          placeholder="Update Username"
+          placeholder={props.username}
           onChange={handleUpdateUser}
           value={editUser.username}
           />
