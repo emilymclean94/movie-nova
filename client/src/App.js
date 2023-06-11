@@ -13,7 +13,6 @@ import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Auth from './utils/auth';
-import MovieSearchBar from "./components/MovieSearchBar";
 // import { useQuery } from '@apollo/client';
 
 const httpLink = createHttpLink({
@@ -55,15 +54,11 @@ const App = () => {
         <Preloader load={load} />
         <Container className="App" id={load ? "no-scroll" : "scroll"}>
           <NavBar /> 
-          <MovieSearchBar />
             <Routes>
               <Route path="" element={<Home />} />
               <Route path="/feed" element={<Feed />} />
               <Route path="/dashboard" element={<Dashboard />} />
-
               <Route path="/movies" element={<Movies />} />
-              {/* <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} /> */}
             </Routes>
           <Footer />
         </Container>
