@@ -7,6 +7,9 @@ const EditFormButton = (props) => {
   const [isButtonVisible, setIsButtonVisible] = useState(true);
 
   const handleButtonClick = () => {
+    document.getElementById('dash').classList.add('hidden');
+    document.getElementById('dash2').classList.add('hidden');
+    document.getElementById('dash3').classList.add('hidden');
     setIsFormVisible(true);
     setIsButtonVisible(false);
   };
@@ -14,7 +17,7 @@ const EditFormButton = (props) => {
   return (
     <div >
        {isButtonVisible && (
-      <button className='btn btn-dark' onClick={handleButtonClick}>Open Edit Form</button>
+      <button className='btn btn-dark' id='button' onClick={handleButtonClick}>Open Edit Form</button>
       )}
       {isFormVisible && <EditForm username={props.username} name={props.name} genre={props.genre} bio={props.bio} />}
     </div>
@@ -23,4 +26,4 @@ const EditFormButton = (props) => {
 
 export default EditFormButton;
 
-///delete this text
+
