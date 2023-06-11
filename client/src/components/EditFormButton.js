@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EditForm from './EditForm';
 
+
 const EditFormButton = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
@@ -11,9 +12,9 @@ const EditFormButton = () => {
   };
 
   return (
-    <div>
+    <div >
        {isButtonVisible && (
-      <button onClick={handleButtonClick}>Open Edit Form</button>
+      <button className='btn btn-dark' onClick={handleButtonClick}>Open Edit Form</button>
       )}
       {isFormVisible && <EditForm />}
     </div>

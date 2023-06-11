@@ -22,11 +22,13 @@ const Dashboard = () =>  {
     {Auth.loggedIn() ? (
     <Container className="dashboard-body" id="dashboard">
       <Container className="dashboard-content">
-        <h1>Welcome {`${user.name}`} to your Dashboard!</h1>
+        <h1>Welcome to your Dashboard, {`${user.name}`}!</h1>
         <div>
         <h2 className="card-header">{`${user.username}`}</h2>
         <h2 className="card-header">{`${user.genre}`}</h2>
         <h2 className="card-header">{`${user.bio}`}</h2>
+        </div>
+        <div className="m-3">
         <EditFormButton/>
         </div>
       </Container>
