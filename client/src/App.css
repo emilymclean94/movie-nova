@@ -121,7 +121,20 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-  } 
+  }
+  
+  .title {
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 35px #de82ebe8,
+      0 0 40px #de82ebe8,
+      0 0 60px #de82ebe8,
+      0 0 80px #de82ebe8,
+      0 0 80px #de82ebe8;
+  }
 
 
   /* ---- */
@@ -143,7 +156,7 @@ body {
   /* Dashboard */
   /* --------- */
   #dashboard {
-    background-color:  #fff1ea;
+    background-color:  black;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -152,12 +165,26 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
+    color: azure;
   } 
 
   .dashtitle {
+    color: #de82ebe8; ;
     margin-top: -5%;
   }
-  
+   .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   }
+  .content{
+    background-color: rgb(222, 199, 250);
+    border-radius:15px;
+  }
+  .content2{
+    background-color: rgb(222, 199, 250);
+    border-radius:15px;
+  }
   .hidden {
     display: none!important;
   }

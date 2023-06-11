@@ -29,7 +29,7 @@ const Dashboard = () => {
               </h1>
             </div>
             <div className="row">
-              <div className="col-6">
+              <div className="col-6 content">
                 <div id="dash" className="m-3">
                   <h2 className="card-header">Username is: {`${user.username}`}</h2>
                   <h2 className="card-header">Favorite Genre is: {`${user.genre}`}</h2>
@@ -40,7 +40,7 @@ const Dashboard = () => {
                   <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}  />
                 </div>
               </div>
-              <div id="dash3" className="col-6">
+              <div id="dash3" className="col-6 content2">
                 <div className="m-3">
                   <h2 className="card-header">My Watched list</h2>
                   <WatchList/>
