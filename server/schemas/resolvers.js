@@ -76,15 +76,15 @@ const resolvers = {
       return { token, user };
     },
 
-    addMovie: async (parent, { username }) => {
-      const movie = await Movie.create({ posterImg, title, releaseDate, description, updatedAt });
-
-      await User.findOneAndUpdate(
+    addMovie: async (parent, { username, title, description }) => {
+      // const movie = await Movie.create({ posterImg, title, releaseDate, description, updatedAt });
+      const movie = await Movie.create({title, description})
+      const user = await User.findOneAndUpdate(
         { username },
-        { $addToSet: { watched: movieId } }
+        { $addToSet: { myList: movie } }
       );
 
-      return thought;
+      return user;
     },
     removeMovie: async (parent, { movieId }) => {
       return Movie.findOneAndDelete({ _id: movieId });
