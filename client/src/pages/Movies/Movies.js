@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Form, Button, ListGroup } from 'react-bootstrap'; //Card
+import { Container, Form, Button, ListGroup } from 'react-bootstrap';
 import axios from 'axios';
 import MovieItem from '../../components/MovieItem';
+import MovieModal from '../../components/MovieModal';
 
 function Movies() {
+
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     fetchPopularMovies();
@@ -43,7 +46,7 @@ function Movies() {
   };
 
   const searchMovies = () => {
-    const apiKey = 'bb8c9e655b550c820642d263e87af207'; // Replace with your TMDB API key
+    const apiKey = 'bb8c9e655b550c820642d263e87af207';
 
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
 
@@ -57,8 +60,13 @@ function Movies() {
       });
   };
 
+  const handleCloseModal = () => {
+    setSelectedMovie(null);
+  };
+
   return (
     <Container>
+      
       <h1 className="mt-4 mb-4">Movie Search</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="searchForm">
@@ -73,31 +81,32 @@ function Movies() {
           Search
         </Button>
       </Form>
-      <div className="mt-4">
-        <h2>Popular Movies</h2>
-        <div className="popular-movies">
-          {popularMovies.map((movie) => (
-            <MovieItem key={movie.id} movie={movie} />
-          ))}
-        </div>
-      </div>
 
-      <div className="mt-4">
-        <h2>Search Results</h2>
-        {results.length === 0 ? (
-          <p>No results found.</p>
-        ) : (
-          <ListGroup>
-            {results.map((movie) => (
-              <ListGroup.Item key={movie.id}>
-                {movie.title} ({movie.release_date})
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        )}
+      {results.length === 0 && (
+    <div className="mt-4">
+      <h2>Popular Movies</h2>
+      <div className="popular-movies">
+        {popularMovies.map((movie) => (
+          <MovieItem key={movie.id} movie={movie} />
+        ))}
       </div>
+    </div>
+    )}
+
+    {results.length > 0 && (
+    <div className="searched-movies">
+      {results.map((movie) => (
+        <ListGroup.Item key={movie.id}>
+          <MovieItem movie={movie} />
+        </ListGroup.Item>
+      ))}
+    </div>
+    )}
+
+     <MovieModal movie={selectedMovie} onClose={handleCloseModal} />
+
     </Container>
-  );
+  )
 }
 
 export default Movies;
