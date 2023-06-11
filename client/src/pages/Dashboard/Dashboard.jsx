@@ -3,7 +3,8 @@ import { useParams } from 'react-router';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
-import EditFormButton from "../../components/EditFormButton";
+import EditFormButton from "./EditFormButton";
+
 
 const Dashboard = () => {
 

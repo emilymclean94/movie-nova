@@ -1,8 +1,12 @@
 import React, { useState} from 'react';
 import { useMutation } from '@apollo/client';
-import { UPDATE_USER } from '../utils/mutations'
+import { UPDATE_USER } from '../../utils/mutations'
 import { Form } from 'react-bootstrap';
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
+// import { QUERY_USER, QUERY_ME } from '../utils/queries';
+// import { useParams } from 'react-router';
+// import { useQuery } from '@apollo/client';
+
 
 const EditForm = (props) => {
   const [editUser, setEditUser] = useState({

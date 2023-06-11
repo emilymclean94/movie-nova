@@ -3,6 +3,7 @@ import { Table, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 const WatchList = () => {
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -12,14 +13,15 @@ const WatchList = () => {
 
   // Function to fetch movie data
   const fetchMovies = async () => {
+
     try {
       const response = await axios.get('https://api.themoviedb.org/3/movie/popular', {
         params: {
-          api_key: 'YOUR_API_KEY',
-          language: 'en-US',
+          api_key: 'bb8c9e655b550c820642d263e87af207',
           page: 1
         }
       });
+
       setMovies(response.data.results);
     } catch (error) {
       console.log(error);
@@ -28,18 +30,22 @@ const WatchList = () => {
 
   // Function to add a movie to the watch list
   const addMovie = (movie) => {
+
     setMovies([...movies, movie]);
   };
 
   // Function to delete a movie from the watch list
   const deleteMovie = (index) => {
+
     const updatedMovies = [...movies];
     updatedMovies.splice(index, 1);
     setMovies(updatedMovies);
   };
 
   return (
+
     <div>
+      
       <Button variant="primary" onClick={() => addMovie({ title: 'Inception', release_date: '2010-07-16', overview: 'A mind-bending story...', poster_url: 'https://example.com/poster.jpg' })}>
         Add Movie
       </Button>
@@ -65,7 +71,9 @@ const WatchList = () => {
           ))}
         </tbody>
       </Table>
+
     </div>
+
   );
 };
 

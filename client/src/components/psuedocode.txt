@@ -63,6 +63,7 @@ Adding Movies to the Watch List:
 Collect the necessary details for the movie you want to add, such as title, release date, overview, and poster image URL.
 Create a new movie object with the collected details.
 Add the movie object to your watch list data structure. The specific implementation will depend on the data structure you chose.
+
 Deleting Movies from the Watch List:
 
 Identify the movie you want to delete from the watch list, either by its unique ID or another identifying property.
