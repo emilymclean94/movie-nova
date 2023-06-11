@@ -52,7 +52,9 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router>
         <Preloader load={load} />
-        <Container className="App" id={load ? "no-scroll" : "scroll"}>
+        <div className="App" 
+        id={load ? "no-scroll" : "scroll"}
+        >
           <NavBar /> 
             <Routes>
               <Route path="" element={<Home />} />
@@ -61,7 +63,7 @@ const App = () => {
               <Route path="/movies" element={<Movies />} />
             </Routes>
           <Footer />
-        </Container>
+        </div>
       </Router>
     </ApolloProvider>
   )

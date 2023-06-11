@@ -32,9 +32,11 @@ const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    <Navbar bg="dark" variant="dark" expanded={expand} expand="md" className={navColor ? "sticky" : "navbar"}>
+    <Navbar bg="dark" variant="dark" expanded={expand} expand="md" className=""
+    // {navColor ? "sticky" : "navbar"}
+    >
 
-      <Container>
+      {/* <Container> */}
 
         <Navbar.Brand href="/" aria-label="navbar-logo">
           <img
@@ -84,7 +86,7 @@ const [showModal, setShowModal] = useState(false);
           </Nav>
         </Navbar.Collapse>
 
-      </Container>
+      {/* </Container> */}
 
     </Navbar>
 
