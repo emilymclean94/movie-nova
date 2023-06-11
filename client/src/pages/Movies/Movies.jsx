@@ -8,8 +8,8 @@ const Movies = () => {
 
   return (
 <div>
-      <MovieSearchBar/>
-      <PopularMovies/>
+      <MovieSearchBar />
+      <PopularMovies />
 </div>
   )
 }
