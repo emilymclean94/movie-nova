@@ -22,7 +22,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ username: context.user.username }).populate('myList');
+        return User.findOne({ _id: context.user._id }).populate('myList');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -36,9 +36,10 @@ const resolvers = {
       return { token, user };
     },
 
-    updateUser: async (_, { userId, name, username, genre, bio}) => {
-     return User.findOneAndUpdate(
-      { _id: userId},
+    updateUser: async (parent, { name, username, genre, bio }, context) => {
+      if (context.user) {
+     const updatedUser = await User.findOneAndUpdate(
+      { _id: context.user._id },
       {
         $set: {
         name: name,
@@ -47,11 +48,14 @@ const resolvers = {
         bio: bio
         } 
       },
+    
       {
         new: true,
         runValidators: true,
       }
      )
+     return updatedUser;
+    }
     },
 
     login: async (parent, { username, password }) => {
@@ -77,7 +81,7 @@ const resolvers = {
 
       await User.findOneAndUpdate(
         { username },
-        { $addToSet: { watched: movieId } }
+        { $addToSet: { myList: movieId } }
       );
 
       return thought;

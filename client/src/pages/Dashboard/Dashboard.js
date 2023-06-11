@@ -7,15 +7,13 @@ import { Container } from "react-bootstrap";
 import EditFormButton from "../../components/EditFormButton";
 
 const Dashboard = () =>  {
-    const { username: userParam } = useParams();
+    const { _id: userParam } = useParams();
   
     const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-      variables: { username: userParam },
-    }); //loading was next to data
+      variables: { _id: userParam },
+    }); 
   
     const user = data?.me || data?.user || {};
-    // navigate to personal profile page if username is yours
-
     
   return (
     <>

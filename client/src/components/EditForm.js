@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 // import { useQuery } from '@apollo/client';
 
 const EditForm = () => {
+
   const [editUser, setEditUser] = useState({
     name: '',
     username: '',
@@ -27,16 +28,16 @@ const EditForm = () => {
     });
   };
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const handleFormSubmit = async () => {
     console.log(editUser);
 
     try {
       const { data } = await updateUser({
         variables: { ...editUser },
       });
-      
-      Auth.login(data.addUser.token);
+    
+      const token = data.updateUser.token
+           Auth.updateUser(token);
     } catch (e) {
         console.error(e);
     }

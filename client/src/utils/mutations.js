@@ -26,8 +26,9 @@ mutation Mutation($name: String!, $username: String!, $email: String!, $password
 `;
 
 export const UPDATE_USER = gql`
-mutation Mutation($userId: ID!, $name: String, $username: String, $genre: String, $bio: String) {
-  updateUser(userId: $userId, name: $name, username: $username, genre: $genre, bio: $bio) {
+mutation updateUser($name: String, $username: String, $genre: String, $bio: String) {
+  updateUser(name: $name, username: $username, genre: $genre, bio: $bio) {
+    _id
     bio
     genre
     name
