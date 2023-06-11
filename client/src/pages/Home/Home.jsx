@@ -1,5 +1,8 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import Hero from "../../components/Hero";
+import Scroll1 from "../../components/Scroll";
+import Reviews from "../../components/Reviews";
 
 const Home = () => {
 
@@ -8,7 +11,9 @@ const Home = () => {
     <Container className="home-body" id="home">
 
       <Container className="home-content">
-        <h1>Home</h1>
+        <Hero />
+        <Scroll1 />
+        <Reviews />
       </Container>
       
     </Container>
