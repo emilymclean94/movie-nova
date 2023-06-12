@@ -53,7 +53,7 @@ const Footer = () => {
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h6>Sammy</h6>
+        <h6>Sami</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
