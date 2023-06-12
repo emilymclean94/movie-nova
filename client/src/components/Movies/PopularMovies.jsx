@@ -6,7 +6,7 @@ import MovieCard from './MovieCard';
 const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
 const PopularMovies = () => {
-
+  
   const [results] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
 
