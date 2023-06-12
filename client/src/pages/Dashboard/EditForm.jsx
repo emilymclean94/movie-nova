@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../../utils/mutations'
 import { Form } from 'react-bootstrap';
 import Auth from '../../utils/auth';
+import './dashboard.css';
 // import { QUERY_USER, QUERY_ME } from '../utils/queries';
 // import { useParams } from 'react-router';
 // import { useQuery } from '@apollo/client';
@@ -45,19 +46,27 @@ const EditForm = (props) => {
 
   return (
     <>
-      <h1 className='updateForm'>Update Your Information</h1>
-      <form className='updateForm' onSubmit={handleFormSubmit}>
+      <h1 className='update-form'>Update Your Information</h1>
+      <form className='update-form-container' onSubmit={handleFormSubmit}>
         <Form.Group>
+        <label htmlFor="name-input" className="input-label">
+          Update your name:
+        </label>
           <input
+          id="name-input"
           name="name"
           type="text"
-          placeholder="Updated your name"
+          label="Updated your name"
           onChange={handleUpdateUser}
           value={editUser.name}
           />
           </Form.Group>
         <Form.Group>
+        <label htmlFor="username-input" className="input-label">
+          Update your username:
+        </label>
           <input 
+          id="username-input"
           name="username"
           type="text"
           placeholder={props.username}
@@ -66,7 +75,11 @@ const EditForm = (props) => {
           />
         </Form.Group>
         <Form.Group>
+        <label htmlFor="genre-input" className="input-label">
+          Update your favorite genre:
+        </label>
           <input
+          id="genre-input"
           name="genre"
           type="text"
           placeholder="Update Genre"
@@ -75,7 +88,11 @@ const EditForm = (props) => {
           />
         </Form.Group>
         <Form.Group>
+        <label htmlFor="bio-input" className="input-label">
+          Update your bio:
+        </label>
           <input
+          id="bio-input"
           name="bio"
           type="text"
           placeholder="Update Bio"
@@ -83,7 +100,7 @@ const EditForm = (props) => {
           value={editUser.bio}
           />
         </Form.Group>
-        <input className='btn btn-dark my-3 ' type="submit" value="Update" />
+        <input className='btn btn-dark my-3' type="submit" value="Update" />
       </form>
     </>
   );
