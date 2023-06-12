@@ -3,7 +3,7 @@ import { Button, Col, Table } from 'react-bootstrap';
 import { useQuery } from '@apollo/client';
 import { QUERY_MOVIES } from '../../utils/queries';
 
-const WatchList = () => {
+const WatchList = ({username}) => {
   
   const [movies, setMovies] = useState([]);
 
