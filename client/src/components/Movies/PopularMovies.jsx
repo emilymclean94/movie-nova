@@ -5,8 +5,7 @@ import MovieCard from './MovieCard';
 
 const PopularMovies = () => {
 
-  const [searchTerm] = useState('');
-  const [results, setResults] = useState([]);
+  const [results] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
