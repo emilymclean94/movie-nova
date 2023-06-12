@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import axios from 'axios';
 
+const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
+
 const AddMovieButton = ({ movie }) => {
   const [showModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
@@ -21,7 +23,7 @@ const AddMovieButton = ({ movie }) => {
     try {
       const response = await axios.get('https://api.themoviedb.org/3/movie/', {
         params: {
-          api_key: 'bb8c9e655b550c820642d263e87af207',
+          api_key: MOVIE_DB_API_KEY,
           page: 1
         }
       });

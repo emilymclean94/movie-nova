@@ -4,6 +4,7 @@ import axios from 'axios';
 import MovieCard from  './MovieCard';
 import MovieModal from './MovieModal';
 
+const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
 const MovieSearchBar = () => {
 
@@ -28,7 +29,7 @@ const MovieSearchBar = () => {
 
     const searchMovies = () => {
 
-        const apiKey = 'bb8c9e655b550c820642d263e87af207';
+        const apiKey = MOVIE_DB_API_KEY;
 
         const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
 

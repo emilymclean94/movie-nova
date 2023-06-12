@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import Hero from '../../Assets/homeGif.gif'
 import './home.css'
 import Intro from "./Intro";
@@ -14,6 +14,7 @@ const Home = () => {
         <Col className="col-lg-6 image-container">
           <img 
             src={Hero}
+            alt="hero"
           />
         </Col>
         <Col className="col-lg-6">

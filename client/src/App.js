@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 import Preloader from "./components/Pre";
 import NavBar from "./components/Navbar";
@@ -10,14 +10,10 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Movies from "./pages/Movies/Movies";
 import Footer from "./components/Footer";
 import MyMovieList from "./components/Movies/MyMovieList";
+import Auth from './utils/auth';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Auth from './utils/auth';
-// import { useQuery } from '@apollo/client';
-
-const httpLink = createHttpLink({
-  uri: '/graphql', 
-});
+import MovieSearch from "./components/Movies/MovieSearch";
 
 const authLink = setContext((_, { headers }) => {
   const token = Auth.getToken();
@@ -28,6 +24,10 @@ const authLink = setContext((_, { headers }) => {
       Authorization: token ? `Bearer ${token}` : '',
     },
   };
+});
+
+const httpLink = createHttpLink({
+  uri: '/graphql', 
 });
 
 const client = new ApolloClient({
@@ -62,6 +62,7 @@ const App = () => {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/mylist" element={<MyMovieList />} />
+              <Route path="/moviesearch" element={<MovieSearch />} />
             </Routes>
           <Footer />
         </div>
