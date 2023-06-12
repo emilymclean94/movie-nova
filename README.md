@@ -24,14 +24,16 @@ To use our app follow [Heroku](this link) to our deployed page on Heroku.
 
 ## Screenshots
 
-![Screenshot]() (to be filled in later)
+![Screenshot-1](Assets/streamV_01.png)
+![Screenshot-2](Assets/streamV_02.png) 
+![Screenshot-3](Assets/streamV_03.png)
 
 # Technologies-Used
 
-Mongo DB
-Express
-React
-Node
+* Mongo DB
+* Express
+* React
+* Node
 
 ## Credits
 Thanks to this amazing group for making this app possible!
@@ -43,8 +45,6 @@ Thanks to this amazing group for making this app possible!
 [Sami](https://github.com/sweetkloid)
 
 
-## License
-none
 
 ## Questions
 If you have any questions don't hesitate to contact us with the information listed below.
