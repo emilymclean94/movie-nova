@@ -5,7 +5,7 @@ import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
 import WatchList from "../../components/MyMovieList";
-import { Container, Card } from "react-bootstrap/";
+import { Container, Row, Col } from "react-bootstrap/";
 
 
 const Dashboard = () => {
@@ -20,43 +20,60 @@ const Dashboard = () => {
 
 
   return (
-    <div>
+
+    <Container
+    className="vh-100 m-auto"
+    id="dashboard"
+    >
       {Auth.loggedIn() ? (
-        <Container className="dashboard-body" id="dashboard">
+        <div className="" >
           
-            <div id="dash2" className="row dashtitle">
+          <div id="dash2" className="dashtitle">
               <h1>
                 Welcome to your Dashboard, {`${user.name}`}!
               </h1>
-            </div>
-            
-            <div className="">
+          </div>
 
-              <div className="col-lg-4 content">
-                <Card id="dash" className="m-3">
-                  <h2 className="card-header">Username is: {`${user.username}`}</h2>
-                  <h2 className="card-header">Favorite Genre is: {`${user.genre}`}</h2>
-                  <h2 className="card-header">Your Bio: {`${user.bio}`}</h2>
-                </Card>
+          <Row>
+              <Col className="content">
+
+                <div id="dash" className="m-3">
+                  <h4>Username: 
+                    <br />
+                    {`${user.username}`}
+                  </h4>
+                  <h4>
+                    Favorite Genre: 
+                    <br />
+                    {`${user.genre}`}
+                  </h4>
+                  <h4>
+                    Bio: 
+                    <br />
+                    {`${user.bio}`}
+                  </h4>
+                </div>
+
                 <div className="m-3">
                   <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}  />
                 </div>
-              </div>
 
-              <div id="dash3" className="col-lg-8 content2">
-                <div className="m-3">
-                  <h2 className="card-header">My Watched list</h2>
+              </Col>
+
+                <Col id="dash3" className="m-3 content2">
+                  <h2>My Watched list</h2>
                   {/* <WatchList/> */}
-                </div>
-              </div>
+                </Col>
 
-            </div>
-        </Container>) : (
+            </Row>
+
+        </div>) : (
         <h4>
           You need to be logged in to see this. Use the navigation links above to
           sign up or log in!
         </h4>)}
-    </div>
+    </Container>
+
   );
 }
 
