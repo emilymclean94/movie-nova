@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Col, Table } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
+import { QUERY_MOVIES } from '../../utils/queries';
 
 const WatchList = () => {
+  
   const [movies, setMovies] = useState([]);
 
-  // Function to add a movie to the watch list
+ 
+  const { data } = useQuery(QUERY_MOVIES);
+
+  useEffect(() => {
+    if (data) {
+      setMovies(data.movie);
+    }
+  }, [data]);
+
+
   const addMovie = (movie) => {
     setMovies([...movies, movie]);
   };
 
-  // Function to delete a movie from the watch list
+  
   const deleteMovie = (index) => {
     const updatedMovies = [...movies];
     updatedMovies.splice(index, 1);
@@ -32,13 +44,13 @@ const WatchList = () => {
           </thead>
           <tbody>
             {movies.map((movie, index) => (
-              <tr key={index}>
+              <tr key={movie._id}>
                 <td className="poster-container-watched">
-                  <img className="poster-watched" src={movie.poster_url} alt={movie.title} />
+                  <img className="poster-watched" src={movie.posterImg} alt={movie.title} />
                 </td>
                 <td className="movie-title">{movie.title}</td>
-                <td className="overview">{movie.release_date}</td>
-                <td className="overview">{movie.overview}</td>
+                <td className="overview">{movie.releaseDate}</td>
+                <td className="overview">{movie.description}</td>
                 <td>
                   <Button onClick={() => deleteMovie(index)}>Delete</Button>
                 </td>
@@ -51,9 +63,10 @@ const WatchList = () => {
           onClick={() =>
             addMovie({
               title: 'Inception',
-              release_date: '2010-07-16',
-              overview: 'A mind-bending story...',
-              poster_url: 'https://example.com/poster.jpg',
+              releaseDate: '2010-07-16',
+              description: 'A mind-bending story...',
+              posterImg: 'https://example.com/poster.jpg',
+              _id: Date.now().toString(),
             })
           }
         >

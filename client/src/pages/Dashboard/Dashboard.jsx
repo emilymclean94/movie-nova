@@ -4,19 +4,29 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
-import MyList from "../../components/Movies/MyMovieList";
+import WatchList from "../../components/Movies/MyMovieList";
 import { Container, Row, Col } from "react-bootstrap/";
 import "./dashboard.css";
 
 
 const Dashboard = () => {
+  
   const { username: userParam } = useParams();
 
-  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+   const { loading, error, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
   const user = data?.me || data?.user || {};
+  const myList = user.myList || [];
 
   return (
     <Container className="dashboard" fluid>
@@ -56,7 +66,7 @@ const Dashboard = () => {
             </Col>
 
             <Col className="m-3 content2" id="dash4">
-              <MyList />
+              <WatchList myList={myList}/>
             </Col>
 
           </>
