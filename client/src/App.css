@@ -187,30 +187,25 @@
     text-align: center;
     flex-direction: column;
   }
-
+ 
+  /* ---- */
+  /* Dashboard */
+  /* ---- */
   #dashboard {
     background-color: black;
     height: 100vh;
-    width: 100%;
+    width: 50%;
     display: flex;
-    justify-content: space-evenly;
-    flex: wrap;
-    align-items: center;
     text-align: center;
     flex-direction: column;
-    color: azure;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .dashtitle {
     color: #de82ebe8;
     ;
     margin-top: -5%;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   .content {
@@ -223,6 +218,7 @@
     border-radius: 15px;
   }
 
+  
   .hidden {
     display: none !important;
   }
