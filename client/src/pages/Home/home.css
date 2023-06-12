@@ -165,3 +165,10 @@
   width: 500px;
   padding-right: 3em;
 }
+.icon-wrapper{
+  display: flex;
+  align-items: center;
+}
+.icon-wrapper h6 {
+  margin-left: 5px;
+}
