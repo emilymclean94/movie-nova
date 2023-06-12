@@ -19,7 +19,7 @@ If you want to clone this repository make sure to npm install all of our amazing
 
 ## Usage
 
-To use our app follow [Heroku](this link) to our deployed page on Heroku.
+To use our app follow [Heroku](https://streamversee.herokuapp.com/) to our deployed page on Heroku.
 
 
 ## Screenshots
