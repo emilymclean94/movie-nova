@@ -18,7 +18,7 @@ const WatchList = () => {
     try {
       const response = await axios.get('https://api.themoviedb.org/3/movie/popular', {
         params: {
-          api_key: 'bb8c9e655b550c820642d263e87af207',
+          api_key: '93d064eaaeea0b2a09e2e20af37a5993',
           page: 1
         }
       });
@@ -56,7 +56,7 @@ const WatchList = () => {
               <th>IMG</th>
               <th>Title</th>
               <th>Release Date</th>
-              {/* <th>Overview</th> */}
+              <th>Overview</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -64,9 +64,9 @@ const WatchList = () => {
             {movies.map((movie, index) => (
               <tr key={index}>
                 <td className="poster-container-watched"><img className="poster-watched" src={movie.poster_url} alt={movie.title} /></td>
-                <td>{movie.title}</td>
-                <td>{movie.release_date}</td>
-                {/* <td>{movie.overview}</td> */}
+                <td className="movie-title">{movie.title}</td>
+                <td className="overview">{movie.release_date}</td>
+                <td className="overview">{movie.overview}</td>
                 <td>
                   <Button onClick={() => deleteMovie(index)}>Delete</Button>
                 </td>
