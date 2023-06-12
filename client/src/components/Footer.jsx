@@ -22,45 +22,57 @@ const Footer = () => {
 
       <a 
       className="display-10 me-4 my-2" 
-      href="https://github.com/emilymclean94/movie-nova" 
+      href="https://github.com/emilymclean94" 
       style={styles.icons}>
+        <div className="icon-wrapper">
         <BsGithub />
         <h6>Emily</h6>
+        </div>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/keelyybug" 
       style={styles.icons}>
+        <div className="icon-wrapper">
         <BsGithub />
         <h6>Keely</h6>
+        </div>
       </a>
       <a 
       className="display-10 me-4 my-2" 
-      href="https://github.com/emilymclean94/movie-nova" 
+      href="https://github.com/EGARRISXN" 
       style={styles.icons}>
+         <div className="icon-wrapper">
         <BsGithub />
         <h6>Ethan</h6>
+        </div>
       </a>
       <a 
       className="display-10 me-4 my-2" 
-      href="https://github.com/emilymclean94/movie-nova" 
+      href="hhttps://github.com/Ashleyg5" 
       style={styles.icons}>
+         <div className="icon-wrapper">
         <BsGithub />
         <h6>Ashley</h6>
+        </div>
       </a>
       <a 
       className="display-10 me-4 my-2" 
-      href="https://github.com/emilymclean94/movie-nova" 
+      href="https://github.com/sweetkloid" 
       style={styles.icons}>
+        <div className="icon-wrapper">
         <BsGithub />
         <h6>Sami</h6>
+        </div>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
+         <div className="icon-wrapper">
         <BsGithub />
         <h6>Repo</h6>
+        </div>
       </a>
     </Navbar>
   )
