@@ -4,55 +4,44 @@ import MovieModal from './MovieModal';
 import axios from 'axios';
 
 const MovieInfoButton = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
 
-    const [showModal, setShowModal] = useState(false);
-    const [movies, setMovies] = useState([]);
+  const handleMoreInfo = () => {
+    setShowModal(true);
+  };
 
-    const handleMoreInfo = () => {
-      setShowModal(true);
-    };
-  
-    const handleCloseModal = () => {
-      setShowModal(false);
-    };
-      
-    useEffect(() => {
-      // Fetch initial movie data
-      fetchMovies();
-    }, []);
-  
-    // Function to fetch movie data
-    const fetchMovies = async () => {
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
-      try {
-        const response = await axios.get('https://api.themoviedb.org/3/movie/', {
-          params: {
-            api_key: 'bb8c9e655b550c820642d263e87af207',
-            page: 1
-          }
-        });
-        setMovies(response.data.results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  useEffect(() => {
+    // Fetch initial movie data
+    fetchMovies();
+  }, []);
 
-    const { id, title, poster_path, release_date } = movie;
-  
-    return (
+  // Function to fetch movie data
+  const fetchMovies = async () => {
+    try {
+      await axios.get('https://api.themoviedb.org/3/movie/', {
+        params: {
+          api_key: 'bb8c9e655b550c820642d263e87af207',
+          page: 1,
+        },
+      });
+      // You can update the state or perform any other desired actions
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-        <div>
-
-            <Button variant="primary"
-            onClick={handleMoreInfo}>
-                More Info
-            </Button>
-
-            {showModal && <MovieModal movie={movie} onClose={handleCloseModal} />}
-
-        </div>
-        
-    )
-}
+  return (
+    <div>
+      <Button variant="primary" onClick={handleMoreInfo}>
+        More Info
+      </Button>
+      {showModal && <MovieModal movie={movie} onClose={handleCloseModal} />}
+    </div>
+  );
+};
 
 export default MovieInfoButton;
