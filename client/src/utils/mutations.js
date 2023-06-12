@@ -38,7 +38,7 @@ mutation Mutation($name: String, $username: String, $genre: String, $bio: String
 `;
 //! removed all movie params except title and description for testing purposes
 export const ADD_MOVIE = gql`
-  mutation addMovie($title: String, $description: String) {
+  mutation addMovie($title: String, $description: String, $posterImg: String) {
     addMovie(posterImg: $posterImg, title: $title, releaseDate: $releaseDate, description: $description, updatedAt: $updatedAt) {
       _id
       posterImg
