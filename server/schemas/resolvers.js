@@ -76,22 +76,17 @@ const resolvers = {
       return { token, user };
     },
 
-    addMovie: async (parent, { username, title, description }) => {
-      // Create a new movie
-      const movie = await Movie.create({ title, description });
-    
-      // Extract the movie ID
-      const movieId = movie._id;
-    
-      // Add the movie ID to the user's list
+    addMovie: async (parent, { title, description, posterImg, releaseDate }, context) => {
+      if (context.user) {
+      const movie = await Movie.create({ title, description, posterImg, releaseDate });
       const user = await User.findOneAndUpdate(
-        { username },
-        { $addToSet: { myList: movieId } },
+        { username: context.user.username },
+        { $addToSet: { myList: movie } },
         { new: true }
       );
-    
+      
       return user;
-    },
+    }},
     removeMovie: async (parent, { movieId }) => {
       return Movie.findOneAndDelete({ _id: movieId });
     },
