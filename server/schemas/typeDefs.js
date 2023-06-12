@@ -59,7 +59,7 @@ type Auth {
     login(username: String!, password: String!): Auth
     addUser(name: String!, email: String!, username: String!, password: String!, genre: String, bio: String): Auth
     updateUser(name: String, username: String, genre: String, bio: String): User
-    addMovie(username: String!, title: String!, description: String!): User
+    addMovie(username: String!, title: String!, description: String!, releaseDate: String!, posterImg: String!): User
     removeMovie(movieId: ID!): User
     addFriend(friendId: ID!): User
     

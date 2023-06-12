@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
-const AddMovieButton = ({ id }) => {
+const AddMovieButton = ({ movie }) => {
   const [showModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -21,7 +21,7 @@ const AddMovieButton = ({ id }) => {
 
   const fetchMovies = async () => {
     try {
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/`, {
         params: {
           api_key: MOVIE_DB_API_KEY,
           page: 1
@@ -35,13 +35,15 @@ const AddMovieButton = ({ id }) => {
 
   // Function to add a movie to the watch list
   const addMovie = (movie) => {
+    console.log(movie);
+    console.log(movies);
     setMovies([...movies, movie]);
     setShowSuccessModal(true);
   };
 
   return (
     <div>
-      <Button variant="primary" onClick={addMovie}>
+      <Button variant="primary" onClick={() => addMovie(movie)}>
         Add Movie
       </Button>
       {showModal} 

@@ -1,16 +1,45 @@
-import React from 'react';
-import { Card } from 'react-bootstrap';
+import React, {useState} from 'react';
+import { Card, Button } from 'react-bootstrap';
 import MovieInfoButton from './MovieInfoButton';
 import AddMovieButton from './AddMovieButton';
+import { useQuery, useMutation } from '@apollo/client';
+import { ADD_MOVIE } from '../../utils/mutations';
 
-const MovieItem = ({ movie }) => {
+const MovieCard = ({ movie }) => {
+  const { title, overview, poster_path, release_date, id } = movie;
 
+  const [movieData, setMovieData] = useState({
+    title: '',
+    description: '',
+    releaseDate: '',
+    posterImg: '',
+    username: '',
+  });
+
+  const [addMovie, { error }] = useMutation(ADD_MOVIE);
+
+  const handleAddMovie = async () => {
+    setMovieData({
+      title,
+      description: overview,
+      releaseDate: release_date,
+      posterImg: poster_path,
+      
+    })
+    try {
+      await addMovie({
+        variables: movieData
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   if (!movie) {
     return null; // Return null or a placeholder if movie prop is undefined
   }
 
-  const { title, poster_path, release_date, id } = movie;
+
 
   return (
 
@@ -23,12 +52,12 @@ const MovieItem = ({ movie }) => {
 
         <div className="d-flex align-items-center justify-content-center ">
           <MovieInfoButton movie={movie} />
-          <AddMovieButton movie={movie} />
+          <Button onClick={handleAddMovie}>Add Movie</Button>
         </div>
-       
+
       </Card.Body>
     </Card>
   );
 };
 
-export default MovieItem;
+export default MovieCard;

@@ -76,9 +76,9 @@ const resolvers = {
       return { token, user };
     },
 
-    addMovie: async (parent, { username, title, description }) => {
+    addMovie: async (parent, { username, title, description, posterImg, releaseDate }) => {
       // Create a new movie
-      const movie = await Movie.create({ title, description });
+      const movie = await Movie.create({ title, description, posterImg, releaseDate });
     
       // Extract the movie ID
       const movieId = movie._id;
