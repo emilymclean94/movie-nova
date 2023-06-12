@@ -37,3 +37,26 @@ font-family: 'Roboto Condensed', sans-serif;
     color: #2d1950;
     font-family: 'Roboto Condensed', sans-serif;
 }
+.watchlist{
+    color: #2d1950;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.poster-container-watched{
+height:8em;
+}
+.watched-list-title{
+padding-top:.5em;
+}
+.poster-watched{
+    height: 4em;
+    width: 2em;
+}
+td{
+    text-align: center;
+    vertical-align: middle;
+}
+th{
+    text-align: center;
+    vertical-align: middle;
+}
+

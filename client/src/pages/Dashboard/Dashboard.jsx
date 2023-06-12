@@ -19,7 +19,7 @@ const Dashboard = () => {
   const user = data?.me || data?.user || {};
 
   return (
-    <Container fluid>
+    <Container className="dashboard" fluid>
       <Row>
         {Auth.loggedIn() ? (
           <>
