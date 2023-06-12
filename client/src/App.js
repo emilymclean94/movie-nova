@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
-import { Container } from "react-bootstrap";
 import Preloader from "./components/Pre";
 import NavBar from "./components/Navbar";
 import Home from "./pages/Home/Home";
