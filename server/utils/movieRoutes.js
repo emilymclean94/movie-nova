@@ -4,7 +4,7 @@ const router = express.Router();
 
 const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
-apiConfig = {
+const apiConfig = {
   baseUrl: 'https://api.themoviedb.org/3/',
   apiKey: 'MOVIE_DB_API_KEY',
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,

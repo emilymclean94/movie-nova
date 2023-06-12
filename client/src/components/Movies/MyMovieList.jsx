@@ -65,7 +65,7 @@ const WatchList = () => {
               title: 'Inception',
               releaseDate: '2010-07-16',
               description: 'A mind-bending story...',
-              posterImg: 'https://example.com/poster.jpg',
+              posterImg: 'https://image.tmdb.org/t/p/w300/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg',
               _id: Date.now().toString(),
             })
           }
