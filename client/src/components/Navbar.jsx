@@ -5,6 +5,7 @@ import SignUpForm from './Signup';
 import LoginForm from './Login';
 import Auth from '../utils/auth';
 import Logogo from '../Assets/Logogo.png'
+import "../pages/Home/home.css";
 
 
 const NavBar = () => {
@@ -32,7 +33,7 @@ const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    <Navbar bg="black" variant="dark" expanded={expand} expand="md" className=""
+    <Navbar bg="#110831" variant="dark" expanded={expand} expand="md" className="nav-bar"
     // {navColor ? "sticky" : "navbar"}
     >
 

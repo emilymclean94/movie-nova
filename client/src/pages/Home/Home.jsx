@@ -5,15 +5,16 @@ import './home.css'
 import Intro from "./Intro";
 import Features from "./Features";
 import Trust from "./Trust";
+import Maybe from '../../Assets/24OD.gif';
 
 const Home = () => {
 
   return (
-<div>
+<div className="home-background">
     <Container className="home-body d-flex flex-row flex-wrap align-content-center bg-" id="home">
         <Col className="col-lg-6 image-container">
           <img 
-            src={Hero}
+            src={Maybe}
             alt="hero"
           />
         </Col>
