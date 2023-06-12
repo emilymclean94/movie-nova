@@ -25,20 +25,20 @@ const Dashboard = () => {
           <>
           
             <Col className="m-3 content1 ">
-              <div className=" m-3 dashtitle text-center">
+              <div className=" m-3 dashtitle text-center" id="dash">
                 <h1 id="dashtitle" >Welcome to your Dashboard <br/> {user.name}!</h1>
               </div>
 
               <div id="dashinfo" className="m-3 dashinfo">
-                <h3 className="username">
+                <h3 className="username" id="dash1">
                   Username: { }
                   {user.username}
                 </h3>
-                <h5 className="fav-genre">
+                <h5 className="fav-genre" id="dash2">
                   Favorite Genre: { }
                   {user.genre}
                 </h5>
-                <h5 className="bio">
+                <h5 className="bio" id="dash3">
                   Bio: { }
                   {user.bio}
                 </h5>
@@ -55,7 +55,7 @@ const Dashboard = () => {
 
             </Col>
 
-            <Col className="m-3 content2">
+            <Col className="m-3 content2" id="dash4">
               <MyList />
             </Col>
 
