@@ -1,0 +1,39 @@
+.username{
+color: black;
+padding: 1em 1em 0 .7em;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.fav-genre{
+    color: black;
+    padding: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bio{
+    color: black;
+    padding: 0 1em 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.dashinfo{
+    background-color: white;
+    border-radius: 10px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.edit-button{
+    padding-bottom: 1em;
+}
+.content1{
+    background-color: rgb(222, 199, 250);
+    border-radius: 10px;
+    width:fit-content;
+    height: fit-content;
+
+}
+
+#dashtitle{
+    color: #2d1950;
+    font-family: 'Roboto Condensed', sans-serif;
+}

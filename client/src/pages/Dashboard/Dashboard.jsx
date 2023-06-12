@@ -6,6 +6,7 @@ import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
 import MyList from "../../components/Movies/MyMovieList";
 import { Container, Row, Col, Card } from "react-bootstrap/";
+import "./dashboard.css";
 
 
 const Dashboard = () => {
@@ -23,27 +24,25 @@ const Dashboard = () => {
         {Auth.loggedIn() ? (
           <>
           
-            <Col className="m-3 content1">
-              <div id="dashtitle" className=" m-3 dashtitle">
-                <h1>Welcome to your Dashboard, {user.name}!</h1>
+            <Col className="m-3 content1 ">
+              <div className=" m-3 dashtitle text-center">
+                <h1 id="dashtitle" >Welcome to your Dashboard <br/> {user.name}!</h1>
               </div>
 
               <div id="dashinfo" className="m-3 dashinfo">
-                <h3>
+                <h3 className="username">
                   Username: { }
                   {user.username}
                 </h3>
-                <h5>
+                <h5 className="fav-genre">
                   Favorite Genre: { }
                   {user.genre}
                 </h5>
-                <h5>
+                <h5 className="bio">
                   Bio: { }
                   {user.bio}
                 </h5>
-              </div>
-
-              <div className="m-3">
+                <div className="m-3 edit-button">
                 <EditFormButton
                   username={user.username}
                   name={user.name}
@@ -51,6 +50,9 @@ const Dashboard = () => {
                   bio={user.bio}
                 />
               </div>
+              </div>
+
+
             </Col>
 
             <Col className="m-3 content2">
@@ -67,7 +69,11 @@ const Dashboard = () => {
           </Col>
         )}
       </Row>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+      </style>
     </Container>
+
   );
 }
 

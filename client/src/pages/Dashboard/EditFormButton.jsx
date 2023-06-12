@@ -17,7 +17,7 @@ const EditFormButton = (props) => {
   return (
     <div >
        {isButtonVisible && (
-      <button className='btn btn-dark' id='button' onClick={handleButtonClick}>Open Edit Form</button>
+      <button className='btn btn-dark' id='button' onClick={handleButtonClick}>Update Profile</button>
       )}
       {isFormVisible && <EditForm username={props.username} name={props.name} genre={props.genre} bio={props.bio} />}
     </div>

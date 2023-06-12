@@ -204,8 +204,7 @@
   }
 
   .dashtitle {
-    color: #de82ebe8;
-    ;
+    color: #2d1950;
     margin-top: -5%;
   }
 
@@ -227,9 +226,6 @@
   .hidden {
     display: none !important;
   }
-
-
-  
   .movies-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
