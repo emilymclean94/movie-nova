@@ -10,7 +10,7 @@ const MovieItem = ({ movie }) => {
     return null; // Return null or a placeholder if movie prop is undefined
   }
 
-  const { title, poster_path, release_date } = movie;
+  const { title, poster_path, release_date, id } = movie;
 
   return (
 

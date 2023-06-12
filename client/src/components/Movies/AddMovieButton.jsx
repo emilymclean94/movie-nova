@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
-const AddMovieButton = ({ movie }) => {
+const AddMovieButton = ({ id }) => {
   const [showModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -14,14 +14,14 @@ const AddMovieButton = ({ movie }) => {
   };
 
   useEffect(() => {
-    // Fetch initial movie data
+
     fetchMovies();
   }, []);
 
-  // Function to fetch movie data
+
   const fetchMovies = async () => {
     try {
-      const response = await axios.get('https://api.themoviedb.org/3/movie/', {
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
         params: {
           api_key: MOVIE_DB_API_KEY,
           page: 1
