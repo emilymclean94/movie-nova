@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Col, Table} from 'react-bootstrap';
 import axios from 'axios';
+import '../../pages/Dashboard/dashboard.css';
 
 const WatchList = () => {
 
@@ -44,28 +45,30 @@ const WatchList = () => {
 
   return (
     <Col className='watchlist'>
-      <h2>My Watched list</h2>     
+      <h2 className="watched-list-title text-center">My Watched List</h2>     
       <Col className="m-3 content2">
-        <Button variant="primary" onClick={() => addMovie({ title: 'Inception', release_date: '2010-07-16', overview: 'A mind-bending story...', poster_url: 'https://example.com/poster.jpg' })}>
+        {/* <Button variant="primary" onClick={() => addMovie({ title: 'Inception', release_date: '2010-07-16', overview: 'A mind-bending story...', poster_url: 'https://example.com/poster.jpg' })}>
           Add Movie
-        </Button>
-        <Table striped bordered hover>
+        </Button> */}
+        <Table striped rounded bordered hover>
           <thead>
-            <tr>
+            <tr className="font text-center">
+              <th>IMG</th>
               <th>Title</th>
               <th>Release Date</th>
-              <th>Overview</th>
+              {/* <th>Overview</th> */}
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
             {movies.map((movie, index) => (
               <tr key={index}>
+                <td className="poster-container-watched"><img className="poster-watched" src={movie.poster_url} alt={movie.title} /></td>
                 <td>{movie.title}</td>
                 <td>{movie.release_date}</td>
-                <td>{movie.overview}</td>
+                {/* <td>{movie.overview}</td> */}
                 <td>
-                  <Button variant="danger" onClick={() => deleteMovie(index)}>Delete</Button>
+                  <Button onClick={() => deleteMovie(index)}>Delete</Button>
                 </td>
               </tr>
             ))}
