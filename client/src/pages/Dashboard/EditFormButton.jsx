@@ -8,8 +8,10 @@ const EditFormButton = (props) => {
 
   const handleButtonClick = () => {
     document.getElementById('dash').classList.add('hidden');
+    document.getElementById('dash1').classList.add('hidden');
     document.getElementById('dash2').classList.add('hidden');
     document.getElementById('dash3').classList.add('hidden');
+    document.getElementById('dash4').classList.add('hidden');
     setIsFormVisible(true);
     setIsButtonVisible(false);
   };
