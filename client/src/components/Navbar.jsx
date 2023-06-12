@@ -32,7 +32,7 @@ const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    <Navbar bg="black" variant="dark" expanded={expand} expand="md" className=""
+    <Navbar bg="#110831" variant="dark" expanded={expand} expand="md" className=""
     // {navColor ? "sticky" : "navbar"}
     >
 
