@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
-import WatchList from "../../components/MyMovieList";
-import { Container, Row, Col } from "react-bootstrap/";
+import MyList from "../../components/Movies/MyMovieList";
+import { Container, Row, Col Card } from "react-bootstrap/";
 
 
 const Dashboard = () => {
@@ -58,11 +58,12 @@ const Dashboard = () => {
                   <EditFormButton username={user.username} name={user.name} genre={user.genre} bio={user.bio}  />
                 </div>
 
+
               </Col>
 
                 <Col id="dash3" className="m-3 content2">
                   <h2>My Watched list</h2>
-                  {/* <WatchList/> */}
+                  <MyList />
                 </Col>
 
             </Row>

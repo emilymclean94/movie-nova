@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
-import MovieItem from '../../components/MovieItem';
+import MovieCard from './MovieCard';
 
 const PopularMovies = () => {
 
@@ -38,7 +38,7 @@ const PopularMovies = () => {
           <div className="popular-movies">
             <div className="movies-grid">
               {popularMovies.map((movie) => (
-                <MovieItem key={movie.id} movie={movie} />
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </div>
           </div>
