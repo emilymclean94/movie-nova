@@ -25,42 +25,42 @@ const Footer = () => {
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Emily</h7>
+        <h6>Emily</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/keelyybug" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Keely</h7>
+        <h6>Keely</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Ethan</h7>
+        <h6>Ethan</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Ashley</h7>
+        <h6>Ashley</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Sammy</h7>
+        <h6>Sammy</h6>
       </a>
       <a 
       className="display-10 me-4 my-2" 
       href="https://github.com/emilymclean94/movie-nova" 
       style={styles.icons}>
         <BsGithub />
-        <h7>Repo</h7>
+        <h6>Repo</h6>
       </a>
     </Navbar>
   )

@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
+const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
+
 const PopularMovies = () => {
 
   const [results] = useState([]);
@@ -13,7 +15,7 @@ const PopularMovies = () => {
   }, []);
 
   const fetchPopularMovies = () => {
-    const apiKey = 'bb8c9e655b550c820642d263e87af207';
+    const apiKey = MOVIE_DB_API_KEY;
 
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 

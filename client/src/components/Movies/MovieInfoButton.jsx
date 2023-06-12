@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import MovieModal from './MovieModal';
 import axios from 'axios';
 
+const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
+
 const MovieInfoButton = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -24,7 +26,7 @@ const MovieInfoButton = ({ movie }) => {
     try {
       await axios.get('https://api.themoviedb.org/3/movie/', {
         params: {
-          api_key: 'bb8c9e655b550c820642d263e87af207',
+          api_key: MOVIE_DB_API_KEY,
           page: 1,
         },
       });

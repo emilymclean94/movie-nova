@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Col, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const WatchList = () => {
   const [movies, setMovies] = useState([]);
 
   // Function to add a movie to the watch list
   const addMovie = (movie) => {
-    setMovies([...movies, movie]);
+    const updatedMovies = [...movies, movie];
+    setMovies(updatedMovies);
+    localStorage.setItem('mylist', JSON.stringify(updatedMovies));
   };
 
   // Function to delete a movie from the watch list
@@ -14,6 +17,7 @@ const WatchList = () => {
     const updatedMovies = [...movies];
     updatedMovies.splice(index, 1);
     setMovies(updatedMovies);
+    localStorage.setItem('mylist', JSON.stringify(updatedMovies));
   };
 
   return (
@@ -59,6 +63,9 @@ const WatchList = () => {
         >
           Add Movie
         </Button>
+        <Link to="/watchlist">
+          <Button variant="secondary">Go to Watchlist</Button>
+        </Link>
       </Col>
     </Col>
   );
