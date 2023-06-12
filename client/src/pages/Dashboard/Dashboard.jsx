@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
-import WatchList from "../../components/MyMovieList";
+import MyList from "../../components/Movies/MyMovieList";
 import { Container, Card } from "react-bootstrap/";
 
 
@@ -46,7 +46,7 @@ const Dashboard = () => {
               <div id="dash3" className="col-lg-8 content2">
                 <div className="m-3">
                   <h2 className="card-header">My Watched list</h2>
-                  {/* <WatchList/> */}
+                  <MyList />
                 </div>
               </div>
 

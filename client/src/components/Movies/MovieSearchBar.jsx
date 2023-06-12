@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, ListGroup } from 'react-bootstrap';
 import axios from 'axios';
-import MovieItem from  './MovieItem';
+import MovieCard from  './MovieCard';
 import MovieModal from './MovieModal';
 
 
@@ -69,7 +69,7 @@ const MovieSearchBar = () => {
         <div className="searched-movies">
         {results.map((movie) => (
             <ListGroup.Item key={movie.id}>
-            <MovieItem movie={movie} />
+            <MovieCard movie={movie} />
             </ListGroup.Item>
         ))}
         </div>

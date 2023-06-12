@@ -1,6 +1,6 @@
 import React from 'react';
-import MovieSearchBar from '../../components/MovieSearchBar';
-import PopularMovies from './PopularMovies';
+import MovieSearchBar from '../../components/Movies/MovieSearchBar';
+import PopularMovies from '../../components/Movies/PopularMovies';
 
 const Movies = () => {
 
