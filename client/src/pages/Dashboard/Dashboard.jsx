@@ -29,7 +29,7 @@ const Dashboard = () => {
   const myList = user.myList || [];
 
   return (
-    <Container className="dashboard" fluid>
+    <Container className="dashboard vh-100" >
       <Row>
         {Auth.loggedIn() ? (
           <>
