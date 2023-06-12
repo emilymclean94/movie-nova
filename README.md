@@ -1,4 +1,4 @@
-# Movie Nova
+# Stream Verse
 
 ## Description
 
@@ -49,6 +49,4 @@ none
 ## Questions
 If you have any questions don't hesitate to contact us with the information listed below.
 
-You can find our GitHub here: [GitHub](https://github.com/emilymclean94/stream_verse)
-
-You can email us here: 
+You can find our GitHub here: [GitHub](https://github.com/emilymclean94/movie-nova)
