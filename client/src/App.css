@@ -191,6 +191,7 @@
   /* ---- */
   /* Dashboard */
   /* ---- */
+
   #dashboard {
     background-color: black;
     height: 100vh;
@@ -208,6 +209,11 @@
     margin-top: -5%;
   }
 
+  .dashinfo {
+    color: #f0ffdee8;
+    margin-top: 5%;
+  }
+
   .content {
     background-color: rgb(222, 199, 250);
     border-radius: 15px;
@@ -217,12 +223,13 @@
     background-color: rgb(222, 199, 250);
     border-radius: 15px;
   }
-
   
   .hidden {
     display: none !important;
   }
 
+
+  
   .movies-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -233,6 +240,6 @@
     padding: 1rem;
   }
 
-  .MovieItem {
+  .MovieCard{
     margin: 1rem;
   }

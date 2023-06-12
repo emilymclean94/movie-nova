@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Button, Col, Table} from 'react-bootstrap';
 import axios from 'axios';
 
 const WatchList = () => {
@@ -43,36 +43,37 @@ const WatchList = () => {
   };
 
   return (
-
-    <div>
-      
-      <Button variant="primary" onClick={() => addMovie({ title: 'Inception', release_date: '2010-07-16', overview: 'A mind-bending story...', poster_url: 'https://example.com/poster.jpg' })}>
-        Add Movie
-      </Button>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Release Date</th>
-            <th>Overview</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movies.map((movie, index) => (
-            <tr key={index}>
-              <td>{movie.title}</td>
-              <td>{movie.release_date}</td>
-              <td>{movie.overview}</td>
-              <td>
-                <Button variant="danger" onClick={() => deleteMovie(index)}>Delete</Button>
-              </td>
+    <Col className='watchlist'>
+      <h2>My Watched list</h2>     
+      <Col className="m-3 content2">
+        <Button variant="primary" onClick={() => addMovie({ title: 'Inception', release_date: '2010-07-16', overview: 'A mind-bending story...', poster_url: 'https://example.com/poster.jpg' })}>
+          Add Movie
+        </Button>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Release Date</th>
+              <th>Overview</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {movies.map((movie, index) => (
+              <tr key={index}>
+                <td>{movie.title}</td>
+                <td>{movie.release_date}</td>
+                <td>{movie.overview}</td>
+                <td>
+                  <Button variant="danger" onClick={() => deleteMovie(index)}>Delete</Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
 
-    </div>
+      </Col>
+    </Col>
 
   );
 };
