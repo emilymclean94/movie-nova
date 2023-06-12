@@ -5,7 +5,7 @@ import { QUERY_USER, QUERY_ME } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import EditFormButton from "./EditFormButton";
 import MyList from "../../components/Movies/MyMovieList";
-import { Container, Row, Col Card } from "react-bootstrap/";
+import { Container, Row, Col, Card } from "react-bootstrap/";
 
 
 const Dashboard = () => {

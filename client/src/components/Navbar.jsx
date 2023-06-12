@@ -32,7 +32,7 @@ const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-    <Navbar bg="dark" variant="dark" expanded={expand} expand="md" className=""
+    <Navbar bg="black" variant="dark" expanded={expand} expand="md" className=""
     // {navColor ? "sticky" : "navbar"}
     >
 
@@ -44,7 +44,7 @@ const [showModal, setShowModal] = useState(false);
               src= { Logogo }
               width="50"
               height="50"
-              className="d-inline-block"
+              className="d-inline-block logo"
             />{" "}
             StreamVerse
         </Navbar.Brand>
@@ -79,7 +79,7 @@ const [showModal, setShowModal] = useState(false);
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                  <Nav.Link onClick={() => setShowModal(true)}
+                  <Nav.Link className="spacing" onClick={() => setShowModal(true)}
                   >Login | Sign Up</Nav.Link>
               )}
 

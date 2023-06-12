@@ -12,3 +12,130 @@
     margin: 0;
     /* font-size: 2rem; */
 }
+.intro{
+  position:relative;
+  background-color: #2862FE;
+  height: 75vh;
+}
+.custom-shape-divider-top-1686537761 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1686537761 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 124px;
+}
+
+.custom-shape-divider-top-1686537761 .shape-fill {
+  fill: #000000;
+}
+.features{
+  position: relative;
+  background-color: #7875FC;
+  height: 75vh;
+}
+.custom-shape-divider-top-1686538417 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1686538417 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 124px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1686538417 .shape-fill {
+  fill: #2862FE;
+}
+.logo{
+  margin-left: 3em;
+}
+.spacing{
+  margin-right: 4em;
+}
+
+.trust{
+  position: relative;
+  background-color: #C787FA;
+  height: 75vh;
+}
+.custom-shape-divider-top-1686538780 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1686538780 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 124px;
+}
+
+.custom-shape-divider-top-1686538780 .shape-fill {
+  fill: #7875FC;
+}
+/* .home-divs-title{
+  color: white;
+  font-size: 70px;
+  transform: translateY(3em); 
+  padding-left: 1.5em;
+} */
+.home-divs-h2-intro{
+  color: white;
+  transform: translateY(5.5em); 
+  padding-left: 2em; 
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+}
+.home-divs-h2{
+  color: white;
+  transform: translateY(4.5em); 
+  padding-left: 2em; 
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+}
+
+/* .home-divs-title-right-2{
+  color: white;
+  transform: translateY(8em); 
+} */
+
+.home-divs-h2-right-2{
+  color: white;
+  text-align: right;
+  padding-right: 2em;
+  transform: translateY(4.8em); 
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+}
+.div-container {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-container > *:not(:last-child) {
+  margin-bottom: 0; /* Adjust the value as needed */
+}
