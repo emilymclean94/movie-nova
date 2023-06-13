@@ -24,9 +24,10 @@ To use our app follow [Heroku](https://streamversee.herokuapp.com/) to our deplo
 
 ## Screenshots
 
-![Screenshot-1](Assets/streamV_01.png)
-![Screenshot-2](Assets/streamV_02.png) 
-![Screenshot-3](Assets/streamV_03.png)
+![streamverse](https://github.com/emilymclean94/movie-nova/assets/126130230/eed21f35-0944-4d3e-ba99-0eb20599d03e)
+![streamverse-login](https://github.com/emilymclean94/movie-nova/assets/126130230/13fa8e9b-5d25-410a-9043-aa3ab51716fe)
+![streamverse-movies](https://github.com/emilymclean94/movie-nova/assets/126130230/b65f13cf-d002-4986-9ae3-57c6a294984b)
+
 
 # Technologies-Used
 
