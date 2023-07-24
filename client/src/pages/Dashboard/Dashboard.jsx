@@ -3,9 +3,8 @@ import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
-import SearchBar from "../../components/SearchBar";
 import EditFormButton from "./EditFormButton";
-import WatchList from "./MyMovieList";
+import MyMovieList from "./MyMovieList";
 import { Container, Row, Col } from "react-bootstrap/";
 import "./dashboard.css";
 
@@ -29,7 +28,6 @@ const Dashboard = () => {
 
   return (
     <Container className="dashboard">
-      <SearchBar />
       <Row>
         {Auth.loggedIn() ? (
           <>
@@ -65,7 +63,7 @@ const Dashboard = () => {
             </Col>
 
             <Col className="m-3 content2" id="dash4">
-              <WatchList myList={myList} />
+              <MyMovieList myList={myList} />
             </Col>
           </>
         ) : (

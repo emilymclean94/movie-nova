@@ -40,7 +40,7 @@ const WatchList = ({ username }) => {
                 <td className="poster-container-watched">
                   <img
                     className="poster-watched"
-                    src={movie.posterImg}
+                    src={`https://image.tmdb.org/t/p/w300${movie.posterImg}`}
                     alt={movie.title}
                   />
                 </td>
