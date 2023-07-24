@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
-import MovieModal from './MovieModal';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
+import MovieModal from "./MovieModal";
+import axios from "axios";
 
-const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
+const REACT_APP_TMDB_KEY = "93d064eaaeea0b2a09e2e20af37a5993";
 
 const MovieInfoButton = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
@@ -24,9 +24,9 @@ const MovieInfoButton = ({ movie }) => {
   // Function to fetch movie data
   const fetchMovies = async () => {
     try {
-      await axios.get('https://api.themoviedb.org/3/movie/', {
+      await axios.get("https://api.themoviedb.org/3/movie/", {
         params: {
-          api_key: MOVIE_DB_API_KEY,
+          api_key: REACT_APP_TMDB_KEY,
           page: 1,
         },
       });

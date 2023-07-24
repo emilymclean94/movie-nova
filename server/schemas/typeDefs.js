@@ -15,11 +15,11 @@ const typeDefs = gql`
   }
 
   type Movie {
-    _id: ID
-    posterImg: String
-    title: String
-    releaseDate: String
-    description: String
+    _id: ID!
+    posterImg: String!
+    title: String!
+    releaseDate: String!
+    description: String!
 }
 
 type movieInput {
@@ -49,7 +49,7 @@ type Auth {
     users: [User]
     user(username: String!): User
     movie: [Movie]
-    movies(username: String!): [Movie]
+    movies: [Movie!]!
     me: User
   }
 
@@ -58,7 +58,7 @@ type Auth {
     addUser(name: String!, email: String!, username: String!, password: String!, genre: String, bio: String): Auth
     updateUser(name: String, username: String, genre: String, bio: String): User
     addMovie(title: String!, description: String!, releaseDate: String!, posterImg: String!): Movie
-    removeMovie(movieId: ID!): User
+    removeMovie(movieId: ID!): Movie
     addFriend(friendId: ID!): User
     
 }

@@ -9,11 +9,9 @@ import Feed from "./pages/Feed/Feed";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Movies from "./pages/Movies/Movies";
 import Footer from "./components/Footer";
-import MyMovieList from "./components/Movies/MyMovieList";
 import Auth from './utils/auth';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import MovieSearch from "./components/Movies/MovieSearch";
 
 const authLink = setContext((_, { headers }) => {
   const token = Auth.getToken();
@@ -38,6 +36,7 @@ const client = new ApolloClient({
 const App = () => {
   
   const [load, upadateLoad] = useState(true);
+  const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -46,6 +45,26 @@ const App = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled down more than 100 pixels
+      if (window.scrollY > 100) {
+        setShowFooter(true);
+      } else {
+        setShowFooter(false);
+      }
+    };
+
+    // Add the scroll event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the scroll event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
 
@@ -61,10 +80,8 @@ const App = () => {
               <Route path="/feed" element={<Feed />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/movies" element={<Movies />} />
-              <Route path="/mylist" element={<MyMovieList />} />
-              <Route path="/moviesearch" element={<MovieSearch />} />
             </Routes>
-          <Footer />
+          <Footer className={showFooter ? 'show' : ''} />
         </div>
       </Router>
     </ApolloProvider>

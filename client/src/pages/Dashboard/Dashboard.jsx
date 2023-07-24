@@ -1,19 +1,18 @@
 import React from "react";
-import { useParams } from 'react-router';
-import { useQuery } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../../utils/queries';
-import Auth from '../../utils/auth';
+import { useParams } from "react-router";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import Auth from "../../utils/auth";
 import EditFormButton from "./EditFormButton";
-import WatchList from "../../components/Movies/MyMovieList";
+import SearchBar from "../../components/SearchBar";
+import WatchList from "../../components/WatchList";
 import { Container, Row, Col } from "react-bootstrap/";
 import "./dashboard.css";
 
-
 const Dashboard = () => {
-  
   const { username: userParam } = useParams();
 
-   const { loading, error, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { loading, error, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
@@ -29,62 +28,61 @@ const Dashboard = () => {
   const myList = user.myList || [];
 
   return (
-    <Container className="dashboard vh-100" >
+    <Container className="dashboard">
       <Row>
+        <SearchBar />
         {Auth.loggedIn() ? (
           <>
-          
             <Col className="m-3 content1 ">
               <div className=" m-3 dashtitle text-center" id="dash">
-                <h1 id="dashtitle" >Welcome to your Dashboard <br/> {user.name}!</h1>
+                <h1 id="dashtitle">
+                  Welcome to your Dashboard <br /> {user.name}!
+                </h1>
               </div>
 
               <div id="dashinfo" className="m-3 dashinfo">
                 <h3 className="username" id="dash1">
-                  Username: { }
+                  Username: {}
                   {user.username}
                 </h3>
                 <h5 className="fav-genre" id="dash2">
-                  Favorite Genre: { }
+                  Favorite Genre: {}
                   {user.genre}
                 </h5>
                 <h5 className="bio" id="dash3">
-                  Bio: { }
+                  Bio: {}
                   {user.bio}
                 </h5>
                 <div className="m-3 edit-button">
-                <EditFormButton
-                  username={user.username}
-                  name={user.name}
-                  genre={user.genre}
-                  bio={user.bio}
-                />
+                  <EditFormButton
+                    username={user.username}
+                    name={user.name}
+                    genre={user.genre}
+                    bio={user.bio}
+                  />
+                </div>
               </div>
-              </div>
-
-
             </Col>
 
             <Col className="m-3 content2" id="dash4">
-              <WatchList myList={myList}/>
+              <WatchList myList={myList} />
             </Col>
-
           </>
         ) : (
           <Col sm={12} className="dashboard-content">
             <h4>
-              You need to be logged in to see this. Use the navigation links above
-              to sign up or log in!
+              You need to be logged in to see this. Use the navigation links
+              above to sign up or log in!
             </h4>
           </Col>
         )}
       </Row>
       <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+        @import
+        url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
       </style>
     </Container>
-
   );
-}
+};
 
 export default Dashboard;

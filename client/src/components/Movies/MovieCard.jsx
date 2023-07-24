@@ -1,22 +1,43 @@
-import React, { useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
-import MovieInfoButton from './MovieInfoButton';
-import AddMovieButton from './AddMovieButton';
-import { useQuery, useMutation } from '@apollo/client';
-import { ADD_MOVIE } from '../../utils/mutations';
+import React, { useState } from "react";
+import { Card, Button } from "react-bootstrap";
+import MovieModal from "./MovieModal";
+import { useMutation } from "@apollo/client";
+import { ADD_MOVIE } from "../../utils/mutations";
+
+const MovieInfoButton = ({ movie }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleMoreInfo = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  return (
+    <div>
+      <Button variant="primary" onClick={handleMoreInfo}>
+        More Info
+      </Button>
+      {showModal && <MovieModal movie={movie} onClose={handleCloseModal} />}
+    </div>
+  );
+};
 
 const MovieCard = ({ username, movie }) => {
-  const { original_title, overview, poster_path, release_date, id } = movie;
+  const { original_title, overview, poster_path, release_date, _id } = movie;
 
   const [movieData, setMovieData] = useState({
-    title: '',
-    description: '',
-    releaseDate: '',
-    posterImg: '',
-    username: '',
+    title: "",
+    description: "",
+    releaseDate: "",
+    posterImg: "",
+    username: "",
+    _id: "",
   });
 
-  const [addMovie, { error }] = useMutation(ADD_MOVIE);
+  const addMovie = useMutation(ADD_MOVIE);
 
   const handleAddMovie = async () => {
     const updatedMovieData = {
@@ -24,8 +45,9 @@ const MovieCard = ({ username, movie }) => {
       title: original_title,
       description: overview,
       releaseDate: release_date,
-      posterImg: poster_path,
+      posterImg: `https://image.tmdb.org/t/p/w300${poster_path}`,
       username: username,
+      _id: _id,
     };
 
     setMovieData(updatedMovieData);
@@ -44,8 +66,11 @@ const MovieCard = ({ username, movie }) => {
   }
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
+    <Card style={{ width: "16rem" }}>
+      <Card.Img
+        variant="top"
+        src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+      />
       <Card.Body>
         <Card.Title>{original_title}</Card.Title>
         <Card.Text>Release Date: {release_date}</Card.Text>
