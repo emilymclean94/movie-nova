@@ -173,9 +173,12 @@
   margin-left: 5px;
 }
 
-.nav-bar{
-background-color: #110831;
-}
 .home-background{
+  background-color: #110831;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
   background-color: #110831;
 }

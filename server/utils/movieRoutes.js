@@ -2,18 +2,17 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-const MOVIE_DB_API_KEY = '93d064eaaeea0b2a09e2e20af37a5993';
 
 const apiConfig = {
   baseUrl: 'https://api.themoviedb.org/3/',
-  apiKey: 'MOVIE_DB_API_KEY',
+  apiKey: '93d064eaaeea0b2a09e2e20af37a5993',
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
   w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
 };
 
 
 router.get('/movies', (req, res) => {
-  const apiUrl = `https://api.themoviedb.org/3/movie?api_key=${MOVIE_DB_API_KEY}`;
+  const apiUrl = `${apiConfig.baseUrl}movie?api_key=${apiConfig.apiKey}`;
 
   axios.get(apiUrl)
     .then((response) => {
@@ -43,18 +42,20 @@ router.post('/movies', (req, res) => {
 
 
 router.delete('/movies/:id', (req, res) => {
-  const movieId = req.params.id;
+  console.log('Movie ID to delete:', movieId); // Check the movieId received from the frontend
 
-  // Make a DELETE request to the API
-  axios.delete(`https://api.themoviedb.org/3/movie/${movieId}`, {
-    params: {
-      api_key: MOVIE_DB_API_KEY
-    }
-  })
+  axios
+    .delete(`${apiConfig.baseUrl}movie/${movieId}`, {
+      params: {
+        api_key: apiConfig.apiKey,
+      },
+    })
     .then((response) => {
+      console.log('Delete API Response:', response.data); // Check the response from the external API
       res.json(response.data);
     })
     .catch((error) => {
+      console.error('Error deleting movie:', error); // Log any errors during the deletion process
       res.status(500).json({ error: 'Internal Server Error' });
     });
 });
