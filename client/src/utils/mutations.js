@@ -49,9 +49,9 @@ export const ADD_MOVIE = gql`
   }
 `;
 
-export const DELETE_MOVIE = gql`
-  mutation deleteMovie($movieId: ID!) {
-    removeMovie(id: $movieId) {
+export const REMOVE_MOVIE = gql`
+  mutation removeMovie($movieId: ID!) {
+    removeMovie(movieId: $movieId) {
       _id
     }
   }
