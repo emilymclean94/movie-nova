@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Modal, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -11,32 +11,10 @@ const NavBar = () => {
   //set modal display state
   const [showModal, setShowModal] = useState(false);
   const [expand, updateExpanded] = useState(false);
-  const [navColor, updateNavbar] = useState(false);
-
-  useEffect(() => {
-    function scrollHandler() {
-      if (window.scrollY >= 20) {
-        updateNavbar(true);
-      } else {
-        updateNavbar(false);
-      }
-    }
-
-    window.addEventListener("scroll", scrollHandler);
-
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-    };
-  }, []);
 
   return (
     <>
-      <Navbar
-        variant="dark"
-        expanded={expand}
-        expand="md"
-        className={navColor ? "sticky" : "navbar"}
-      >
+      <Navbar variant="dark" expanded={expand} expand="lg" className="navbar">
         <Container>
           <Navbar.Brand href="/" aria-label="navbar-logo">
             <img
@@ -44,20 +22,20 @@ const NavBar = () => {
               src={Logogo}
               width="50px"
               max-height="50px"
-              className="d-inline-block logo"
+              className="streamverse"
             />{" "}
             StreamVerse
           </Navbar.Brand>
 
           <Navbar.Toggle
+            type="button"
+            data-toggle="collapse"
             aria-controls="responsive-navbar-nav"
             onClick={() => {
               updateExpanded(expand ? false : "expanded");
             }}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
 
           <Navbar.Collapse id="responsive-navbar-nav">

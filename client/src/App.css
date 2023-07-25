@@ -1,6 +1,7 @@
   /* --- */
   /* App */
   /* --- */
+
   * {
     padding: auto;
   }
@@ -9,9 +10,11 @@
     background-color: #110831;
   }
 
+
   /* --------- */
   /* Preloader */
   /* --------- */
+
   #preloader {
     position: fixed;
     top: 0;
@@ -34,9 +37,11 @@
     height: 100vh;
   }
 
+
   /* --------- */
   /* Scrollbar */
   /* --------- */
+
   ::-webkit-scrollbar {
     width: 7px;
   }
@@ -62,6 +67,7 @@
   /* ------ */
   /* NavBar */
   /* ------ */
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -73,55 +79,55 @@
     color: var(--bs-nav-pills-link-active-color);
     background-color: #b279d8f5;
     padding: 5px;
-    font-size: large;
+    font-size: medium;
   }
 
   .nav-pills .nav-link {
     border-radius: var(--bs-nav-pills-border-radius);
     color: #b279d8f5;
-    font-size: large;
+    font-size: medium;
   }
+
 
   /* ------ */
   /* Footer */
   /* ------ */
+
   .footer {
     display: flex;
     justify-content: space-evenly;
+    align-items: center; 
     color: #de82ebe8;
-    background-color:#0c0620;
+    background-color: #0c0620;
     width: 100%;
-    height: 0px;
+    max-height: 0; 
     position: fixed;
     bottom: 0;
     overflow: none;
-    text-align: center;
     font-size: 15px;
-
-
   
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: max-height 2s ease-in-out;
+    -o-transition: max-height 2s ease-in-out;
+    transition: max-height 2s ease-in-out;
+    -webkit-transition: max-height 2s ease-in-out;
   }
   
   .footer.show {
-    height: 40px;
+    max-height: 1000px; /* Set a value larger than the actual content height */
   
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: max-height 2s ease-in-out; /* Increase the transition duration */
+    -o-transition: max-height 2s ease-in-out;
+    transition: max-height 2s ease-in-out;
+    -webkit-transition: max-height 2s ease-in-out;
   }
-
 
   /* ----- */
   /* Login */
   /* ----- */
+
   .login {
     background-color: #343a40;
-    height: 75vh;
+    height: 80vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -136,7 +142,7 @@
   }
 
   .modal-header {
-    padding: 7px;
+    padding: 4px;
     background-color: black;
   }
 
@@ -146,16 +152,18 @@
   button:not(:disabled) {
     cursor: pointer;
     background-color: #b279d8f5;
-    margin-right: 5px;
+    margin: 5px;
   }
 
   .btn:hover {
     background-color: #de82ebe8;
   }
 
+  
   /* ------ */
   /* Signup */
   /* ------ */
+
   .signup {
     background-color: #343a40;
     height: 80vh;
@@ -168,9 +176,11 @@
     color: #b279d8f5;
   }
 
+
   /* ---- */
   /* Home */
   /* ---- */
+
   #home {
     background-color: #110831;
     height: 100vh;
@@ -199,6 +209,7 @@
   /* ---- */
   /* Feed */
   /* ---- */
+
   .feed {
     background-color: #fff1ea;
     height: 100vh;
@@ -209,63 +220,53 @@
     text-align: center;
     flex-direction: column;
   }
- 
-  /* ---- */
-  /* Dashboard */
-  /* ---- */
-  .dashboard {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
 
-  .dashtitle {
-    color: #2d1950;
-    margin-top: -5%;
-  }
-
-  .dashinfo {
-    color: #f0ffdee8;
-    margin-top: 5%;
-  }
-
-  .content {
-    background-color: rgb(222, 199, 250);
-    border-radius: 15px;
-  }
-
-  .content2 {
-    background-color: rgb(222, 199, 250);
-    border-radius: 15px;
-  }
-  
-  .hidden {
-    display: none !important;
-  }
-
-    /* ---- */
+   /* ---- */
   /* Movies */
   /* ---- */
 
+  .searched {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+ 
+  .searched-movies {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .searched-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
   .movies {
     text-align: center;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
   }
-
+  
   .popular-movies {
+    display: flex;
+    flex-direction: column ;
     padding: 1rem;
   }
-
+  
   .movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    justify-items: center;
     gap: 1rem;
+    margin-bottom: 3rem;
   }
-
-  .MovieCard{
-    margin: 1rem;
-  }
+  

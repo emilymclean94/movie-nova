@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar";
-import MovieCard from "../../components/Movies/MovieCard";
+import MovieCard from "./MovieCard";
 import { Container } from "react-bootstrap/";
 import axios from "axios";
+import "./movies.css";
 
 const Movies = () => {
   const [results] = useState([]);

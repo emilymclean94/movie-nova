@@ -1,5 +1,6 @@
-import React from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import React from "react";
+import { Button, Modal } from "react-bootstrap";
+import "./movies.css";
 
 const MovieModal = ({ movie, onClose }) => {
   if (!movie) {
@@ -15,7 +16,7 @@ const MovieModal = ({ movie, onClose }) => {
       </Modal.Header>
       <Modal.Body>
         <div className="d-flex align-items-center justify-content-center mb-3">
-        <h5>{movie && movie.title}</h5>
+          <h5>{movie && movie.title}</h5>
         </div>
         <div className="d-flex align-items-center justify-content-center mb-3">
           {poster_path && (
@@ -36,6 +37,6 @@ const MovieModal = ({ movie, onClose }) => {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default MovieModal;

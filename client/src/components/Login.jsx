@@ -36,8 +36,7 @@ const Login = () => {
 
   return (
     <div className="login rounded">
-      <h1>Login</h1>
-      <Form className="mt-4" onSubmit={handleFormSubmit}>
+      <Form className="login" onSubmit={handleFormSubmit}>
         <Form.Group className="mb-3">
           <label className="mb-1" htmlFor="usernameInput">
             Username
@@ -50,7 +49,7 @@ const Login = () => {
             className="form-control"
             id="usernameInput"
             aria-describedby="username"
-            placeholder="janedoe86"
+            placeholder="Janedoe86"
           />
         </Form.Group>
         <Form.Group className="mb-3">
@@ -65,7 +64,7 @@ const Login = () => {
             className="form-control"
             id="passwordInput"
             aria-describedby="password"
-            placeholder="password"
+            placeholder="Password"
           />
         </Form.Group>
         <button type="submit" className="btn btn-dark">

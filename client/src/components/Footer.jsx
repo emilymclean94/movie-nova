@@ -11,7 +11,14 @@ const styles = {
 
 const Footer = ({ className }) => {
   return (
-    <div className={`footer ${className}`}>
+    <div
+      className={`footer ${className}`}
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        flexDirection: "column",
+      }}
+    >
       <p className="dark bold mx-2 my-2">
         Made with <TiHeartOutline /> by the Caffeine Coders:
       </p>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Form, Button, ListGroup } from "react-bootstrap";
 import axios from "axios";
-import MovieCard from "./Movies/MovieCard";
-import MovieModal from "./Movies/MovieModal";
+import MovieCard from "../pages/Movies/MovieCard";
+import MovieModal from "../pages/Movies/MovieModal";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -63,18 +63,20 @@ const SearchBar = () => {
           </Button>
         </div>
       </Form>
-
-      {results.length > 0 && (
-        <div className="searched-movies">
-          {results.map((movie) => (
-            <ListGroup.Item key={movie.id}>
-              <MovieCard movie={movie} />
-            </ListGroup.Item>
-          ))}
-        </div>
-      )}
-
-      <MovieModal movie={selectedMovie} onClose={handleCloseModal} />
+      <div className="searched">
+        {results.length > 0 && (
+          <div className="searched-movies">
+            <div className="searched-grid">
+              {results.map((movie) => (
+                <ListGroup.Item key={movie.id}>
+                  <MovieCard movie={movie} />
+                </ListGroup.Item>
+              ))}
+            </div>
+          </div>
+        )}
+        <MovieModal movie={selectedMovie} onClose={handleCloseModal} />
+      </div>
     </Container>
   );
 };

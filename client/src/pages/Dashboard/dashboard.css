@@ -1,8 +1,17 @@
+.dashboard {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
 .username{
-color: black;
-font-weight: 500;
-padding: 1em 1em 0 .7em;
-font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    font-weight: 500;
+    padding: 1em 1em 0 .7em;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .fav-genre{
@@ -18,42 +27,51 @@ font-family: 'Roboto Condensed', sans-serif;
     padding: 0 1em 0;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.dashtitle {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2d1950;
+    margin-top: -5%;
+}
+
 .dashinfo{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #f0ffdee8;
     background-color: white;
     border-radius: 10px;
     align-self: center;
-    margin: 0 auto;
+    margin-top: 5%;
 }
 
-.edit-button{
-    padding-bottom: 1em;
-}
-.content1{
-    background-color: rgb(222, 199, 250);
-    border-radius: 10px;
-    width:fit-content;
-    height: fit-content;
-
-}
-
-#dashtitle{
-    color: #2d1950;
-    font-family: 'Roboto Condensed', sans-serif;
-}
 .watchlist{
     color: #2d1950;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
+.content1{
+    background-color: rgb(222, 199, 250);
+    border-radius: 15px;
+    width:fit-content;
+    height: fit-content;
+}
+
+.content2 {
+    background-color: rgb(222, 199, 250);
+    border-radius: 15px;
+}
+  
+.hidden {
+    display: none !important;
+}
+
 .poster-container-watched{
-height:8em;
+    width: 5rem;
 }
-.watched-list-title{
-padding-top:.5em;
-}
+
 .poster-watched{
-    height: 4em;
-    width: 2em;
+    width: 5rem;
 }
+
 td{
     text-align: center;
     vertical-align: middle;
@@ -62,18 +80,16 @@ th{
     text-align: center;
     vertical-align: middle;
 }
+
 .overview{
-    font-size:small;
+    font-size:x-small;
+    font-weight: bold;
+
 }
 .movie-title{
-    font-weight: bold;
+    font-size: small;
+    font-weight: bolder;
 }
-.update-form{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: bold;
-    color: #2d1950;
-    padding: 1em;
-  }
 
 .input-label{
     font-family: 'Roboto Condensed', sans-serif;
@@ -84,3 +100,5 @@ th{
     font-family: 'Roboto Condensed', sans-serif;
     color: #2d1950;
 }
+
+

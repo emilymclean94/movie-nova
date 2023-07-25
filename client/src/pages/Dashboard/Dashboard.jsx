@@ -53,7 +53,7 @@ const Dashboard = () => {
                   Bio: {}
                   {user.bio}
                 </h5>
-                <div className="m-3 edit-button">
+                <div className="m-3 edit-button pb-3">
                   <EditFormButton
                     username={user.username}
                     name={user.name}

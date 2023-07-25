@@ -43,9 +43,8 @@ const Signup = () => {
   };
   return (
     <div className="signup rounded">
-      <h1>Signup</h1>
       <form onSubmit={handleFormSubmit}>
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="nameInput">
             Name
           </label>
@@ -60,7 +59,7 @@ const Signup = () => {
             placeholder="Jane Doe"
           />
         </Form.Group>
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="emailInput">
             Email address
           </label>
@@ -72,10 +71,10 @@ const Signup = () => {
             className="form-control"
             id="emailInput"
             aria-describedby="email"
-            placeholder="janeDoe86@mail.com"
+            placeholder="JaneDoe86@mail.com"
           />
         </Form.Group>
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="usernameInput">
             Username
           </label>
@@ -87,10 +86,10 @@ const Signup = () => {
             className="form-control"
             id="usernameInput"
             aria-describedby="name"
-            placeholder="janedoe86"
+            placeholder="Janedoe86"
           />
         </Form.Group>
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="passwordInput">
             Password
           </label>
@@ -104,7 +103,7 @@ const Signup = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="genreInput">
             Favorite Genre
           </label>
@@ -118,7 +117,7 @@ const Signup = () => {
             placeholder="Horror"
           />
         </Form.Group>
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-2">
           <label className="mb-1" htmlFor="bioInput">
             Bio
           </label>
@@ -132,7 +131,7 @@ const Signup = () => {
             placeholder="Tell us about yourself!"
           />
         </Form.Group>
-        <button type="submit" className="btn btn-dark mb-3">
+        <button type="submit" className="btn btn-dark mb-1">
           Submit
         </button>
       </form>

@@ -5,6 +5,7 @@ import { ADD_MOVIE } from "../../utils/mutations";
 import { toast } from "react-toastify";
 import axios from "axios";
 import MovieModal from "./MovieModal";
+import "./movies.css";
 
 const REACT_APP_TMDB_KEY = "93d064eaaeea0b2a09e2e20af37a5993";
 
@@ -84,7 +85,7 @@ const MovieCard = ({ username, movie }) => {
   };
 
   return (
-    <Card style={{ width: "16rem" }}>
+    <Card style={{ width: "16rem" }} className="movie-card">
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w300${poster_path}`}
@@ -93,11 +94,21 @@ const MovieCard = ({ username, movie }) => {
         <Card.Title>{original_title}</Card.Title>
         <Card.Text>Release Date: {release_date}</Card.Text>
         <div className="d-flex align-items-center justify-content-center ">
-          <Button variant="primary" onClick={handleMoreInfo}>
+          <Button
+            className="card-button"
+            variant="primary"
+            onClick={handleMoreInfo}
+          >
             More Info
           </Button>
           {showModal && <MovieModal movie={movie} onClose={handleCloseModal} />}
-          <Button onClick={handleAddMovie}>Add Movie</Button>
+          <Button
+            className="card-button"
+            variant="primary"
+            onClick={handleAddMovie}
+          >
+            Add Movie
+          </Button>
         </div>
       </Card.Body>
     </Card>
