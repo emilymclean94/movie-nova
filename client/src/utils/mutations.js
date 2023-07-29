@@ -13,7 +13,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-mutation Mutation($name: String!, $username: String!, $email: String!, $password: String!, $genre: String, $bio: String) {
+mutation addUser($name: String!, $username: String!, $email: String!, $password: String!, $genre: String, $bio: String) {
   addUser(name: $name, username: $username, email: $email, password: $password, genre: $genre, bio: $bio) {
     token
     user {
@@ -26,7 +26,7 @@ mutation Mutation($name: String!, $username: String!, $email: String!, $password
 `;
 
 export const UPDATE_USER = gql`
-mutation Mutation($name: String, $username: String, $genre: String, $bio: String) {
+mutation updateUser($name: String, $username: String, $genre: String, $bio: String) {
   updateUser(name: $name, username: $username, genre: $genre, bio: $bio) {
     _id
     bio
@@ -36,7 +36,7 @@ mutation Mutation($name: String, $username: String, $genre: String, $bio: String
   }
 }
 `;
-//! removed all movie params except title and description for testing purposes
+
 export const ADD_MOVIE = gql`
   mutation addMovie($title: String!, $description: String!, $posterImg: String!, $releaseDate: String!) {
     addMovie(posterImg: $posterImg, title: $title, releaseDate: $releaseDate, description: $description) {
@@ -45,6 +45,14 @@ export const ADD_MOVIE = gql`
       title
       releaseDate
       description
+    }
+  }
+`;
+
+export const REMOVE_MOVIE = gql`
+  mutation removeMovie($movieId: ID!) {
+    removeMovie(movieId: $movieId) {
+      _id
     }
   }
 `;

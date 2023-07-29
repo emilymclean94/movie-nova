@@ -2,24 +2,25 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Movie, User } = require('../models');
 const { signToken } = require('../utils/auth');
 
-
-
-
 const resolvers = {
   Query: {
-    users: async () => {
-      return await User.find();
-    },
+
     user: async (parent, { username }) => {
       return User.findOne({ username: username });
     },
-    movies: async (parent, { username }) => {
-      const params = username ? { username } : {};
-      return Movie.find({});
+
+    movies: async (parent, args, context) => {
+      if (context.user) {
+        return Movie.find();
+      } else {
+        throw new AuthenticationError('You need to be logged in to access movie data.');
+      }
     },
-    movie: async (parent) => {
-      return Movie.find();
+
+    movie: async (parent, { movieId }) => {
+      return Movie.findById(movieId);
     },
+
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('myList');
@@ -78,19 +79,23 @@ const resolvers = {
 
     addMovie: async (parent, { title, description, posterImg, releaseDate }, context) => {
       if (context.user) {
-      const movie = await Movie.create({ title, description, posterImg, releaseDate });
-      const user = await User.findOneAndUpdate(
-        { username: context.user.username },
-        { $addToSet: { myList: movie } },
-        { new: true }
-      );
-      
-      return user;
-    }},
-    removeMovie: async (parent, { movieId }) => {
-      return Movie.findOneAndDelete({ _id: movieId });
+        // Only allow adding a movie if the user is authenticated (context.user exists)
+        const movie = await Movie.create({ title, description, posterImg, releaseDate });
+        return movie; // Return the movie object instead of the user object
+      }
+      throw new Error('Authentication required to add a movie.');
     },
-  },
-};
+
+    removeMovie: async (parent, { movieId }) => {
+      try {
+        const deletedMovie = await Movie.findByIdAndDelete(movieId);
+        return deletedMovie;
+      } catch (error) {
+        console.error('Error deleting movie:', error);
+        throw new Error('An error occurred while deleting the movie.');
+      }
+    }
+  }
+}
 
 module.exports = resolvers;
