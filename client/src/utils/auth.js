@@ -1,5 +1,6 @@
 import decode from 'jwt-decode';
 
+const TOKEN_KEY = 'my_app_token';
 class AuthService {
   getProfile() {
     return decode(this.getToken());
@@ -20,16 +21,16 @@ class AuthService {
   }
 
   getToken() {
-    return localStorage.getItem('id_token');
+    return localStorage.getItem(TOKEN_KEY);
   }
 
   login(idToken) {
-    localStorage.setItem('id_token', idToken);
+    localStorage.setItem(TOKEN_KEY, idToken);
     window.location.assign('/');
   }
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem(TOKEN_KEY);
     window.location.assign('/');
   }
 }

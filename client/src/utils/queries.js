@@ -40,9 +40,9 @@ query me {
 }
 `;
 
-export const QUERY_MOVIES = gql`
-  query getMovies {
-    movie {
+export const QUERY_MOVIE = gql`
+  query movie($movieId: ID!) {
+    movie(movieId: $movieId) {
         _id
         posterImg
         title
@@ -52,9 +52,9 @@ export const QUERY_MOVIES = gql`
   }
 `;
 
-export const QUERY_SINGLE_MOVIE = gql`
-  query getSingleMovie($movieId: ID!) {
-    movie(movieId: $movieId) {
+export const QUERY_MOVIES = gql`
+  query movies {
+    movies {
         _id
         posterImg
         title

@@ -14,12 +14,20 @@ const typeDefs = gql`
     myList:[Movie]
   }
 
-  type Movie {
+  type userInput{
     _id: ID
-    posterImg: String
-    title: String
-    releaseDate: String
-    description: String
+    name: String
+    username: String
+    genre: String
+    bio: String
+  }
+
+  type Movie {
+    _id: ID!
+    posterImg: String!
+    title: String!
+    releaseDate: String!
+    description: String!
 }
 
 type movieInput {
@@ -30,13 +38,6 @@ type movieInput {
     description: String
 }
 
-type userInput{
-  _id: ID
-  name: String
-  username: String
-  genre: String
-  bio: String
-}
 
 type Auth {
   token: ID!
@@ -46,11 +47,10 @@ type Auth {
   # Define which queries the front end is allowed to make and what data is returned
   
   type Query {
-    users: [User]
     user(username: String!): User
-    movie: [Movie]
-    movies(username: String!): [Movie]
     me: User
+    movie(movieId: ID!): Movie
+    movies: [Movie!]!
   }
 
   type Mutation {
@@ -58,9 +58,7 @@ type Auth {
     addUser(name: String!, email: String!, username: String!, password: String!, genre: String, bio: String): Auth
     updateUser(name: String, username: String, genre: String, bio: String): User
     addMovie(title: String!, description: String!, releaseDate: String!, posterImg: String!): Movie
-    removeMovie(movieId: ID!): User
-    addFriend(friendId: ID!): User
-    
+    removeMovie(movieId: ID!): Movie
 }
 `;
 
