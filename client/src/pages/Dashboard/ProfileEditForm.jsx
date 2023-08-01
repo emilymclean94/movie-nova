@@ -1,12 +1,9 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { UPDATE_USER } from "../../utils/mutations";
-import { Form } from "react-bootstrap";
 import Auth from "../../utils/auth";
 import "./dashboard.css";
-// import { QUERY_USER, QUERY_ME } from '../utils/queries';
-// import { useParams } from 'react-router';
-// import { useQuery } from '@apollo/client';
 
 const EditForm = (props) => {
   const [editUser, setEditUser] = useState({
@@ -45,8 +42,8 @@ const EditForm = (props) => {
 
   return (
     <>
-      <h1 className="update-form">Update Your Information</h1>
-      <form className="update-form-container" onSubmit={handleFormSubmit}>
+      <h2 className="update-form">Update Your Information</h2>
+      <Form className="update-form-container" onSubmit={handleFormSubmit}>
         <Form.Group>
           <label htmlFor="name-input" className="input-label">
             Update your name:
@@ -99,8 +96,8 @@ const EditForm = (props) => {
             value={editUser.bio}
           />
         </Form.Group>
-        <input className="btn btn-dark my-3" type="submit" value="Update" />
-      </form>
+        <input className="btn btn-dark" type="submit" value="Update" />
+      </Form>
     </>
   );
 };

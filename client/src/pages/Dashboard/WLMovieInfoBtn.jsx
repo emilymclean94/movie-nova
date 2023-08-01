@@ -27,9 +27,10 @@ const WLMovieInfoBtn = ({ movie }) => {
       >
         More Info
       </Button>
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title>Streamverse</Modal.Title>
+          <Modal.Title className="modal-title">Streamverse</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="d-flex align-items-center justify-content-center mb-3">

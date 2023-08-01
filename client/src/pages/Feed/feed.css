@@ -1,0 +1,21 @@
+  /* ---- */
+  /* Feed */
+  /* ---- */
+
+  .feed-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .feed-content {
+    border: #fff1ea 1px solid;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }

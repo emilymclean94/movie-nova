@@ -63,3 +63,14 @@ export const QUERY_MOVIES = gql`
     }
   }
 `;
+
+export const QUERY_POSTS = gql`
+  query posts {
+    posts {
+      _id
+      title
+      content
+      createdAt
+    }
+  }
+`;

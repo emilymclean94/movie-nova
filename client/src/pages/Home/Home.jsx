@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Col } from "react-bootstrap";
-// import Hero from "../../Assets/homeGif.gif";
-import "./home.css";
 import Intro from "./Intro";
 import Features from "./Features";
 import Trust from "./Trust";
-import Maybe from "../../Assets/24OD.gif";
+import Maybe from "../../assets/24OD.gif";
+// import Hero from "../../assets/homeGif.gif";
+import "./home.css";
 
 const Home = () => {
   return (
@@ -29,10 +29,6 @@ const Home = () => {
         <Features />
         <Trust />
       </div>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
-      </style>
     </div>
   );
 };

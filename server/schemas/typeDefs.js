@@ -30,19 +30,26 @@ const typeDefs = gql`
     description: String!
 }
 
-type movieInput {
+  type movieInput {
     _id: ID
     posterImg: String
     title: String
     releaseDate: String
     description: String
-}
+  }
 
+  type Post {
+    _id: ID!
+    title: String!
+    content: String!
+    createdAt: String!
+    likes: [ID!]!
+  }
 
-type Auth {
-  token: ID!
-  user: User
-}
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   # Define which queries the front end is allowed to make and what data is returned
   
@@ -51,6 +58,7 @@ type Auth {
     me: User
     movie(movieId: ID!): Movie
     movies: [Movie!]!
+    posts: [Post!]!
   }
 
   type Mutation {
@@ -59,7 +67,11 @@ type Auth {
     updateUser(name: String, username: String, genre: String, bio: String): User
     addMovie(title: String!, description: String!, releaseDate: String!, posterImg: String!): Movie
     removeMovie(movieId: ID!): Movie
-}
+    createPost(title: String!, content: String!): Post
+    likePost(postId: ID!): Post
+    updatePost(postId: ID!, title: String, content: String): Post
+    deletePost(postId: ID!): Post
+  }
 `;
 
 module.exports = typeDefs;

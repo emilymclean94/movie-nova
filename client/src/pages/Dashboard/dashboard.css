@@ -1,69 +1,78 @@
-@import
-url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+  /* --------- */
+  /* Dashboard */
+  /* --------- */
 
-.dashboard-container{
+  .dashboard-container{
     display: flex;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
-.mydashboard{
+.dashboard-content{
+    justify-content: center;
+}
+
+.myprofile{
     background-color: rgb(222, 199, 250);
     border-radius: 15px;
     align-items: center;
-    height: fit-content;
+    height: 100%;
 }
 
 .username{
     color: black;
-    font-weight: 500;
-    padding: 1em 1em 0 .7em;
+    padding: .5rem;
 }
 
 .fav-genre{
     color: black;
-    font-weight: 500;
-    padding: 1em;
+    padding: .5rem;
 }
 
 .bio{
     color: black;
-    font-weight: 500;
-    padding: 0 1em 0;
+    padding: .5rem;
 }
 
-.dashboard-title {
+.profile-title {
     color: #2d1950;
-    margin-top: -5%;
 }
 
-.dashboard-info{
-    color: #f0ffdee8;
+.profile-info{
+    color: #264600e8;
     background-color: white;
-    border-radius: 10px;
-    align-self: center;
-    margin-top: 5%;
+    border-radius: 15px;
 }
 
 .input-label{
     color: #2d1950;
-    padding: 1em;
+    padding: .5rem;
 }
 .input-label input{
     color: #2d1950;
+    padding: .5rem;
 }
+
+.hidden {
+    display: none !important;
+}
+
 
 .mywatchlist {
     background-color: rgb(222, 199, 250);
     border-radius: 15px;
     color: #2d1950;
+    overflow-x: auto; /* Add horizontal scrollbar when the table overflows */
+    height: 100%;
 }
-  
-.hidden {
-    display: none !important;
-}
+
+.table{
+    border: 3px solid #d8d8d8;
+    border-radius: 15px;
+    overflow: hidden;
+  }
 
 td{
     text-align: center;
@@ -74,23 +83,25 @@ th{
     vertical-align: middle;
 }
 
-.poster-container-watched{
+.poster-container-watched {
+    width: 7rem;
+}
+.poster-watched {
     width: 5rem;
 }
 
-.poster-watched{
+.movie-title{
+    font-size: small;
+    font-weight: bold;
     width: 5rem;
 }
 
 .overview{
     font-size:x-small;
-    font-weight: bold;
-
-}
-.movie-title{
-    font-size: small;
-    font-weight: bolder;
+    width: 10rem;
 }
 
-
+.buttons {
+    width: 5rem;
+}
 

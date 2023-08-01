@@ -3,10 +3,10 @@ import { useParams } from "react-router";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
+import { Container, Row, Col } from "react-bootstrap/";
 import SearchBar from "../../components/SearchBar";
 import MyWatchList from "./MyWatchList";
-import MyDashboard from "./MyDashboard";
-import { Container, Row, Col } from "react-bootstrap/";
+import MyProfile from "./MyProfile";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -20,21 +20,21 @@ const Dashboard = () => {
   const myList = user.myList || [];
 
   return (
-    <Container className="dashboard-container">
+    <Container className=" dashboard-container" id="dashboard">
       <SearchBar />
-      <Row>
+      <Row className="dashboard-content">
         {Auth.loggedIn() ? (
           <>
-            <Col className="m-3 mydashboard ">
-              <MyDashboard user={user} />
+            <Col xs={11} sm={11} md={11} lg={6} className="m-3 myprofile">
+              <MyProfile user={user} />
             </Col>
 
-            <Col className="m-3 mywatchlist" id="dash4">
+            <Col xs={11} sm={11} md={11} lg={5} className="m-3 mywatchlist">
               <MyWatchList myList={myList} />
             </Col>
           </>
         ) : (
-          <Col sm={12} className="dashboard-content">
+          <Col xs={11} className="dashboard-content">
             <h4>
               You need to be logged in to see this. Use the navigation links
               above to sign up or log in!

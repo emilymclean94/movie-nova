@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import ProfileForm from "./ProfileForm";
+import ProfileEditForm from "./ProfileEditForm";
 
 const EditFormButton = (props) => {
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -11,7 +11,6 @@ const EditFormButton = (props) => {
     document.getElementById("dash1").classList.add("hidden");
     document.getElementById("dash2").classList.add("hidden");
     document.getElementById("dash3").classList.add("hidden");
-    document.getElementById("dash4").classList.add("hidden");
     setIsFormVisible(true);
     setIsButtonVisible(false);
   };
@@ -28,7 +27,7 @@ const EditFormButton = (props) => {
         </Button>
       )}
       {isFormVisible && (
-        <ProfileForm
+        <ProfileEditForm
           username={props.username}
           name={props.name}
           genre={props.genre}
