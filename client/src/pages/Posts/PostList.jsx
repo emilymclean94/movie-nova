@@ -1,37 +1,14 @@
 import React from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import { Col } from "react-bootstrap";
+import { useQuery } from "@apollo/client";
 import { QUERY_POSTS } from "../../utils/queries";
-import { LIKE_POST } from "../../utils/mutations";
+import LikePostBtn from "./LikePostBtn";
+import UpdatePostBtn from "./UpdatePostBtn";
+import DeletePostBtn from "./DeletePostBtn";
 import "./posts.css";
 
 const PostList = () => {
   const { loading, error, data } = useQuery(QUERY_POSTS);
-
-  const [likePost] = useMutation(LIKE_POST, {
-    onError: (error) => {
-      console.error("Error liking post:", error.message);
-    },
-  });
-
-  const handleLike = (postId) => {
-    likePost({
-      variables: { postId },
-      update: (cache, { data: { likePost } }) => {
-        // Update the cache to reflect the updated like count
-        const updatedPost = likePost;
-        const { posts } = cache.readQuery({ query: QUERY_POSTS });
-        const updatedPosts = posts.map((post) =>
-          post._id === updatedPost._id ? updatedPost : post
-        );
-        cache.writeQuery({
-          query: QUERY_POSTS,
-          data: { posts: updatedPosts },
-        });
-      },
-    }).catch((error) => {
-      console.error("Error liking post:", error.message);
-    });
-  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -47,21 +24,36 @@ const PostList = () => {
   }
 
   return (
-    <div>
-      <h2>Posts</h2>
+    <Col className="postlist-content">
+      <h2 className="postlist-title">Posts</h2>
       {data.posts.map((post) => (
         <div key={post._id} className="card mb-3">
           <div className="card-body">
-            <h5 className="card-title">{post.title}</h5>
-            <p className="card-text">{post.content}</p>
-            <p className="card-text">Created at: {post.createdAt}</p>
-            <p>Likes: {post.likes?.length ?? 0}</p>{" "}
-            {/* Use optional chaining */}
-            <button onClick={() => handleLike(post._id)}>Like</button>
+            <h5 className="card-title" id="post1">
+              Title: {}
+              {post.title}
+            </h5>
+            <p className="card-text" id="post2">
+              Post: {}
+              {post.postText}
+            </p>
+            <p className="card-text" id="post3">
+              Created at: {}
+              {post.createdAt}
+            </p>
+            <div className=" edit-button p-1">
+              <LikePostBtn postID={post.postId} />
+            </div>
+            <div className="edit-button p-1">
+              <UpdatePostBtn title={post.title} postText={post.postText} />
+            </div>
+            <div className="edit-button p-1">
+              <DeletePostBtn postId={post.postId} />
+            </div>
           </div>
         </div>
       ))}
-    </div>
+    </Col>
   );
 };
 

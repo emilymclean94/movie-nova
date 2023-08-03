@@ -1,25 +1,35 @@
 const db = require('../config/connection');
-const { User, Movie, Post } = require('../models');
-const seeds = require('./seeds.json');
+const { Movie, User, Post } = require('../models');
+const movieSeeds = require('./movieSeeds.json');
+const userSeeds = require('./userSeeds.json');
+const postSeeds = require('./postSeeds.json');
 
 db.once('open', async () => {
   try {
     // Delete all existing users and posts from the respective collections
-    await User.deleteMany({});
     await Movie.deleteMany({});
+    await User.deleteMany({});
     await Post.deleteMany({});
 
-    // Create new users and posts using the data from seeds.json
-    const createdUsers = await User.create(seeds.users);
-    const createdMovies = await Movie.create(seeds.movies);
-    const createdPosts = await Post.create(seeds.posts);
+    await Movie.create(movieSeeds);
+    await User.create(userSeeds);
 
-    console.log(`${createdUsers.length} users seeded successfully`);
-    console.log(`${createdMovies.length} users seeded successfully`);
-    console.log(`${createdPosts.length} posts seeded successfully`);
-    process.exit(0);
+    for (let i = 0; i < postSeeds.length; i++) {
+      const { _id, postAuthor } = await Post.create(postSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { user: postAuthor },
+        {
+          $addToSet: {
+            postList: _id,
+          },
+        }
+      );
+    }
+
   } catch (err) {
     console.error('Seed error:', err);
     process.exit(1);
   }
+  console.log('all done!');
+  process.exit(0);
 });

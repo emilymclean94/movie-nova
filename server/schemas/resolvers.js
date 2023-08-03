@@ -4,10 +4,17 @@ const { User, Movie, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
+  Posts: {
+    : (parent) => parent.likes.length,
+  },
+
   Query: {
+    users: async () => {
+    return User.find().populate('posts').populate('movies');
+    },
 
     user: async (_, { username }) => {
-      return User.findOne({ username: username });
+      return User.findOne({ username: username })
     },
 
     movies: async () => {
@@ -15,48 +22,40 @@ const resolvers = {
     },
 
     movie: async (_, { movieId }) => {
-      return Movie.findById(movieId);
+      return Movie.findById({ _id: movieId });
+    },
+
+    posts: async (_, { username }) => {
+      const params = username ? { username } : {};
+      return Post.find(params).sort({ createdAt: -1 });
+    },
+
+    post: async (_, { postId }) => {
+      return Post.findOne({ _id: postId });
     },
 
     me: async (_, __, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('myList');
+        return User.findOne({ _id: context.user._id }).populate('posts').populate('movies');
       }
       throw new AuthenticationError('You need to be logged in!');
-    },
-    posts: async () => {
-      const posts = await Post.find().populate("likes"); // Populate the likes array with user objects
-      return posts;
     },
   },
 
   Mutation: {
-    addUser: async (_, input) => {
-      const { name, username, email, password, genre, bio } = input;
-      const user = await User.create({ name, username, email, password, genre, bio });
+    addUser: async (_, { name, username, email, password, genre, bio }) => {
+      const user = await User.create(
+        {
+          name,
+          username,
+          email,
+          password,
+          genre,
+          bio
+        }
+        );
       const token = signToken(user);
       return { token, user };
-    },
-
-    updateUser: async (_, { name, username, genre, bio }, context) => {
-      if (context.user) {
-     const updatedUser = await User.findOneAndUpdate(
-      { _id: context.user._id },
-      {
-        $set: {
-        name: name,
-        username: username,
-        genre: genre,
-        bio: bio
-        } 
-      },
-      {
-        new: true,
-        runValidators: true,
-      }
-     )
-     return updatedUser;
-    }
     },
 
     login: async (_, { username, password }) => {
@@ -72,81 +71,225 @@ const resolvers = {
       return { token, user };
     },
 
+    updateUser: async (_, { name, username, genre, bio }, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+        { 
+          _id: context.user._id
+        },
+        {
+          $set: {
+          name: name,
+          username: username,
+          genre: genre,
+          bio: bio
+          } 
+        },
+        {
+          new: true,
+          runValidators: true
+        }
+        );
+        return updatedUser;
+      } else {
+        throw new AuthenticationError('You need to be logged in!');
+      }
+    },
+
     addMovie: async (_, { title, description, posterImg, releaseDate }, context) => {
       if (context.user) {
         // Only allow adding a movie if the user is authenticated (context.user exists)
-        const movie = await Movie.create({ title, description, posterImg, releaseDate });
-        return movie; // Return the movie object instead of the user object
+        const movie = await Movie.create(
+        {
+          title,
+          description,
+          posterImg,
+          releaseDate
+        }
+        );
+        await User.findOneAndUpdate(
+          {
+            _id: context.user._id
+          },
+          {
+            $addToSet: {
+              movies: movie._id
+            }
+          }
+        );
+        return movie;
+      } else {
+        throw new AuthenticationError('Authentication required to add a movie.');
       }
-      throw new Error('Authentication required to add a movie.');
     },
 
-    removeMovie: async (_, { movieId }) => {
-      try {
-        const deletedMovie = await Movie.findByIdAndDelete(movieId);
+    removeMovie: async (_, { movieId }, context) => {
+      if (context.user) {
+        const deletedMovie = await Movie.findOneAndDelete(
+        {
+          _id: movieId
+        }
+        );
         return deletedMovie;
-      } catch (error) {
-        console.error('Error deleting movie:', error);
-        throw new Error('An error occurred while deleting the movie.');
+      } else {
+        throw new AuthenticationError('An error occurred while deleting the movie.');
       }
     },
 
-    createPost: async (_, { title, content }) => {
-      const post = new Post({ title, content });
-      await post.save();
-      return post;
-    },
-
-
-    updatePost: async (_, { postId, title, content }) => {
-      try {
-        const post = await Post.findById(postId);
-        if (!post) {
-          throw new Error('Post not found');
+    addPost: async (_, { title, postText }, context) => {
+      if (context.user) {
+        const post = await Post.create(
+        {
+          title,
+          postText,
+          postAuthor: context.user.username
         }
-        if (title) {
-          post.title = title;
-        }
-        if (content) {
-          post.content = content;
-        }
-        await post.save();
+        );
+        await User.findOneAndUpdate(
+          { 
+            _id: context.user._id
+          },
+          {
+            $addToSet: {
+              posts: post._id
+            }
+          }
+        );
         return post;
-      } catch (error) {
-        throw new Error('Failed to update post');
       }
+      throw new AuthenticationError('You need to be logged in!');
     },
 
-    deletePost: async (_, { postId }) => {
-      try {
-        const post = await Post.findByIdAndDelete(postId);
-        if (!post) {
-          throw new Error('Post not found');
-        }
-        return post;
-      } catch (error) {
-        throw new Error('Failed to delete post');
+    updatePost: async (_, { title, postText }, context) => {
+      if (context.user) {
+        const updatedPost = await Post.findOneAndUpdate(
+          {
+            _id: context.user._id
+          },
+          { 
+            $set: {
+              title: title,
+              postText: postText,
+            } 
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        return updatedPost;
       }
+      throw new AuthenticationError('You need to be logged in!');
+      },
+
+    removePost: async (_, { postId }, context) => {
+      if (context.user) {
+        const removedPost = await Post.findOneAndDelete(
+        { 
+          _id: postId,
+          postAuthor: context.user.username,
+        }
+        );
+        await User.findOneAndUpdate(
+        {
+          _id: context.user.username
+        },
+        {
+          $pull: {
+            posts: postId
+          }
+        }
+        );
+        return removedPost;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     likePost: async (_, { postId }, context) => {
-      const { user } = context;
-      if (!user) {
-        throw new AuthenticationError('Authentication required to like a post.');
+      if (context.user) {
+        const like = await Post.findOneAndUpdate(
+        { _id: postId },
+        { 
+          $addToSet: { 
+            likes: {
+              likeAuthor: context.user.username,
+            }, 
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+        );
+        return like;
       }
-      try {
-        const post = await Post.findByIdAndUpdate(
-          postId,
-          { $addToSet: { likes: user._id } },
-          { new: true }
-        ).populate('likes');
-        return post;
-      } catch (error) {
-        console.error('Error liking post:', error);
-        throw error;
-      }
+      throw new AuthenticationError('You need to be logged in!');
     },
-    
+
+    addComment: async (_, { postId, commentText }, context) => {
+      if (context.user) {
+        const comment = await Post.findOneAndUpdate(
+        { _id: postId },
+        {
+          $addToSet: {
+            comments: {
+              commentText,
+              commentAuthor: context.user.username
+            },
+          },
+        },
+        {
+          new: true,
+          runValidators: true
+        }
+      );
+        return comment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    updateComment: async (_, { postId, commentText }, context) => {
+      if (context.user) {
+        const updatedComment = await Post.findOneAndUpdate(
+        { _id: postId },
+        {
+          $set: {
+            comments: {
+              commentText,
+              commentAuthor: context.user.username
+            },
+          },
+        },
+        {
+          new: true,
+          runValidators: true
+        }
+        );
+        return updatedComment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+      },
+
+    removeComment: async (_, { postId, commentId }, context) => {
+      if (context.user) {
+        return Post.findOneAndUpdate(
+        { _id: postId },
+        {
+          $pull: {
+            comments: {
+              _id: commentId,
+              commentAuthor: context.user.username,
+            },
+          },
+        },
+        {
+          new: true,
+          runValidators: true
+        }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   }
 }
 

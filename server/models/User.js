@@ -28,7 +28,13 @@ const userSchema = new Schema(
     bio: { 
       type: String 
     },
-    myList: [
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+      },
+    ],
+    movies: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Movie',

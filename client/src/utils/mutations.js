@@ -57,31 +57,40 @@ export const REMOVE_MOVIE = gql`
   }
 `;
 
-export const CREATE_POST = gql`
-  mutation createPost($title: String!, $content: String!) {
-    createPost(title: $title, content: $content) {
+export const ADD_POST = gql`
+  mutation addPost($title: String!, $postText: String!) {
+    addPost(title: $title, postText: $postText) {
       _id
       title
-      content
+      postText
+      postAuthor
       createdAt
+      comments {
+        _id
+        commentText
+      }
+      likes {
+        _id
+        likeAuthor
+      }
+      
     }
   }
 `;
 
 export const UPDATE_POST = gql`
-  mutation updatePost($postId: ID! $title: String, $content: String) {
-    updatePost(postId: $postId, title: $title, content: $content) {
+  mutation updatePost($title: String, $postText: String) {
+    updatePost(title: $title, postText: $postText) {
       _id
       title
-      content
-      createdAt
+      postText
     }
   }
 `;
 
-export const DELETE_POST = gql`
-  mutation deletePost($postId: ID!) {
-    deletePost(postId: $postId) {
+export const REMOVE_POST = gql`
+  mutation removePost($postId: ID!) {
+    removePost(postId: $postId) {
       _id
     }
   }
@@ -91,10 +100,60 @@ export const LIKE_POST = gql`
   mutation likePost($postId: ID!) {
     likePost(postId: $postId) {
       _id
+      likes {
+        _id
+        likeAuthor
+      }
+      
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addComment($postId: ID!, $commentText: String!) {
+    addComment(postId: $postId, commentText: $commentText) {
+      _id
       title
-      content
+      postText
+      postAuthor
       createdAt
-      likes
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const UPDATE_COMMENT = gql`
+  mutation updateComment($postId: ID!, $commentText: String!) {
+    updateComment(postId: $postId, commentText: $commentText) {
+      _id
+      title
+      postText
+      postAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($postId: ID!, $commentId: ID!) {
+    removeComment(postId: $postId, commentId: $commentId) {
+      _id
+      title
+      postText
+      postAuthor
+      createdAt
+      comments {
+        _id
+      }
     }
   }
 `;

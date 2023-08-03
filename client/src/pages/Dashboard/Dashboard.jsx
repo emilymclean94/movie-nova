@@ -17,7 +17,7 @@ const Dashboard = () => {
   });
 
   const user = data?.me || data?.user || {};
-  const myList = user.myList || [];
+  const movies = user.movies || [];
 
   return (
     <Container className=" dashboard-container" id="dashboard">
@@ -30,7 +30,7 @@ const Dashboard = () => {
             </Col>
 
             <Col xs={11} sm={11} md={11} lg={5} className="m-3 mywatchlist">
-              <MyWatchList myList={myList} />
+              <MyWatchList movies={movies} />
             </Col>
           </>
         ) : (

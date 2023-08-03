@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { Col } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
-import { CREATE_POST } from "../../utils/mutations";
+import { ADD_POST } from "../../utils/mutations";
 import "./posts.css";
 
 const PostForm = () => {
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [postText, setPostText] = useState("");
 
-  const [createPost] = useMutation(CREATE_POST, {
+  const [createPost] = useMutation(ADD_POST, {
     onCompleted: () => {
-      // After post creation, you can optionally refetch the list of posts to display the latest data
+      alert("Post created!");
     },
     onError: (error) => {
       console.error("Error creating post:", error.message);
@@ -18,14 +19,14 @@ const PostForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createPost({ variables: { title, content } });
+    createPost({ variables: { title, postText } });
     setTitle("");
-    setContent("");
+    setPostText("");
   };
 
   return (
-    <div>
-      <h2>Create a New Post</h2>
+    <Col className="postform-content">
+      <h2 className="postform-title">Create a New Post</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
@@ -40,13 +41,13 @@ const PostForm = () => {
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="content" className="form-label">
-            Content
+          <label htmlFor="postText" className="form-label">
+            postText
           </label>
           <textarea
-            id="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
+            id="postText"
+            value={postText}
+            onChange={(e) => setPostText(e.target.value)}
             className="form-control"
           />
         </div>
@@ -54,7 +55,7 @@ const PostForm = () => {
           Create Post
         </button>
       </form>
-    </div>
+    </Col>
   );
 };
 
