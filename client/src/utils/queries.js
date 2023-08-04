@@ -12,7 +12,6 @@ export const QUERY_USER = gql`
       posts {
         _id
         postText
-        postAuthor
         createdAt
       }
       movies {
@@ -29,24 +28,23 @@ export const QUERY_USER = gql`
 export const QUERY_MOVIES = gql`
   query movies {
     movies {
-        _id
-        posterImg
-        title
-        releaseDate
-        description
+      _id
+      posterImg
+      title
+      releaseDate
+      description
     }
   }
 `;
 
-
 export const QUERY_MOVIE = gql`
   query movie($movieId: ID!) {
     movie(movieId: $movieId) {
-        _id
-        posterImg
-        title
-        releaseDate
-        description
+      _id
+      posterImg
+      title
+      releaseDate
+      description
     }
   }
 `;
@@ -59,24 +57,13 @@ export const QUERY_POSTS = gql`
       postText
       postAuthor
       createdAt
-      comments {
-        _id
-        commentText
-        commentAuthor
-        createdAt
-      }
-      likes {
-        _id
-        likeAuthor
-      }
-      
     }
   }
 `;
 
 export const QUERY_POST = gql`
-  query post($thoughtId: ID!) {
-    post(thoughtId: $thoughtId) {
+  query post($posttId: ID!) {
+    post(postId: $postId) {
       _id
       title
       postText
@@ -98,7 +85,7 @@ export const QUERY_POST = gql`
 
 export const QUERY_ME = gql`
   query me {
-  me {
+    me {
       _id
       name
       username

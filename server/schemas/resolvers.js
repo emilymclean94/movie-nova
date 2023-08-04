@@ -4,9 +4,6 @@ const { User, Movie, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
-  Posts: {
-    : (parent) => parent.likes.length,
-  },
 
   Query: {
     users: async () => {
@@ -14,7 +11,7 @@ const resolvers = {
     },
 
     user: async (_, { username }) => {
-      return User.findOne({ username: username })
+      return User.findOne({ username: username }).populate('posts').populate('movies');
     },
 
     movies: async () => {
@@ -22,7 +19,7 @@ const resolvers = {
     },
 
     movie: async (_, { movieId }) => {
-      return Movie.findById({ _id: movieId });
+      return Movie.findById(movieId);
     },
 
     posts: async (_, { username }) => {
@@ -51,7 +48,7 @@ const resolvers = {
           email,
           password,
           genre,
-          bio
+          bio,
         }
         );
       const token = signToken(user);
@@ -73,7 +70,7 @@ const resolvers = {
 
     updateUser: async (_, { name, username, genre, bio }, context) => {
       if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
+        const user = await User.findOneAndUpdate(
         { 
           _id: context.user._id
         },
@@ -82,7 +79,7 @@ const resolvers = {
           name: name,
           username: username,
           genre: genre,
-          bio: bio
+          bio: bio,
           } 
         },
         {
@@ -90,7 +87,7 @@ const resolvers = {
           runValidators: true
         }
         );
-        return updatedUser;
+        return user;
       } else {
         throw new AuthenticationError('You need to be logged in!');
       }
@@ -104,16 +101,16 @@ const resolvers = {
           title,
           description,
           posterImg,
-          releaseDate
+          releaseDate,
         }
         );
         await User.findOneAndUpdate(
           {
-            _id: context.user._id
+            _id: context.user._id,
           },
           {
             $addToSet: {
-              movies: movie._id
+              movies: movie._id,
             }
           }
         );
@@ -125,12 +122,12 @@ const resolvers = {
 
     removeMovie: async (_, { movieId }, context) => {
       if (context.user) {
-        const deletedMovie = await Movie.findOneAndDelete(
+        const movie = await Movie.findOneAndDelete(
         {
-          _id: movieId
+          _id: movieId,
         }
         );
-        return deletedMovie;
+        return movie;
       } else {
         throw new AuthenticationError('An error occurred while deleting the movie.');
       }
@@ -142,16 +139,16 @@ const resolvers = {
         {
           title,
           postText,
-          postAuthor: context.user.username
+          postAuthor: context.user.username,
         }
         );
         await User.findOneAndUpdate(
           { 
-            _id: context.user._id
+            _id: context.user._id,
           },
           {
             $addToSet: {
-              posts: post._id
+              posts: post._id,
             }
           }
         );
@@ -160,11 +157,12 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    updatePost: async (_, { title, postText }, context) => {
+    updatePost: async (_, { postId, title, postText }, context) => {
       if (context.user) {
-        const updatedPost = await Post.findOneAndUpdate(
+        const post = await Post.findOneAndUpdate(
           {
-            _id: context.user._id
+            _id: postId,
+            postAuthor: context.user.username, 
           },
           { 
             $set: {
@@ -177,33 +175,38 @@ const resolvers = {
             runValidators: true,
           }
         );
-        return updatedPost;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-      },
-
-    removePost: async (_, { postId }, context) => {
-      if (context.user) {
-        const removedPost = await Post.findOneAndDelete(
-        { 
-          _id: postId,
-          postAuthor: context.user.username,
-        }
-        );
-        await User.findOneAndUpdate(
-        {
-          _id: context.user.username
-        },
-        {
-          $pull: {
-            posts: postId
-          }
-        }
-        );
-        return removedPost;
+        return post;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    
+
+    removePost: async (_, { postId }, context) => {
+      if (context.user) {
+        const post = await Post.findOneAndDelete(
+          {
+            _id: postId,
+            postAuthor: context.user.username,
+          }
+        );
+    
+        // Remove the post ID from the user's posts array
+        await User.findOneAndUpdate(
+          {
+            _id: context.user._id,
+          },
+          {
+            $pull: {
+              posts: postId,
+            },
+          }
+        );
+    
+        return post;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
 
     likePost: async (_, { postId }, context) => {
       if (context.user) {
@@ -228,68 +231,74 @@ const resolvers = {
 
     addComment: async (_, { postId, commentText }, context) => {
       if (context.user) {
-        const comment = await Post.findOneAndUpdate(
+       const comment = await Post.findOneAndUpdate(
         { _id: postId },
         {
           $addToSet: {
             comments: {
               commentText,
-              commentAuthor: context.user.username
-            },
-          },
-        },
-        {
-          new: true,
-          runValidators: true
-        }
-      );
-        return comment;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-
-    updateComment: async (_, { postId, commentText }, context) => {
-      if (context.user) {
-        const updatedComment = await Post.findOneAndUpdate(
-        { _id: postId },
-        {
-          $set: {
-            comments: {
-              commentText,
-              commentAuthor: context.user.username
-            },
-          },
-        },
-        {
-          new: true,
-          runValidators: true
-        }
-        );
-        return updatedComment;
-      }
-      throw new AuthenticationError('You need to be logged in!');
-      },
-
-    removeComment: async (_, { postId, commentId }, context) => {
-      if (context.user) {
-        return Post.findOneAndUpdate(
-        { _id: postId },
-        {
-          $pull: {
-            comments: {
-              _id: commentId,
               commentAuthor: context.user.username,
             },
           },
         },
         {
           new: true,
-          runValidators: true
+          runValidators: true,
         }
         );
+        return comment;
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    updateComment: async (_, { postId, commentId, commentText }, context) => {
+      if (context.user) {
+        const comment = await Post.findOneAndUpdate(
+          { 
+            _id: postId,
+            'comments._id': commentId,
+          },
+          {
+            $set: {
+              'comments.$.commentText': commentText,
+            },
+          },
+          {
+            new: true,
+            runValidators: true
+          }
+        );
+        return comment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
+
+    removeComment: async (_, { postId, commentId }, context) => {
+      if (context.user) {
+        const comment = await Post.findOneAndUpdate(
+          {
+            _id: postId,
+            'comments._id': commentId,
+            'comments.commentAuthor': context.user.username,
+          },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+              },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+        return comment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
   }
 }
 

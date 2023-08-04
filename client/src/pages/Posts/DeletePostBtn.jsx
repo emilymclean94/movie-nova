@@ -16,13 +16,11 @@ const DeletePostBtn = ({ postId }) => {
       // Update the cache to remove the deleted post
       const updatedPost = removePost;
       const { posts } = cache.readQuery({ query: QUERY_POST });
-      const updatedPosts = posts.filter((post) =>
-        post._id !== updatedPost._id ? updatedPosts : post
-      );
+      const updatedPosts = posts.filter((post) => post._id !== updatedPost._id);
 
       cache.writeQuery({
         query: QUERY_POST,
-        data: { post: updatedPost },
+        data: { posts: updatedPosts },
       });
     },
   });

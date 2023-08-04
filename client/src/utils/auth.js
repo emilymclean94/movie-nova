@@ -14,7 +14,7 @@ class AuthService {
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
-      return decoded.exp < Date.now() / 1000;
+      return decoded.exp * 1000 < Date.now() ;
     } catch (err) {
       return false;
     }

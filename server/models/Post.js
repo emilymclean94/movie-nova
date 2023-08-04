@@ -50,11 +50,6 @@ const postSchema = new Schema({
     },
   ],
   },
-  {
-  toJSON: {
-    virtuals: true,
-    },
-  },
 );
 
 const Post = model('Post', postSchema);

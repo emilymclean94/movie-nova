@@ -7,6 +7,8 @@ import { Container, Row, Col } from "react-bootstrap/";
 import SearchBar from "../../components/SearchBar";
 import MyWatchList from "./MyWatchList";
 import MyProfile from "./MyProfile";
+import PostList from "../../components/PostList";
+import PostForm from "../../components/PostForm";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -32,6 +34,19 @@ const Dashboard = () => {
             <Col xs={11} sm={11} md={11} lg={5} className="m-3 mywatchlist">
               <MyWatchList movies={movies} />
             </Col>
+
+            <Col xs={11} sm={11} md={11} lg={6} className="m-3 myprofile">
+              <PostForm />
+            </Col>
+
+            <div className="col-12 col-md-10 mb-5">
+              <PostList
+                posts={user.posts}
+                title={`${user.username}'s posts...`}
+                showTitle={false}
+                showUsername={false}
+              />
+            </div>
           </>
         ) : (
           <Col xs={11} className="dashboard-content">

@@ -73,17 +73,17 @@ const NavBar = () => {
                 <>
                   <Nav.Link
                     as={Link}
-                    to="/posts"
-                    onClick={() => updateExpanded(false)}
-                  >
-                    Posts
-                  </Nav.Link>
-                  <Nav.Link
-                    as={Link}
                     to="/feed"
                     onClick={() => updateExpanded(false)}
                   >
                     Feed
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/me"
+                    onClick={() => updateExpanded(false)}
+                  >
+                    Profile
                   </Nav.Link>
                   <Nav.Link
                     as={Link}

@@ -86,7 +86,7 @@ const typeDefs = gql`
     removeMovie(movieId: ID!): Movie
     addPost(title: String!, postText: String!): Post
     updatePost(postId: ID!, title: String, postText: String): Post
-    removePost(postId: ID!): String
+    removePost(postId: ID!): Post
     likePost(postId: ID!): Post
     addComment(postId: ID!, commentText: String!): Post
     updateComment(postId: ID!, commentId: ID!, commentText: String!): Post

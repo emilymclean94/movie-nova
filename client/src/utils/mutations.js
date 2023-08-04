@@ -1,17 +1,5 @@
 import { gql } from '@apollo/client';
 
-export const LOGIN_USER = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-
 export const ADD_USER = gql`
   mutation addUser($name: String!, $username: String!, $email: String!, $password: String!, $genre: String, $bio: String) {
     addUser(name: $name, username: $username, email: $email, password: $password, genre: $genre, bio: $bio) {
@@ -19,6 +7,21 @@ export const ADD_USER = gql`
       user {
         _id
         email
+        username
+        name
+        genre
+        bio
+      }
+    }
+  }
+`;
+
+export const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      token
+      user {
+        _id
         username
       }
     }
@@ -71,9 +74,7 @@ export const ADD_POST = gql`
       }
       likes {
         _id
-        likeAuthor
       }
-      
     }
   }
 `;
@@ -89,8 +90,8 @@ export const UPDATE_POST = gql`
 `;
 
 export const REMOVE_POST = gql`
-  mutation removePost($postId: ID!) {
-    removePost(postId: $postId) {
+  mutation removePost($postId: ID) {
+    removePost(postId: $postId){
       _id
     }
   }
@@ -104,7 +105,6 @@ export const LIKE_POST = gql`
         _id
         likeAuthor
       }
-      
     }
   }
 `;
@@ -130,10 +130,6 @@ export const UPDATE_COMMENT = gql`
   mutation updateComment($postId: ID!, $commentText: String!) {
     updateComment(postId: $postId, commentText: $commentText) {
       _id
-      title
-      postText
-      postAuthor
-      createdAt
       comments {
         _id
         commentText
@@ -147,10 +143,6 @@ export const REMOVE_COMMENT = gql`
   mutation removeComment($postId: ID!, $commentId: ID!) {
     removeComment(postId: $postId, commentId: $commentId) {
       _id
-      title
-      postText
-      postAuthor
-      createdAt
       comments {
         _id
       }

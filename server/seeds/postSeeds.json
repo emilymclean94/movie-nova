@@ -1,16 +1,12 @@
 [
   {
-    "_id": "6120f4229a1cb19ad9fc6f01",
     "title": "Exciting Adventure",
     "postText": "Just went on an amazing adventure!",
-    "postAuthor": "Ethan Garrison",
-    "createdAt": "2023-07-31"
+    "postAuthor": "Ethan Garrison"
   },
   {
-    "_id": "6120f4229a1cb19ad9fc6f02",
     "title": "Delicious Food",
     "postText": "Tried a new restaurant today. The food was delicious!",
-    "postAuthor": "Ethan Garrison",
-    "createdAt": "2023-07-30"
+    "postAuthor": "Ethan Garrison"
   }
 ]
