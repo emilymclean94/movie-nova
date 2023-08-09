@@ -14,7 +14,7 @@ import SinglePost from "./pages/SinglePost/SinglePost";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   const [load, upadateLoad] = useState(true);
