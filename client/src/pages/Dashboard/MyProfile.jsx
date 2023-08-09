@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
 import UpdateProfileBtn from "./UpdateProfileBtn";
 
-const MyDashboard = ({ user }) => {
+const MyProfile = ({ user }) => {
   const { loading, error } = useQuery(QUERY_ME);
 
   if (loading) {
@@ -16,20 +16,20 @@ const MyDashboard = ({ user }) => {
   }
 
   return (
-    <Col className="mydashboard">
-      <h1 className="dashboard-title text-center m-3" id="dash">
-        Welcome to your Dashboard <br /> {user.name}!
-      </h1>
+    <Col className="myprofile">
+      <h2 className="profile-title text-center m-3" id="dash">
+        Welcome to your Dashboard!
+      </h2>
 
-      <Col className="m-3 dashboard-info">
+      <Col className="m-3 profile-info">
         <h3 className="username" id="dash1">
           Username: {}
           {user.username}
         </h3>
-        <h5 className="fav-genre" id="dash2">
+        <h4 className="fav-genre" id="dash2">
           Favorite Genre: {}
           {user.genre}
-        </h5>
+        </h4>
         <h5 className="bio" id="dash3">
           Bio: {}
           {user.bio}
@@ -46,4 +46,4 @@ const MyDashboard = ({ user }) => {
     </Col>
   );
 };
-export default MyDashboard;
+export default MyProfile;

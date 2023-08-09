@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "6120f4229a1cb19ad9fc6d09",
+    "posterImg": "https://example.com/poster9.jpg",
+    "title": "Movie 9",
+    "releaseDate": "2023-07-09",
+    "description": "This is the description of Movie 9."
+  },
+  {
+    "_id": "6120f4229a1cb19ad9fc6d10",
+    "posterImg": "https://example.com/poster10.jpg",
+    "title": "Movie 10",
+    "releaseDate": "2023-07-10",
+    "description": "This is the description of Movie 10."
+  }
+]

@@ -1,8 +1,32 @@
-.title{
+  /* ---- */
+  /* Home */
+  /* ---- */
+
+  #home {
+    background-color: #110831;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+  }
+
+  .title {
+    color: #fff;
     text-align: right;
-    color: white;
     margin: 0;
-    /* font-size: 6rem; */
+    text-shadow:
+      0 0 7px #fff,
+      0 0 0px #fff,
+      0 0 21px #001c99,
+      0 0 20px #001c99,
+      0 0 15px #001c99,
+      0 0 15px #001c99,
+      0 0 20px #041669,
+      0 0 0px #0b1b64;
   }
 
   .sub-title{

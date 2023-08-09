@@ -5,30 +5,37 @@ const userSchema = new Schema(
   {
     name: { 
       type: String, 
-      required: true 
+      required: true,
     },
     email: { 
       type: String, 
       required: true, 
       unique: true, 
-      match: [/.+@.+\..+/, 'Must match an email address!'] 
+      match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     username: { 
       type: String, 
       required: true, 
-      unique: true 
+      unique: true,
     },
     password: { 
       type: String, 
       required: true, 
-      minlength: 5 },
+      minlength: 5,
+    },
     genre: { 
-      type: String
+      type: String,
     },
     bio: { 
-      type: String 
+      type: String,
     },
-    myList: [
+    posts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Post',
+      },
+    ],
+    movies: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Movie',

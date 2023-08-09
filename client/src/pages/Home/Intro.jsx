@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 // import thumb from "../../Assets/thumb.png";
-import touch from "../../Assets/touch.png";
+import touch from "../../assets/touch.png";
 
 const Intro = () => {
   return (

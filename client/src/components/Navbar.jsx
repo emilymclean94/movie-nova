@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Navbar, Nav, Modal, Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { Container, Navbar, Nav, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./Signup";
 import LoginForm from "./Login";
 import Auth from "../utils/auth";
-import Logogo from "../Assets/Logogo.png";
+import Logogo from "../assets/Logogo.png";
 
 const NavBar = () => {
   //set modal display state
@@ -20,8 +19,8 @@ const NavBar = () => {
             <img
               alt=""
               src={Logogo}
-              width="50px"
-              max-height="50px"
+              width="40px"
+              max-height="40px"
               className="streamverse"
             />{" "}
             StreamVerse
@@ -53,6 +52,16 @@ const NavBar = () => {
               <Nav.Item>
                 <Nav.Link
                   as={Link}
+                  to="/about"
+                  onClick={() => updateExpanded(false)}
+                >
+                  About
+                </Nav.Link>
+              </Nav.Item>
+
+              <Nav.Item>
+                <Nav.Link
+                  as={Link}
                   to="/movies"
                   onClick={() => updateExpanded(false)}
                 >
@@ -62,6 +71,20 @@ const NavBar = () => {
 
               {Auth.loggedIn() ? (
                 <>
+                  <Nav.Link
+                    as={Link}
+                    to="/feed"
+                    onClick={() => updateExpanded(false)}
+                  >
+                    Feed
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/me"
+                    onClick={() => updateExpanded(false)}
+                  >
+                    Profile
+                  </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to="/dashboard"
@@ -74,7 +97,7 @@ const NavBar = () => {
               ) : (
                 <Nav.Link
                   as={Link}
-                  className="spacing"
+                  className=""
                   onClick={() => setShowModal(true)}
                 >
                   Login | Sign Up

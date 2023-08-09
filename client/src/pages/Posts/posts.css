@@ -1,0 +1,27 @@
+  /* ----- */
+  /* Posts */
+  /* ----- */
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.posts-content {
+  justify-content: center;
+}
+
+.postform-content, .postlist-content {
+  border-radius: 15px;
+  align-items: center;
+}
+
+.postform-title, .postlist-title {
+  color: #b79fe0;
+}
+
+.mb-3 {
+  color: aqua;
+}

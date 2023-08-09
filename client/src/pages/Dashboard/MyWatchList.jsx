@@ -20,27 +20,22 @@ const MyWatchList = ({ movie }) => {
   console.log("Current state of movies:", movies);
 
   return (
-    <Col
-      className="mywatchlist"
-      id="dash4"
-      style={{ height: "500px", overflowY: "auto" }}
-    >
-      <h1 className="watchlist-title text-center m-3">My Watched List</h1>
+    <Col className="mywatchlist">
+      <h2 className="watchlist-title text-center m-3">Your Watch List!</h2>
 
-      <Col className="table-resposive m-3 mywatchlist">
+      <Col className="m-3 watchlist-table">
         <Table
           className="table"
+          responsive="lg"
           striped="true"
-          rounded="true"
           bordered="true"
           hover="true"
-          responsive="true"
+          size="sm"
         >
           <thead>
             <tr className="font text-center">
               <th>IMG</th>
               <th>Title</th>
-              <th>Release Date</th>
               <th>Overview</th>
               <th>Actions</th>
             </tr>
@@ -56,14 +51,13 @@ const MyWatchList = ({ movie }) => {
                   />
                 </td>
                 <td className="movie-title">{movie.title}</td>
-                <td className="overview">{movie.releaseDate}</td>
                 <td className="overview">{movie.description}</td>
-                <td>
-                  <div className="delete-button">
-                    <WLMovieDeleteBtn movieId={movie._id} />
+                <td className="buttons">
+                  <div className="info-button">
+                    <WLMovieInfoBtn movie={movie} />
                   </div>
                   <div className="delete-button">
-                    <WLMovieInfoBtn movie={movie} />
+                    <WLMovieDeleteBtn movieId={movie._id} />
                   </div>
                 </td>
               </tr>

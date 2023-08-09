@@ -4,40 +4,26 @@ import { ApolloProvider } from "@apollo/client";
 import client from "./utils/apolloClient";
 import Preloader from "./components/Pre";
 import NavBar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
+import Profile from "./pages/Profile/Profile";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Movies from "./pages/Movies/Movies";
+import About from "./pages/About/About";
 import Feed from "./pages/Feed/Feed";
-import Dashboard from "./pages/Dashboard/DashboardPage";
-import Movies from "./pages/Movies/MoviesPage";
+import SinglePost from "./pages/SinglePost/SinglePost";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./app.css";
 
 const App = () => {
   const [load, upadateLoad] = useState(true);
-  const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
     }, 1200);
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowFooter(true);
-      } else {
-        setShowFooter(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   return (
@@ -48,11 +34,14 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/feed" element={<Feed />} />
+            <Route path="/me" element={<Profile />} />
+            <Route path="/profile/:username" element={<Profile />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/movies" element={<Movies />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/feed" element={<Feed />} />
+            <Route path="/posts/:postId" element={<SinglePost />} />
           </Routes>
-          <Footer className={showFooter ? "show" : ""} />
         </div>
         <ToastContainer />
       </Router>
