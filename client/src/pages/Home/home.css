@@ -207,6 +207,19 @@
 @media (max-width: 768px) {
   .sub-title {
     text-align: center;
+    margin-top: 0;
+}
+
+.trust-img {
+  display: none;
+}
+
+.thumb {
+  display: none;
+}
+
+.features-img {
+  display: none;
 }
   
 }
