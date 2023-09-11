@@ -1,7 +1,7 @@
 import React from "react";
 import "./home.css";
 // import like from "../../Assets/likes.png";
-import thumb from "../../assets/thumb.png";
+import thumb from "../../Assets/thumb.png";
 
 const Trust = () => {
   return (
