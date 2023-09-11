@@ -3,14 +3,14 @@
   /* ---- */
 
 
-  #home {
+  .home-container {
     background-color: #110831;
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    
+    flex-wrap: wrap;
+    /* flex-direction: column; */
   }
 
   .home-body {
@@ -209,6 +209,15 @@
     margin-top: 0;
 }
 
+.title {
+  text-align: center;
+}
+
+.home-container {
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
 .trust-img {
   display: none;
 }
@@ -219,6 +228,11 @@
 
 .features-img {
   display: none;
+}
+
+.intro-trust-h2, 
+.features-h2 {
+  text-align: center;
 }
   
 }

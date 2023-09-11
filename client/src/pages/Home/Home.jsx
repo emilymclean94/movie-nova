@@ -13,19 +13,20 @@ const Home = () => {
   return (
     <div className="home-background">
       <Container
-        className="home-body d-flex"
+        className="home-container"
         id="home"
       >
-        <Col className="col-lg-6 col-sm-12 image-container">
+        <Col className="col-lg-6 image-container">
           <img className='hero-image' src={Hero} alt="hero gif of astronaut spinning around"/>
         </Col>
-        <Col className="col-lg-6">
+        <Col className="col-lg-6 col-sm-12">
           <div className="text-container">
             <h1 className="display-3 sub-title">INTO THE</h1>
             <h1 className="display-1 title">STREAMVERSE</h1>
           </div>
         </Col>
       </Container>
+      
       <div className="div-container">
         <Intro />
         <Features />
