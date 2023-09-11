@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Col } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import Intro from "./Intro";
 import Features from "./Features";
 import Trust from "./Trust";
@@ -13,9 +13,10 @@ const Home = () => {
   return (
     <div className="home-background">
       <Container
-        className="home-container"
+        className="home-container row"
         id="home"
       >
+
         <Col className="image-container">
           <img className='hero-image' src={Hero} alt="hero gif of astronaut spinning around"/>
         </Col>
@@ -27,7 +28,7 @@ const Home = () => {
         </Col>
       </Container>
       
-      <div className="div-container">
+      <div className="divider-container ">
         <Intro />
         <Features />
         <Trust />
