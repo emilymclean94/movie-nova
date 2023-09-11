@@ -16,10 +16,10 @@ const Home = () => {
         className="home-container"
         id="home"
       >
-        <Col className="col-lg-6 image-container">
+        <Col className="image-container">
           <img className='hero-image' src={Hero} alt="hero gif of astronaut spinning around"/>
         </Col>
-        <Col className="col-lg-6 col-sm-12">
+        <Col className="">
           <div className="text-container">
             <h1 className="display-3 sub-title">INTO THE</h1>
             <h1 className="display-1 title">STREAMVERSE</h1>

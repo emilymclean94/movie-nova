@@ -206,16 +206,25 @@
 @media (max-width: 768px) {
   .sub-title {
     text-align: center;
-    margin-top: 0;
+    /* margin-top: 0; */
 }
 
 .title {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .home-container {
-  justify-content: center;
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.hero-image {
+  height: 400px;
+  width: 400px;
+  align-self: center;
 }
 
 .trust-img {
