@@ -7,11 +7,10 @@ const Intro = () => {
   return (
     <div className="intro">
       {/* <h1 className="home-divs-title">What is Streamverse?</h1> */}
-      <h2 className="home-divs-h2-intro">
-        StreamVerse is a social media platform
-        <br /> for movie lovers to connect and form <br />a community!
+      <h2 className="intro-trust-h2">
+        StreamVerse is a social media platform for movie lovers to connect and form a community!
       </h2>
-      <div className="custom-shape-divider-top-1686537761">
+      <div className="shape-divider-one">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +23,7 @@ const Intro = () => {
           ></path>
         </svg>
       </div>
-      <img className="thumb" src={touch} alt="intro img" />
+      <img className="intro-img" src={touch} alt="intro img" />
     </div>
   );
 };

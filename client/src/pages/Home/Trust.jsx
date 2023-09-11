@@ -7,13 +7,13 @@ const Trust = () => {
   return (
     <div className="trust">
       {/* <h1 className="home-divs-title">Trust Us!</h1> */}
-      <h2 className="home-divs-h2">
+      <h2 className="intro-trust-h2">
         No longer will you forget the name <br /> of "that really good show" you
         watched
         <br /> last year or a friends recommendation! You <br />
         can store it all here with us at StreamVerse.
       </h2>
-      <div className="custom-shape-divider-top-1686538780">
+      <div className="shape-divider-three">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"

@@ -36,9 +36,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// home-body
-  // d-flex flex-row flex-wrap align-content-center
-
-// text-container
-  //d-flex flex-wrap flex-column align-items-end m-2

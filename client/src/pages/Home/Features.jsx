@@ -8,11 +8,10 @@ const Features = () => {
   return (
     <div className="features">
       {/* <h1 className="home-divs-title-right-2">What are some Features?</h1> */}
-      <h2 className="home-divs-h2-right-2">
-        You can look up movies, add them to your <br />
-        "Watched List"! It could be simpler!
+      <h2 className="features-h2">
+        You can look up movies and add them to your "Watched List"! It could be simpler!
       </h2>
-      <div className="custom-shape-divider-top-1686538417">
+      <div className="shape-divider-two">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
