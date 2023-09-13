@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_MOVIE } from "../../utils/mutations";
 import { toast } from "react-toastify";
 import { MdAddBox } from "react-icons/md";
-import './movies.css';
+import "./movies.css";
 
 const AddMovieButton = ({ username, movie }) => {
   const { original_title, overview, poster_path, release_date, _id } = movie;
@@ -49,28 +49,20 @@ const AddMovieButton = ({ username, movie }) => {
   };
 
   return (
-
     <>
-
-    {/* Desktop View */}
-    <Button 
-    id="add-btn"
-    className="card-button" 
-    variant="primary" 
-    onClick={handleAddMovie}>
-      Add Movie
-      
-    </Button>
-
-    {/* Mobile View */}
-   
-    <MdAddBox
-        fill="#b279d8f5"
-        size={26}
+      {/* Desktop View */}
+      <Button
+        id="add-btn"
         className="card-button"
+        variant="primary"
         onClick={handleAddMovie}
-      />
+      >
+        Add Movie
+      </Button>
 
+      {/* Mobile View */}
+
+      <MdAddBox id="add-icon" fill="#b279d8f5" size={26} onClick={handleAddMovie} />
     </>
   );
 };

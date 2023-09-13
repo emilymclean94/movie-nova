@@ -33,11 +33,11 @@
     align-items: center;
   }
 
-  #add-btn,
-  #info-btn {
+
+  #info-icon,
+  #add-icon {
     display: none;
   }
-
 
   /** --- */
   /** Media Queries  */
@@ -60,6 +60,16 @@
 
     .card-text {
       font-size: 11px;
+    }
+
+    #add-btn,
+    #info-btn {
+      display: none;
+    }
+
+    #info-icon,
+    #add-icon {
+      display: inline;
     }
 
   }

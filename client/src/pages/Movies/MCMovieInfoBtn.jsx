@@ -32,9 +32,9 @@ const SearchMovieInfoButton = ({ movie }) => {
       </Button>
 
       <BsInfoSquareFill
+        id="info-icon"
         fill="#b279d8f5"
         size={20}
-        className="card-button"
         onClick={handleMoreInfo}
         margin="5px"
       />
