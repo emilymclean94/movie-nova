@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import './movies.css';
 
 const SearchMovieInfoButton = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
@@ -21,6 +22,7 @@ const SearchMovieInfoButton = ({ movie }) => {
   return (
     <>
       <Button
+        id="info-btn"
         className="card-button btn btn-dark"
         variant="primary"
         onClick={handleMoreInfo}
