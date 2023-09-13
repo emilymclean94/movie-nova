@@ -66,7 +66,7 @@ const AddMovieButton = ({ username, movie }) => {
    
     <MdAddBox
         fill="#b279d8f5"
-        size={33}
+        size={26}
         className="card-button"
         onClick={handleAddMovie}
       />

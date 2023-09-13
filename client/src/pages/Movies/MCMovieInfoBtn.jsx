@@ -33,9 +33,10 @@ const SearchMovieInfoButton = ({ movie }) => {
 
       <BsInfoSquareFill
         fill="#b279d8f5"
-        size={25}
+        size={20}
         className="card-button"
         onClick={handleMoreInfo}
+        margin="5px"
       />
 
       <Modal show={showModal} onHide={handleCloseModal}>

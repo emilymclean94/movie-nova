@@ -18,7 +18,7 @@ const MovieCard = ({ username, movie }) => {
         id="card-title"
         className="text-truncate">{original_title}</Card.Title>
         <Card.Text>Release Date: {release_date}</Card.Text>
-        <div className="d-flex align-items-center justify-content-center ">
+        <div className="card-btn-container">
           <SearchedMovieInfoButton movie={movie} />
           <MCMovieAddBtn username={username} movie={movie} />
         </div>
