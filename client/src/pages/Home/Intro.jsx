@@ -1,15 +1,18 @@
 import React from "react";
 import "./home.css";
-// import thumb from "../../Assets/thumb.png";
 import touch from "../../Assets/touch.png";
 
 const Intro = () => {
   return (
     <div className="intro">
-      {/* <h1 className="home-divs-title">What is Streamverse?</h1> */}
-      <h2 className="intro-trust-h2">
-        StreamVerse is a social media platform for movie lovers to connect and form a community!
-      </h2>
+      <div className="intro-content-container">
+        <h2 className="intro-trust-h2">
+          StreamVerse is a social media platform for movie lovers to connect and
+          form a community.
+        </h2>
+        <img className="intro-img" src={touch} alt="intro img" />
+      </div>
+
       <div className="shape-divider-one">
         <svg
           data-name="Layer 1"
@@ -23,7 +26,6 @@ const Intro = () => {
           ></path>
         </svg>
       </div>
-      <img className="intro-img" src={touch} alt="intro img" />
     </div>
   );
 };

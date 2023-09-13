@@ -7,10 +7,14 @@ import top from "../../Assets/top.png";
 const Features = () => {
   return (
     <div className="features">
-      {/* <h1 className="home-divs-title-right-2">What are some Features?</h1> */}
-      <h2 className="features-h2">
-        You can look up movies and add them to your "Watched List"! It could be simpler!
-      </h2>
+      <div className="features-content-container">
+        <h2 className="features-h2">
+          Look up movies and add them to your "Watched List"! It
+          couldn't be simpler!
+        </h2>
+        <img src={top} alt="features img" className="features-img" />
+      </div>
+
       <div className="shape-divider-two">
         <svg
           data-name="Layer 1"
@@ -24,7 +28,6 @@ const Features = () => {
           ></path>
         </svg>
       </div>
-      <img src={top} alt="features img" className="features-img" />
     </div>
   );
 };
