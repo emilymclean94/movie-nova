@@ -11,7 +11,7 @@
 
 body {
   background-color: #110831;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto Condensed', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +33,7 @@ body {
   height: 100%;
   z-index: 999999;
   background-color: #0c0513;
-  background-image: url(./assets/pre.svg);
+  background-image: url(./Assets/pre.svg);
   background-repeat: no-repeat;
   background-position: center;
 }

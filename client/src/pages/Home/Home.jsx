@@ -1,30 +1,34 @@
 import React from "react";
-import { Container, Col } from "react-bootstrap";
+import { Container, div } from "react-bootstrap";
 import Intro from "./Intro";
 import Features from "./Features";
 import Trust from "./Trust";
-import Maybe from "../../assets/24OD.gif";
+import Hero from "../../Assets/24OD.gif";
 // import Hero from "../../assets/homeGif.gif";
 import "./home.css";
+
+
 
 const Home = () => {
   return (
     <div className="home-background">
-      <Container
-        className="home-body d-flex flex-row flex-wrap align-content-center bg-"
-        id="home"
+      <div
+        className="home-div"
+        id="home-container"
       >
-        <Col className="col-lg-6 image-container">
-          <img src={Maybe} alt="hero" />
-        </Col>
-        <Col className="col-lg-6">
-          <div className="text-container d-flex flex-wrap flex-column align-items-end m-2">
+
+        <div className="image-container">
+          <img className='hero-image' src={Hero} alt="hero gif of astronaut spinning around"/>
+        </div>
+        <div className="">
+          <div className="text-container">
             <h1 className="display-3 sub-title">INTO THE</h1>
             <h1 className="display-1 title">STREAMVERSE</h1>
           </div>
-        </Col>
-      </Container>
-      <div className="div-container">
+        </div>
+      </div>
+      
+      <div className="divider-container ">
         <Intro />
         <Features />
         <Trust />

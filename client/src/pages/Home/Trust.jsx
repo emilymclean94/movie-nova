@@ -1,19 +1,18 @@
 import React from "react";
 import "./home.css";
-// import like from "../../Assets/likes.png";
-import thumb from "../../assets/thumb.png";
+import thumb from "../../Assets/thumb.png";
 
 const Trust = () => {
   return (
     <div className="trust">
-      {/* <h1 className="home-divs-title">Trust Us!</h1> */}
-      <h2 className="home-divs-h2">
-        No longer will you forget the name <br /> of "that really good show" you
-        watched
-        <br /> last year or a friends recommendation! You <br />
-        can store it all here with us at StreamVerse.
-      </h2>
-      <div className="custom-shape-divider-top-1686538780">
+      <div className="trust-content-container">
+        <h2 className="intro-trust-h2">
+          No longer will you forget the name of that show you watched last year
+          or a friend's recommendation! You can save it all on StreamVerse.
+        </h2>
+        <img className="trust-img" src={thumb} alt="intro img" />
+      </div>
+      <div className="shape-divider-three">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +25,6 @@ const Trust = () => {
           ></path>
         </svg>
       </div>
-      <img className="trust-img" src={thumb} alt="intro img" />
     </div>
   );
 };

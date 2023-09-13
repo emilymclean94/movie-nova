@@ -12,7 +12,7 @@ import About from "./pages/About/About";
 import Feed from "./pages/Feed/Feed";
 import SinglePost from "./pages/SinglePost/SinglePost";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 

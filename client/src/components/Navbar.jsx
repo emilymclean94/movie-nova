@@ -4,7 +4,7 @@ import { Container, Navbar, Nav, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "./Signup";
 import LoginForm from "./Login";
 import Auth from "../utils/auth";
-import Logogo from "../assets/Logogo.png";
+import Logogo from "../Assets/Logogo.png";
 
 const NavBar = () => {
   //set modal display state
