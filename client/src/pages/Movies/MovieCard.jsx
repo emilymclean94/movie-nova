@@ -8,13 +8,15 @@ const MovieCard = ({ username, movie }) => {
   const { original_title, release_date, poster_path } = movie;
 
   return (
-    <Card style={{ width: "17rem" }} className="movie-card">
+    <Card className="movie-card">
       <Card.Img
         variant="top"
         src={`https://image.tmdb.org/t/p/w300${poster_path}`}
       />
       <Card.Body>
-        <Card.Title className="text-truncate">{original_title}</Card.Title>
+        <Card.Title 
+        id="card-title"
+        className="text-truncate">{original_title}</Card.Title>
         <Card.Text>Release Date: {release_date}</Card.Text>
         <div className="d-flex align-items-center justify-content-center ">
           <SearchedMovieInfoButton movie={movie} />

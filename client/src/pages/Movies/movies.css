@@ -1,6 +1,6 @@
-  /* ------ */
-  /* Movies */
-  /*------- */
+  /** ------ */
+  /** Movies */
+  /** ------- */
 
   .movies-container {
     display: flex;
@@ -18,3 +18,44 @@
     gap: 1.75rem;
   }
 
+  .movie-card {
+    width: 17rem;
+  }
+
+
+/** --- */
+/** Card Buttons */
+/** --- */
+
+#add-btn,
+#info-btn {
+  display: none;
+}
+
+
+/** --- */
+/** Media Queries  */
+/** --- */
+
+@media (max-width: 768px) {
+
+.movies-grid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: .75rem;
+}
+
+.movie-card {
+  width: 10rem;
+}
+
+#card-title {
+  font-size: 14px;
+}
+
+.card-text {
+  font-size: 11px;
+}
+
+}
+
+/* On mobile, the more info button should be replaced with  */
