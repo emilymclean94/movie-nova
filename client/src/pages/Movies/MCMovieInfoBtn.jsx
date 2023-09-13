@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import './movies.css';
+import { BsInfoSquareFill } from "react-icons/bs";
+import "./movies.css";
 
 const SearchMovieInfoButton = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
@@ -29,6 +30,14 @@ const SearchMovieInfoButton = ({ movie }) => {
       >
         More Info
       </Button>
+
+      <BsInfoSquareFill
+        fill="#b279d8f5"
+        size={25}
+        className="card-button"
+        onClick={handleMoreInfo}
+      />
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Streamverse</Modal.Title>

@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_MOVIE } from "../../utils/mutations";
 import { toast } from "react-toastify";
-import { BsInfoSquareFill } from "react-icons/bs"
+import { MdAddBox } from "react-icons/md";
 import './movies.css';
 
 const AddMovieButton = ({ username, movie }) => {
@@ -63,7 +63,13 @@ const AddMovieButton = ({ username, movie }) => {
     </Button>
 
     {/* Mobile View */}
-    <BsInfoSquareFill />
+   
+    <MdAddBox
+        fill="#b279d8f5"
+        size={33}
+        className="card-button"
+        onClick={handleAddMovie}
+      />
 
     </>
   );
