@@ -3,8 +3,8 @@ import { Button } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { ADD_MOVIE } from "../../utils/mutations";
 import { toast } from "react-toastify";
-import { BsInfoSquareFill } from "react-icons/bs"
-import './movies.css';
+import { MdAddBox } from "react-icons/md";
+import "./movies.css";
 
 const AddMovieButton = ({ username, movie }) => {
   const { original_title, overview, poster_path, release_date, _id } = movie;
@@ -49,22 +49,20 @@ const AddMovieButton = ({ username, movie }) => {
   };
 
   return (
-
     <>
+      {/* Desktop View */}
+      <Button
+        id="add-btn"
+        className="card-button"
+        variant="primary"
+        onClick={handleAddMovie}
+      >
+        Add Movie
+      </Button>
 
-    {/* Desktop View */}
-    <Button 
-    id="add-btn"
-    className="card-button" 
-    variant="primary" 
-    onClick={handleAddMovie}>
-      Add Movie
-      
-    </Button>
+      {/* Mobile View */}
 
-    {/* Mobile View */}
-    <BsInfoSquareFill />
-
+      <MdAddBox id="add-icon" fill="#b279d8f5" size={26} onClick={handleAddMovie} />
     </>
   );
 };
