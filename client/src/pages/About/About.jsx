@@ -10,42 +10,43 @@ import Sami from "../../Assets/headshots/anon_headshot.jpg";
 
 const About = () => {
   return (
-    <Container className="about about-container" id="about">
+    <Container className="about about-container">
       <Container className="about-content">
-        <AboutCards 
-        headshot={Emily} 
-        name="Emily McLean" 
-        ghLink="https://github.com/emilymclean94"
-        liLink="https://www.linkedin.com/in/emilyamclean/"
-        bio="Full stack developer and lover of books, video games, and my dogs."
-        />
-        <AboutCards 
-        headshot={Ashley} 
-        name="Ashley Giraldo" 
-        ghLink="hhttps://github.com/Ashleyg5"
-        liLink="https://www.linkedin.com/in/ashley-giraldo/"
-        bio="Bio coming soon."
-        />
-        <AboutCards 
-        headshot={Ethan} 
-        name="Ethan Garrison" 
-        ghLink="https://github.com/EGARRISXN"
-        liLink="https://www.linkedin.com/in/ethan-garrison-261ba4a2/"
-        bio="Bio coming soon."
-        />
-        <AboutCards 
-        headshot={Keely} 
-        name="Keely Sherman" 
-        ghLink="https://github.com/keelyybug"
-        liLink="https://www.linkedin.com/in/ashley-giraldo/"
-        bio="Bio coming soon."
+        <h1>Check out the project GitHub <a href="https://github.com/emilymclean94/stream_verse">HERE</a></h1>
+        <AboutCards
+          headshot={Emily}
+          name="Emily McLean"
+          ghLink="https://github.com/emilymclean94"
+          liLink="https://www.linkedin.com/in/emilyamclean/"
+          bio="Full stack developer and lover of books, video games, and my dogs."
         />
         <AboutCards
-        headshot={Sami} 
-        name="Sami Sweet-Kloid" 
-        ghLink="https://github.com/sweetkloid"
-        // liLink="https://www.linkedin.com/in/keelysherman/"
-        bio="Bio coming soon."
+          headshot={Ashley}
+          name="Ashley Giraldo"
+          ghLink="hhttps://github.com/Ashleyg5"
+          liLink="https://www.linkedin.com/in/ashley-giraldo/"
+          bio="Bio coming soon."
+        />
+        <AboutCards
+          headshot={Ethan}
+          name="Ethan Garrison"
+          ghLink="https://github.com/EGARRISXN"
+          liLink="https://www.linkedin.com/in/ethan-garrison-261ba4a2/"
+          bio="Bio coming soon."
+        />
+        <AboutCards
+          headshot={Keely}
+          name="Keely Sherman"
+          ghLink="https://github.com/keelyybug"
+          liLink="https://www.linkedin.com/in/ashley-giraldo/"
+          bio="Bio coming soon."
+        />
+        <AboutCards
+          headshot={Sami}
+          name="Sami Sweet-Kloid"
+          ghLink="https://github.com/sweetkloid"
+          // liLink="https://www.linkedin.com/in/keelysherman/"
+          bio="Bio coming soon."
         />
       </Container>
     </Container>

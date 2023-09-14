@@ -2,7 +2,7 @@
 /* About */
 /* ----- */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 .about-container {
   height: 100vh;
@@ -13,11 +13,50 @@
   font-family: "Roboto Condensed";
 }
 
+.about-content {
+  margin: 10px;
+}
+
+.about-content a {
+  text-decoration: none;
+  color: #fff;
+  text-align: right;
+  margin: 0;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 0px #fff,
+    0 0 21px #001c99,
+    0 0 20px #001c99,
+    0 0 15px #001c99,
+    0 0 15px #001c99,
+    0 0 20px #041669,
+    0 0 0px #0b1b64;
+}
+
+/* .about-content h1,
+.about-content h2 {
+  color: white;
+  text-align: center;
+  margin: 0px 0px 20px 0px;
+} */
+
 /** --- */
 /** Media Queries */
 /** --- */
 
 @media (max-width: 768px) {
+
+  .about-content h1 {
+    color: white;
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+    font-size: 30px;
+  }
+
+  .about-content h2 {
+    font-weight: 700;
+  }
+
   .bio-card {
     width: 325px;
   }
