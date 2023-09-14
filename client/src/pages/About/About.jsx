@@ -1,8 +1,13 @@
 import React from "react";
+import AboutCards from "./AboutCards";
 import { Row, Container, Col } from "react-bootstrap";
 import { BsGithub } from "react-icons/bs";
-import SearchBar from "../../components/SearchBar";
 import "./about.css";
+import Emily from "../../Assets/headshots/emily_headshot.jpg";
+import Ethan from "../../Assets/headshots/ethan_headshot.jpg";
+import Ashley from "../../Assets/headshots/ashley_headshot.jpg";
+import Keely from "../../Assets/headshots/keely_headshot.png";
+import Sami from "../../Assets/headshots/anon_headshot.jpg";
 
 const styles = {
   icons: {
@@ -13,62 +18,42 @@ const styles = {
 const About = () => {
   return (
     <Container className="about about-container" id="about">
-      <SearchBar />
-      <Row className="links">
-        <Col>
-          <a href="https://github.com/emilymclean94" style={styles.icons}>
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Emily</h6>
-            </div>
-          </a>
-        </Col>
-        <Col>
-          <a href="https://github.com/keelyybug" style={styles.icons}>
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Keely</h6>
-            </div>
-          </a>
-        </Col>
-        <Col>
-          <a href="https://github.com/EGARRISXN" style={styles.icons}>
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Ethan</h6>
-            </div>
-          </a>
-        </Col>
-        <Col>
-          <a href="hhttps://github.com/Ashleyg5" style={styles.icons}>
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Ashley</h6>
-            </div>
-          </a>
-        </Col>
-        <Col>
-          <a href="https://github.com/sweetkloid" style={styles.icons}>
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Sami</h6>
-            </div>
-          </a>
-        </Col>
-        <Col>
-          <a
-            href="https://github.com/emilymclean94/movie-nova"
-            style={styles.icons}
-          >
-            <div className="icon-wrapper">
-              <BsGithub />
-              <h6>Repo</h6>
-            </div>
-          </a>
-        </Col>
-      </Row>
       <Container className="about-content">
-        <h1>About</h1>
+        <AboutCards 
+        headshot={Emily} 
+        name="Emily McLean" 
+        ghLink="https://github.com/emilymclean94"
+        liLink="www.linkedin.com/in/emilyamclean"
+        bio="Full stack developer and lover of books, video games, and my dogs."
+        />
+        <AboutCards 
+        headshot={Ethan} 
+        name="Ethan Garrison" 
+        ghLink="https://github.com/EGARRISXN"
+        liLink="https://www.linkedin.com/in/ethan-garrison-261ba4a2/"
+        bio="Bio coming soon."
+        />
+        <AboutCards 
+        headshot={Ashley} 
+        name="Ashley Giraldo" 
+        ghLink="hhttps://github.com/Ashleyg5"
+        liLink="https://www.linkedin.com/in/ashley-giraldo/"
+        bio="Bio coming soon."
+        />
+        <AboutCards 
+        headshot={Keely} 
+        name="Keely Sherman" 
+        ghLink="https://github.com/keelyybug"
+        liLink="https://www.linkedin.com/in/ashley-giraldo/"
+        bio="Bio coming soon."
+        />
+        <AboutCards 
+        headshot={Sami} 
+        name="Sami Sweet-Kloid" 
+        ghLink="https://github.com/sweetkloid"
+        // liLink="https://www.linkedin.com/in/keelysherman/"
+        bio="Bio coming soon."
+        />
       </Container>
     </Container>
   );
