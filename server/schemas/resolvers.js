@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('@apollo/server');
 const { User, Movie, Post } = require('../models');
 const { signToken } = require('../utils/auth');
 

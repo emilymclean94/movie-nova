@@ -1,7 +1,7 @@
-const { gql } = require('apollo-server-express');
+const { ApolloServer } = require('@apollo/server');
 
 
-const typeDefs = gql`
+const typeDefs = `#graphql
   # Define which fields are accessible from the model
 
   type User {
