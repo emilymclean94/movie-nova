@@ -1,19 +1,12 @@
 import React from "react";
 import AboutCards from "./AboutCards";
-import { Row, Container, Col } from "react-bootstrap";
-import { BsGithub } from "react-icons/bs";
+import { Container } from "react-bootstrap";
 import "./about.css";
 import Emily from "../../Assets/headshots/emily_headshot.jpg";
 import Ethan from "../../Assets/headshots/ethan_headshot.jpg";
 import Ashley from "../../Assets/headshots/ashley_headshot.jpg";
 import Keely from "../../Assets/headshots/keely_headshot.png";
 import Sami from "../../Assets/headshots/anon_headshot.jpg";
-
-const styles = {
-  icons: {
-    color: "#de82ebe8",
-  },
-};
 
 const About = () => {
   return (
@@ -23,15 +16,8 @@ const About = () => {
         headshot={Emily} 
         name="Emily McLean" 
         ghLink="https://github.com/emilymclean94"
-        liLink="www.linkedin.com/in/emilyamclean"
+        liLink="https://www.linkedin.com/in/emilyamclean/"
         bio="Full stack developer and lover of books, video games, and my dogs."
-        />
-        <AboutCards 
-        headshot={Ethan} 
-        name="Ethan Garrison" 
-        ghLink="https://github.com/EGARRISXN"
-        liLink="https://www.linkedin.com/in/ethan-garrison-261ba4a2/"
-        bio="Bio coming soon."
         />
         <AboutCards 
         headshot={Ashley} 
@@ -41,13 +27,20 @@ const About = () => {
         bio="Bio coming soon."
         />
         <AboutCards 
+        headshot={Ethan} 
+        name="Ethan Garrison" 
+        ghLink="https://github.com/EGARRISXN"
+        liLink="https://www.linkedin.com/in/ethan-garrison-261ba4a2/"
+        bio="Bio coming soon."
+        />
+        <AboutCards 
         headshot={Keely} 
         name="Keely Sherman" 
         ghLink="https://github.com/keelyybug"
         liLink="https://www.linkedin.com/in/ashley-giraldo/"
         bio="Bio coming soon."
         />
-        <AboutCards 
+        <AboutCards
         headshot={Sami} 
         name="Sami Sweet-Kloid" 
         ghLink="https://github.com/sweetkloid"
