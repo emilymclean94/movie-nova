@@ -1,25 +1,84 @@
-  /* ----- */
-  /* About */
-  /* ----- */  
-  
-  .about-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-  }
+/* ----- */
+/* About */
+/* ----- */
 
-    .icon-wrapper {
-    justify-content: center;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+.about-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  font-family: "Roboto Condensed";
+}
+
+.about-content {
+  margin: 20px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content a {
+  text-decoration: none;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 0px #fff,
+    0 0 21px #001c99,
+    0 0 20px #001c99,
+    0 0 15px #001c99,
+    0 0 15px #001c99,
+    0 0 20px #041669,
+    0 0 0px #0b1b64;
+}
+
+.about-content h1 {
+  color: white;
+  text-align: center;
+}
+
+.about-content h2 {
+  color: #b279d8f5;
+  text-align: center;
+}
+
+/** --- */
+/** Media Queries */
+/** --- */
+
+@media (max-width: 768px) {
 
   .about-content {
-    border: #fff1ea 1px solid;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
   }
+
+  .about-content h1 {
+    color: white;
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+    font-size: 35px;
+  }
+
+  .about-content a {
+    font-weight: 700;
+  }
+
+  .bio-card {
+    width: 325px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .gh-icon,
+  .li-icon {
+    width: 25px;
+    height: 25px;
+    margin: 0px 5px 0px 5px;
+  }
+}
