@@ -1,8 +1,6 @@
 import React from "react";
 import "./home.css";
 import top from "../../Assets/top.png";
-// import likes from "../../Assets/likes.png";
-// import touch from "../../Assets/touch.png";
 
 const Features = () => {
   return (
