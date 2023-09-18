@@ -55,6 +55,7 @@
 .about-content a {
   text-decoration: none;
   color: #fff;
+  font-weight: 700;
   text-shadow:
     0 0 7px #fff,
     0 0 0px #fff,
@@ -96,31 +97,26 @@
   }
 
   .about-content h1 {
-    color: white;
-    text-align: center;
-    margin: 0px 0px 20px 0px;
-    font-size: 35px;
+    margin: 0px 0px 5px 0px;
+    font-size: 25px;
   }
 
-  .about-content a {
-    font-weight: 700;
+  .about-content h2 {
+    margin: 10px 0px;
   }
 
   .bio-card {
     width: 325px;
   }
 
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  #card-title {
+    font-size: 16px;
   }
 
   .gh-icon,
   .li-icon {
     width: 25px;
     height: 25px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px;
   }
 }
