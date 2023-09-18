@@ -11,7 +11,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
 
@@ -72,13 +72,6 @@
   fill: #110831;
 }
 
-/* .intro-img{
-  position: relative;
-  float: right;
-  top: 60px;
-  right:40px;
-} */
-
 /** --- */
 /** Features divider */
 /** --- */
@@ -115,14 +108,6 @@
 .shape-divider-two .shape-fill {
   fill: #2862FE;
 }
-
-/* .features-img{
-  transform: transformY(-10em);
-  position: relative;
-  top: 90px;
-  padding-left: 2em;
-  width:500px;
-} */
 
 .logo{
   margin-left: 3em;
@@ -166,20 +151,10 @@
   fill: #7875FC;
 }
 
-/* .trust-img{
-  float: right;
-  position: relative;
-  top: -160px;
-  width: 500px;
-  padding-right: 3em;
-} */
-
 .intro-trust-h2 {
   color: white;
   float:left;
   text-align: left;
-  /* transform: translateY(4.5em);  */
-  /* padding-left: 1.5em;  */
   font-family: 'Roboto Condensed';
   font-weight: 900;
   font-size: 48px;
@@ -189,8 +164,6 @@
   color: white;
   float:right;
   text-align: right;
-  /* padding-right: 2em; */
-  /* transform: translateY(5.7em);  */
   font-family: 'Roboto Condensed';
   font-weight: 900;
   font-size: 48px;
@@ -203,7 +176,7 @@
 }
 
 .divider-container > *:not(:last-child) {
-  margin-bottom: 0; /* Adjust the value as needed */
+  margin-bottom: 0; 
 }
 
 .icon-wrapper{
@@ -221,7 +194,6 @@
 @media (max-width: 768px) {
   .sub-title {
     text-align: center;
-    /* margin-top: 0; */
 }
 
 .title {
@@ -234,6 +206,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
+  justify-content: flex-start;
 }
 
 .hero-image {
@@ -252,7 +225,6 @@
   padding: 0px;
   width: 200px;
   height: 200px;
-  /* float: none; */
 }
 
 .intro-trust-h2, 

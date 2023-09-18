@@ -1,10 +1,8 @@
 import React from "react";
-import { Container, div } from "react-bootstrap";
 import Intro from "./Intro";
 import Features from "./Features";
 import Trust from "./Trust";
 import Hero from "../../Assets/24OD.gif";
-// import Hero from "../../assets/homeGif.gif";
 import "./home.css";
 
 
