@@ -103,7 +103,7 @@ const Signup = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Form.Group className="mb-1">
+        {/* <Form.Group className="mb-1">
           <label className="mb-1" htmlFor="genreInput">
             Favorite Genre
           </label>
@@ -116,8 +116,8 @@ const Signup = () => {
             id="genreInput"
             placeholder="Horror"
           />
-        </Form.Group>
-        <Form.Group className="mb-2">
+        </Form.Group> */}
+        {/* <Form.Group className="mb-2">
           <label className="mb-1" htmlFor="bioInput">
             Bio
           </label>
@@ -130,7 +130,7 @@ const Signup = () => {
             id="bioInput"
             placeholder="Tell us about yourself!"
           />
-        </Form.Group>
+        </Form.Group> */}
         <button type="submit" className="btn btn-dark mb-1">
           Submit
         </button>

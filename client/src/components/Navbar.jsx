@@ -112,6 +112,7 @@ const NavBar = () => {
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby="signup-modal"
+        centered
       >
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey="login">
