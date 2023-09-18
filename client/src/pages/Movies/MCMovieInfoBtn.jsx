@@ -39,15 +39,14 @@ const SearchMovieInfoButton = ({ movie }) => {
         margin="5px"
       />
 
-      <Modal show={showModal} onHide={handleCloseModal}>
+      <Modal 
+      show={showModal} 
+      onHide={handleCloseModal}
+      centered>
         <Modal.Header closeButton>
-          <Modal.Title>Streamverse</Modal.Title>
+          <Modal.Title>StreamVerse</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="d-flex align-items-center justify-content-center mb-3">
-            <h5>{title}</h5>
-          </div>
-          <div className="d-flex align-items-center justify-content-center mb-3">
             {poster_path && (
               <img
                 src={`https://image.tmdb.org/t/p/w300${poster_path}`}
@@ -55,15 +54,10 @@ const SearchMovieInfoButton = ({ movie }) => {
                 className="img-fluid rounded"
               />
             )}
-          </div>
+            <h4>{title}</h4>
           <h5>Release Date: {release_date}</h5>
           <p>{overview}</p>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

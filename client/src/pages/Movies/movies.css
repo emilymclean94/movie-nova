@@ -2,6 +2,8 @@
   /** Movies */
   /** ------- */
 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
   .movies-container {
     display: flex;
     flex-direction: column;
@@ -22,6 +24,11 @@
     width: 17rem;
   }
 
+  .card-title {
+    flex-wrap: wrap;
+    display: flex;
+  }
+
 
   /** --- */
   /** Card Buttons */
@@ -39,11 +46,56 @@
     display: none;
   }
 
+  /* --- */
+  /* More info modal */
+  /* --- */
+
+  .modal-title {
+    color: #b279d8f5;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .modal-body h4,
+  .modal-body h5,
+  .modal-body p {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .modal-body h4 {
+    font-weight: 700;
+  }
+
+  .modal-body img {
+    height: 40vh;
+  }
+
+  /* --- */
+  /* Search Form and Button */
+  /* --- */
+
+ .searchbar-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+ }
+
   /** --- */
   /** Media Queries  */
   /** --- */
 
   @media (max-width: 768px) {
+
+    .searchbar-container {
+      padding: 15px;
+      flex-direction: column;
+    }
 
     .movies-grid {
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
