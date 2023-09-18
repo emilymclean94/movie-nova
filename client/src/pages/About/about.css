@@ -4,11 +4,44 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 
+
+/** --- */
+/** About Cards */
+/** --- */
+
+.card-body-container {
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+#card-title {
+  font-size: 28px;
+}
+
+.gh-icon,
+  .li-icon {
+    margin: 0px 15px;
+  }
+
+/** --- */
+/** About Container and Content */
+/** ---- */
+
 .about-container {
   height: 100vh;
   width: 100%;
   display: flex;
-  flex-direction: column;
   margin-bottom: 2rem;
   font-family: "Roboto Condensed";
 }
@@ -22,6 +55,7 @@
 .about-content a {
   text-decoration: none;
   color: #fff;
+  font-weight: 700;
   text-shadow:
     0 0 7px #fff,
     0 0 0px #fff,
@@ -36,11 +70,20 @@
 .about-content h1 {
   color: white;
   text-align: center;
+  margin: 30px 0px;
 }
 
 .about-content h2 {
   color: #b279d8f5;
   text-align: center;
+  margin: 25px 0px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /** --- */
@@ -54,31 +97,26 @@
   }
 
   .about-content h1 {
-    color: white;
-    text-align: center;
-    margin: 0px 0px 20px 0px;
-    font-size: 35px;
+    margin: 0px 0px 5px 0px;
+    font-size: 25px;
   }
 
-  .about-content a {
-    font-weight: 700;
+  .about-content h2 {
+    margin: 10px 0px;
   }
 
   .bio-card {
     width: 325px;
   }
 
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  #card-title {
+    font-size: 16px;
   }
 
   .gh-icon,
   .li-icon {
     width: 25px;
     height: 25px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 5px;
   }
 }
