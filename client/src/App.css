@@ -87,6 +87,27 @@
   }
 
   /* ----- */
+  /* Login & Signup */
+  /* ----- */
+
+  .form-control::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #b6c1cb;
+    opacity: 1;
+    /* Firefox */
+  }
+
+  .form-control:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #b6c1cb;
+  }
+
+  .form-control::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #b6c1cb;
+  }
+
+  /* ----- */
   /* Login */
   /* ----- */
 
@@ -112,10 +133,6 @@
     color: #b279d8f5;
   }
 
-  .form-input {
-    color: lightslategray;
-  }
-
 
   .modal-header {
     padding: 4px;
@@ -132,8 +149,13 @@
     border: none;
   }
 
-  .btn:hover {
+  /* .btn:hover {
     background-color: #b279d8f5;
+  } */
+
+  .modal-header .btn-close {
+    color: black;
+    padding: 5px;
   }
 
   .nav-pills .nav-link.active,
