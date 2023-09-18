@@ -2,6 +2,8 @@
   /** Movies */
   /** ------- */
 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
   .movies-container {
     display: flex;
     flex-direction: column;
@@ -42,6 +44,36 @@
   #info-icon,
   #add-icon {
     display: none;
+  }
+
+  /* --- */
+  /* More info modal */
+  /* --- */
+
+  .modal-title {
+    color: #b279d8f5;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .modal-body h4,
+  .modal-body h5,
+  .modal-body p {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .modal-body h4 {
+    font-weight: 700;
+  }
+
+  .modal-body img {
+    height: 40vh;
   }
 
   /* --- */
