@@ -15,8 +15,7 @@ const MovieCard = ({ username, movie }) => {
       />
       <Card.Body>
         <Card.Title 
-        id="card-title"
-        className="text-truncate">{original_title}</Card.Title>
+        id="card-title">{original_title}</Card.Title>
         <Card.Text>Release Date: {release_date}</Card.Text>
         <div className="card-btn-container">
           <SearchedMovieInfoButton movie={movie} />
