@@ -10,18 +10,18 @@ const AboutCards = ({ headshot, name, ghLink, liLink, bio }) => {
         <Col>
           <Card.Img variant="top" src={headshot} />
         </Col>
-        <Col>
+        <Col className="card-body-container">
         <Card.Body>
-          <Card.Title>
+          <Card.Title id="card-title">
             {name}
           </Card.Title>
           <Card.Text>{bio}</Card.Text>
           <div className="card-btn-container">
             <a href={ghLink}>
-              <FaSquareGithub size={50} fill="#b279d8f5" className="gh-icon" />
+              <FaSquareGithub size={35} fill="#b279d8f5" className="gh-icon" />
             </a>
             <a href={liLink}>
-              <FaLinkedin size={50} fill="#b279d8f5" className="li-icon" />
+              <FaLinkedin size={35} fill="#b279d8f5" className="li-icon" />
             </a>
           </div>
         </Card.Body>

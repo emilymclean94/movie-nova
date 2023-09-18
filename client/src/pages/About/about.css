@@ -9,9 +9,30 @@
 /** About Cards */
 /** --- */
 
-/* .bio-card {
-  width: 50vw;
-} */
+.card-body-container {
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+}
+
+#card-title {
+  font-size: 28px;
+}
+
+.gh-icon,
+  .li-icon {
+    margin: 0px 15px;
+  }
 
 /** --- */
 /** About Container and Content */
@@ -48,11 +69,13 @@
 .about-content h1 {
   color: white;
   text-align: center;
+  margin: 30px 0px;
 }
 
 .about-content h2 {
   color: #b279d8f5;
   text-align: center;
+  margin: 25px 0px;
 }
 
 .card-container {
