@@ -44,6 +44,16 @@
     display: none;
   }
 
+  /* --- */
+  /* Search Form and Button */
+  /* --- */
+
+ .searchbar-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+ }
+
   /** --- */
   /** Media Queries  */
   /** --- */
