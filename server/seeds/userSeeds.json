@@ -14,5 +14,11 @@
     "password": "p@ssw0rd",
     "genre": "Action",
     "bio": "I'm a movie enthusiast who loves action-packed films!"
+  },
+  {
+    "name": "Aelin Galathynus",
+    "email": "aelinfireheart@mail.com",
+    "username": "fireheart",
+    "password": "rowan123"
   }
 ]
