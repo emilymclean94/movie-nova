@@ -5,12 +5,12 @@ import "./about.css";
 
 const AboutCards = ({ headshot, name, ghLink, liLink, bio }) => {
   return (
-    <Card className="bio-card m-2">
+    <Card className="bio-card m-2 col-md-5">
       <Row>
-        <Col xs={6}>
+        <Col>
           <Card.Img variant="top" src={headshot} />
         </Col>
-        <Col xs={6}>
+        <Col>
         <Card.Body>
           <Card.Title>
             {name}

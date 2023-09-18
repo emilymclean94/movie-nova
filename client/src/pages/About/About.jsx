@@ -15,6 +15,7 @@ const About = () => {
         <h1>Check out the project GitHub <a href="https://github.com/emilymclean94/stream_verse">HERE</a></h1>
 
         <h2>Get to know the Caffeine Coders:</h2>
+        <div className="card-container">
         <AboutCards
           headshot={Emily}
           name="Emily McLean"
@@ -50,6 +51,7 @@ const About = () => {
           // liLink="https://www.linkedin.com/in/keelysherman/"
           bio="Bio coming soon."
         />
+        </div>
       </div>
     </Container>
   );
