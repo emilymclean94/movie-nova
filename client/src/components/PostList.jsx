@@ -6,7 +6,7 @@ import UpdatePostBtn from "../pages/Posts/UpdatePostBtn";
 import DeletePostBtn from "../pages/Posts/DeletePostBtn";
 
 const PostList = ({ posts, title, showTitle = true, showUsername = true }) => {
-  if (!posts.length) {
+  if (!posts) {
     return <h3>No Posts Yet</h3>;
   }
 
