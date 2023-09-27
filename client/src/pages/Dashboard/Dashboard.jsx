@@ -23,30 +23,23 @@ const Dashboard = () => {
 
   return (
     <Container className=" dashboard-container" id="dashboard">
-      <SearchBar />
-      <Row className="dashboard-content">
+      {/* <SearchBar /> */}
+      <div className="dashboard-content">
         {Auth.loggedIn() ? (
           <>
-            <Col xs={11} sm={11} md={11} lg={6} className="m-3 myprofile">
+            <Row>
               <MyProfile user={user} />
-            </Col>
-
-            <Col xs={11} sm={11} md={11} lg={5} className="m-3 mywatchlist">
+            </Row>
+            <Row>
               <MyWatchList movies={movies} />
-            </Col>
-
-            <Col xs={11} sm={11} md={11} lg={6} className="m-3 myprofile">
-              <PostForm />
-            </Col>
-
-            <div className="col-12 col-md-10 mb-5">
-              <PostList
+              {/* <PostForm /> */}
+              {/* <PostList
                 posts={user.posts}
                 title={`${user.username}'s posts...`}
                 showTitle={false}
                 showUsername={false}
-              />
-            </div>
+              /> */}
+            </Row>
           </>
         ) : (
           <Col xs={11} className="dashboard-content">
@@ -56,7 +49,7 @@ const Dashboard = () => {
             </h4>
           </Col>
         )}
-      </Row>
+      </div>
     </Container>
   );
 };
