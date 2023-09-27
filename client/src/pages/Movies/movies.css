@@ -20,6 +20,13 @@
     gap: 1.75rem;
   }
 
+  .page-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+  }
+
   .movie-card {
     width: 17rem;
   }

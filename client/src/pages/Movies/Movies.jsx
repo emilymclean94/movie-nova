@@ -30,6 +30,7 @@ const Movies = () => {
   return (
     <Container className="movies-container">
       <SearchBar />
+      <h2 className="page-title">Popular Movies:</h2>
       {results.length === 0 && (
         <div className="m-3 popular-movies">
           <div className="movies-grid">
