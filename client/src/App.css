@@ -177,6 +177,17 @@
   /* Searchbar */
   /* --------- */
 
+  .searchbar-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
   .searched-results {
     text-align: center;
     flex-direction: column;

@@ -42,7 +42,7 @@ const SearchBar = () => {
   return (
     <Container className="searchbar-container">
       <div className="searchbar-and-button">
-        <Form onSubmit={handleSubmit}>
+        <Form className="search-form" onSubmit={handleSubmit}>
           <Form.Group controlId="searchForm">
             <Form.Control
               type="text"
