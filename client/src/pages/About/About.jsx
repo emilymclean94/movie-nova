@@ -19,6 +19,7 @@ const About = () => {
         <AboutCards
           headshot={Emily}
           name="Emily McLean"
+          subtitle="Lead Developer"
           ghLink="https://github.com/emilymclean94"
           liLink="https://www.linkedin.com/in/emilyamclean/"
           bio="Full stack developer and lover of books, video games, and my dogs."
@@ -26,6 +27,7 @@ const About = () => {
         <AboutCards
           headshot={Ashley}
           name="Ashley Giraldo"
+          subtitle="Lead Developer"
           ghLink="hhttps://github.com/Ashleyg5"
           liLink="https://www.linkedin.com/in/ashley-giraldo/"
           bio="Bio coming soon."
