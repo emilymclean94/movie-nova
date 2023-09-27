@@ -3,7 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { FaSquareGithub, FaLinkedin } from "react-icons/fa6";
 import "./about.css";
 
-const AboutCards = ({ headshot, name, ghLink, liLink, bio }) => {
+const AboutCards = ({ headshot, name, subtitle, ghLink, liLink, bio }) => {
   return (
     <Card className="bio-card m-2 col-md-5">
       <Row>
@@ -12,9 +12,12 @@ const AboutCards = ({ headshot, name, ghLink, liLink, bio }) => {
         </Col>
         <Col className="card-body-container">
         <Card.Body>
+          <div>
           <Card.Title id="card-title">
             {name}
           </Card.Title>
+          <Card.Subtitle className="">{subtitle}</Card.Subtitle>
+          </div>
           <Card.Text>{bio}</Card.Text>
           <div className="card-btn-container">
             <a href={ghLink}>
