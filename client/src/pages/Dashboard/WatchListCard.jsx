@@ -27,6 +27,7 @@ const WatchListCard = ({ movie, username }) => {
                 <Card.Title>{title}</Card.Title>
                 <Card.Subtitle>
                   {release_date}
+                  <p>Genre Here</p>
                   {genre}
                 </Card.Subtitle>
               </Col>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { BsInfoSquareFill } from "react-icons/bs";
 
 const WLMovieInfoBtn = ({ movie }) => {
   const [showModal, setShowModal] = useState(false);
@@ -20,13 +21,14 @@ const WLMovieInfoBtn = ({ movie }) => {
 
   return (
     <>
-      <Button
-        className="card-button btn btn-dark"
-        variant="primary"
+
+
+      <BsInfoSquareFill
+        fill="#b279d8f5"
+        size={25}
+        margin="5px"
         onClick={handleMoreInfo}
-      >
-        More Info
-      </Button>
+      />
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>

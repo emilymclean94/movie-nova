@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { QUERY_MOVIES } from "../../utils/queries";
 import { REMOVE_MOVIE } from "../../utils/mutations";
+import { FaTrashAlt } from "react-icons/fa"
 
 const DeleteMovieButton = ({ movieId }) => {
   const [removeMovie] = useMutation(REMOVE_MOVIE, {
@@ -48,14 +49,12 @@ const DeleteMovieButton = ({ movieId }) => {
   };
 
   return (
-    <Button
-      className="btn btn-dark"
-      variant="primary"
-      id="button"
-      onClick={deleteMovie}
-    >
-      Delete
-    </Button>
+
+    <FaTrashAlt
+    fill="#b279d8f5"
+        size={25}
+        margin="5px"
+    onClick={deleteMovie} />
   );
 };
 
