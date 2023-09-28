@@ -9,16 +9,19 @@ const WatchListCard = ({ movie, username }) => {
   const { title, genre, release_date, poster_path } = movie;
 
   return (
-    <Card className="watchlist-card bg-transparent border-top">
+    <Card 
+    className="watchlist-card bg-transparent border-top">
       <Row className="card-body-container">
         <Col>
           <Card.Img
             className="card-img"
             src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+            style={{width:'130px'}}
           ></Card.Img>
         </Col>
         <Col>
-          <Card.Body>
+          <Card.Body className="watchlist-card-body"
+          style={{color: "white"}}>
             <Row>
               <Col>
                 <Card.Title>{title}</Card.Title>

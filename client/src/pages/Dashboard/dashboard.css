@@ -101,6 +101,7 @@
 
   .watchlist-card {
     border-top: solid white 3px;
+    height: 25vh;
   }
   
   .card-body-container {
@@ -108,9 +109,12 @@
   }
 
   .card-img {
-    object-fit: scale-down;
-    height: 20vh;
-    width: 50vw;
+    border: solid #6c757d 2px;
+  }
+
+ .card-title,
+  .card-subtitle {
+    color: white;
   }
 
   /*! -- */
