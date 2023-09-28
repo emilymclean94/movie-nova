@@ -10,35 +10,37 @@ const WatchListCard = ({ movie, username }) => {
 
   return (
     <Card 
-    className="watchlist-card bg-transparent border-top">
-      <Row className="card-body-container">
-        <Col>
+    className="watchlist-card bg-transparent border-top"
+    style={{boxShadow: 0, borderRadius: 0}}>
+      <div className="card-contents">
+        
           <Card.Img
             className="card-img"
             src={`https://image.tmdb.org/t/p/w300${poster_path}`}
             style={{width:'130px'}}
           ></Card.Img>
-        </Col>
-        <Col>
-          <Card.Body className="watchlist-card-body"
-          style={{color: "white"}}>
-            <Row>
-              <Col>
+       
+        <div className="card-body"
+        style={{color: "white"}}>
+          {/* <Card.Body className="watchlist-card-body"
+          style={{color: "white"}}> */}
+            
+              <div>
                 <Card.Title>{title}</Card.Title>
                 <Card.Subtitle>
                   {release_date}
                   <p>Genre Here</p>
                   {genre}
                 </Card.Subtitle>
-              </Col>
-              <Col>
+              </div>
+              <div className="card-btn-container">
                 <WLMovieInfoBtn movie={movie} />
                 <WLMovieDeleteBtn username={username} movieId={movie.id} />
-              </Col>
-            </Row>
-          </Card.Body>
-        </Col>
-      </Row>
+              </div>
+            
+          {/* </Card.Body> */}
+          </div>
+      </div>
     </Card>
   );
 };

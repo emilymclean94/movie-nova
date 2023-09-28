@@ -100,21 +100,30 @@
   /*! --- */
 
   .watchlist-card {
-    border-top: solid white 3px;
-    height: 25vh;
+      border-top: solid white 3px;
+      height: 25vh;
+      padding: 15px 0px;
   }
-  
-  .card-body-container {
-    padding: 15px 0px;
+
+  .card-contents {
+    display: flex;
+  }
+
+  div>.card-body {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: 2px 15px;
   }
 
   .card-img {
-    border: solid #6c757d 2px;
+      border: solid #6c757d 2px;
   }
 
- .card-title,
+
+  .card-title,
   .card-subtitle {
-    color: white;
+      color: white;
   }
 
   /*! -- */
@@ -142,7 +151,7 @@
       }
 
       .profile-info {
-        flex-direction: column;
-        text-align: center;
+          flex-direction: column;
+          text-align: center;
       }
   }
