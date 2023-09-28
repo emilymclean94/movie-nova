@@ -1,6 +1,6 @@
-  /* --------- */
-  /* Dashboard */
-  /* --------- */
+  /*! --------- */
+  /*! Dashboard */
+  /*! --------- */
 
   .dashboard-container {
       margin-bottom: 2rem;
@@ -11,9 +11,14 @@
       width: 100vw;
   }
 
+  /*! --- */
+  /*! Profile Component */
+  /*! --- */
 
   .profile-info-container {
       width: 100vw;
+      margin: 50px;
+      padding-top: 50px;
   }
 
   .profile-info {
@@ -61,6 +66,10 @@
       margin: 8px 0px;
   }
 
+  /*! --- */
+  /*! Edit Modal */
+  /*! --- */
+
   .input-label {
       color: #2d1950;
       padding: .5rem;
@@ -75,54 +84,38 @@
       display: none !important;
   }
 
+  /*! --- */
+  /*! Watched List */
+  /*! --- */
 
-  .mywatchlist {
-      background-color: rgb(222, 199, 250);
-      border-radius: 15px;
-      color: #2d1950;
-      overflow-x: auto;
-      /* Add horizontal scrollbar when the table overflows */
-      height: 100%;
+  .watchlist-title {
+      font-size: 22px;
+      color: #b279d8f5;
   }
 
-  .table {
-      border: 3px solid #d8d8d8;
-      border-radius: 15px;
-      overflow: hidden;
+
+
+  /*! ---- */
+  /*! Watched List Card */
+  /*! --- */
+
+  .watchlist-card {
+    border-top: solid white 3px;
+  }
+  
+  .card-body-container {
+    padding: 15px 0px;
   }
 
-  td {
-      text-align: center;
-      vertical-align: middle;
+  .card-img {
+    object-fit: scale-down;
+    height: 20vh;
+    width: 50vw;
   }
 
-  th {
-      text-align: center;
-      vertical-align: middle;
-  }
-
-  .poster-container-watched {
-      width: 7rem;
-  }
-
-  .poster-watched {
-      width: 5rem;
-  }
-
-  .movie-title {
-      font-size: small;
-      font-weight: bold;
-      width: 5rem;
-  }
-
-  .overview {
-      font-size: x-small;
-      width: 10rem;
-  }
-
-  .buttons {
-      width: 5rem;
-  }
+  /*! -- */
+  /*! Media Queries */
+  /*! --- */
 
   @media screen and (max-width: 768px) {
 

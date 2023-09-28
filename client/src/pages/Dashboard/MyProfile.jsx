@@ -27,7 +27,7 @@ const MyProfile = ({ user }) => {
         <Col className="user-info">
         <Row className="user-heading">
         <h1 className="username" id="dash1">
-          Username{user.username}
+          <span style={{color: "#b279d8f5"}}>Username</span>{user.username}
           <UpdateProfileBtn
             username={user.username}
             name={user.name}
@@ -38,10 +38,10 @@ const MyProfile = ({ user }) => {
         </Row>
         <Row>
         <p className="fav-genre" id="dash2">
-          Favorite Genre: Horror{user.genre}
+          <span style={{color: "#b279d8f5"}}>Favorite Genre:</span> Horror{user.genre}
         </p>
         <p className="bio" id="dash3">
-          Bio: I love watching movies!{user.bio}
+          <span style={{color: "#b279d8f5"}}>Bio:</span> I love watching movies!{user.bio}
         </p>
         </Row>
         </Col>
