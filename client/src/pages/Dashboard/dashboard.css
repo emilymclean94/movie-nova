@@ -120,10 +120,14 @@
       border: solid #6c757d 2px;
   }
 
-
   .card-title,
   .card-subtitle {
       color: white;
+  }
+
+  .info-icon,
+  .delete-icon {
+    margin: 0px 10px;
   }
 
   /*! -- */

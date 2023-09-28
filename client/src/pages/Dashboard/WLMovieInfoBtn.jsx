@@ -21,12 +21,10 @@ const WLMovieInfoBtn = ({ movie }) => {
 
   return (
     <>
-
-
       <BsInfoSquareFill
         fill="#b279d8f5"
         size={25}
-        margin="5px"
+        className="info-icon"
         onClick={handleMoreInfo}
       />
 

@@ -34,8 +34,10 @@ const WatchListCard = ({ movie, username }) => {
                 </Card.Subtitle>
               </div>
               <div className="card-btn-container">
-                <WLMovieInfoBtn movie={movie} />
-                <WLMovieDeleteBtn username={username} movieId={movie.id} />
+                <WLMovieInfoBtn movie={movie}
+                 />
+                <WLMovieDeleteBtn username={username} movieId={movie.id} 
+                 />
               </div>
             
           {/* </Card.Body> */}
