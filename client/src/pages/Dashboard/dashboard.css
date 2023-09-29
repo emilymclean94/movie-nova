@@ -1,107 +1,161 @@
-  /* --------- */
-  /* Dashboard */
-  /* --------- */
+  /*! --------- */
+  /*! Dashboard */
+  /*! --------- */
 
-.dashboard-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.dashboard-content{
-    justify-content: center;
-}
-
-.myprofile{
-    background-color: rgb(222, 199, 250);
-    border-radius: 15px;
-    align-items: center;
-    height: 100%;
-}
-
-.username{
-    color: black;
-    padding: .5rem;
-}
-
-.fav-genre{
-    color: black;
-    padding: .5rem;
-}
-
-.bio{
-    color: black;
-    padding: .5rem;
-}
-
-.profile-title {
-    color: #2d1950;
-}
-
-.profile-info{
-    color: #264600e8;
-    background-color: white;
-    border-radius: 15px;
-}
-
-.input-label{
-    color: #2d1950;
-    padding: .5rem;
-}
-.input-label input{
-    color: #2d1950;
-    padding: .5rem;
-}
-
-.hidden {
-    display: none !important;
-}
-
-
-.mywatchlist {
-    background-color: rgb(222, 199, 250);
-    border-radius: 15px;
-    color: #2d1950;
-    overflow-x: auto; /* Add horizontal scrollbar when the table overflows */
-    height: 100%;
-}
-
-.table{
-    border: 3px solid #d8d8d8;
-    border-radius: 15px;
-    overflow: hidden;
+  .dashboard-container {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      height: 100vh;
+      width: 100vw;
   }
 
-td{
-    text-align: center;
-    vertical-align: middle;
-}
-th{
-    text-align: center;
-    vertical-align: middle;
-}
+  /*! --- */
+  /*! Profile Component */
+  /*! --- */
 
-.poster-container-watched {
-    width: 7rem;
-}
-.poster-watched {
-    width: 5rem;
-}
+  .profile-info-container {
+      width: 100vw;
+      margin: 50px;
+      padding-top: 50px;
+  }
 
-.movie-title{
-    font-size: small;
-    font-weight: bold;
-    width: 5rem;
-}
+  .profile-info {
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+  }
 
-.overview{
-    font-size:x-small;
-    width: 10rem;
-}
+  .avatar-container {
+      display: flex;
+      justify-content: center;
+  }
 
-.buttons {
-    width: 5rem;
-}
+  .user-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 50px;
+  }
 
+  .user-heading {
+      width: 445px;
+  }
+
+  .username {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      border-bottom: solid white 1px;
+      padding-bottom: 5px;
+  }
+
+  .edit-btn {
+      margin: 3px;
+      padding: 2px 2px;
+      font-size: 14px;
+      font-weight: 300;
+      text-decoration: underline;
+  }
+
+  .fav-genre,
+  .bio {
+      font-weight: 400;
+      margin: 8px 0px;
+  }
+
+  /*! --- */
+  /*! Edit Modal */
+  /*! --- */
+
+  .input-label {
+      color: #2d1950;
+      padding: .5rem;
+  }
+
+  .input-label input {
+      color: #2d1950;
+      padding: .5rem;
+  }
+
+  .hidden {
+      display: none !important;
+  }
+
+  /*! --- */
+  /*! Watched List */
+  /*! --- */
+
+  .watchlist-title {
+      font-size: 22px;
+      color: #b279d8f5;
+  }
+
+
+
+  /*! ---- */
+  /*! Watched List Card */
+  /*! --- */
+
+  .watchlist-card {
+      border-top: solid white 3px;
+      height: 25vh;
+      padding: 15px 0px;
+  }
+
+  .card-contents {
+    display: flex;
+  }
+
+  div>.card-body {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    padding: 2px 15px;
+  }
+
+  .card-img {
+      border: solid #6c757d 2px;
+  }
+
+  .card-title,
+  .card-subtitle {
+      color: white;
+  }
+
+  .info-icon,
+  .delete-icon {
+    margin: 0px 10px;
+  }
+
+  /*! -- */
+  /*! Media Queries */
+  /*! --- */
+
+  @media screen and (max-width: 768px) {
+
+      .user-info {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+
+      .user-heading {
+          width: 300px;
+          text-align: center;
+      }
+
+      .user-avatar {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          margin: 0px 0px 5px 0px;
+      }
+
+      .profile-info {
+          flex-direction: column;
+          text-align: center;
+      }
+  }
