@@ -1,22 +1,17 @@
 import React from "react";
-import Intro from "./Intro";
-import Features from "./Features";
-import Trust from "./Trust";
 import Hero from "../../Assets/24OD.gif";
 import "./home.css";
-
-
 
 const Home = () => {
   return (
     <div className="home-background">
-      <div
-        className="home-div"
-        id="home-container"
-      >
-
+      <div className="home-div" id="home-container">
         <div className="image-container">
-          <img className='hero-image' src={Hero} alt="hero gif of astronaut spinning around"/>
+          <img
+            className="hero-image"
+            src={Hero}
+            alt="hero gif of astronaut spinning around"
+          />
         </div>
         <div className="">
           <div className="text-container">
@@ -24,12 +19,6 @@ const Home = () => {
             <h1 className="display-1 title">STREAMVERSE</h1>
           </div>
         </div>
-      </div>
-      
-      <div className="divider-container ">
-        <Intro />
-        <Features />
-        <Trust />
       </div>
     </div>
   );
