@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import { useQuery } from "@apollo/client";
-import { QUERY_MOVIES } from "../../utils/queries";
-import WLMovieDeleteBtn from "./WLMovieDeleteBtn";
-import WLMovieInfoBtn from "./WLMovieInfoBtn";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_MOVIES } from "../../utils/queries";
+// import WLMovieDeleteBtn from "./WLMovieDeleteBtn";
+// import WLMovieInfoBtn from "./WLMovieInfoBtn";
 import WatchListCard from "./WatchListCard";
 import axios from "axios";
 
@@ -50,9 +50,11 @@ const MyWatchList = () => {
         <Col>
           {results.length === 0 && (
             <div>
-              {popularMovies.filter((item, idx) => idx < 5).map((movie) => (
-                <WatchListCard key={movie.id} movie={movie} />
-              ))}
+              {popularMovies
+                .filter((item, idx) => idx < 5)
+                .map((movie) => (
+                  <WatchListCard key={movie.id} movie={movie} />
+                ))}
             </div>
           )}
         </Col>

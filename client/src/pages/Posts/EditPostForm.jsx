@@ -24,7 +24,7 @@ const EditPostForm = (props) => {
 
   const handleFormSubmit = async () => {
     console.log(editPost);
-    const { data } = await updatePost({
+    await updatePost({
       variables: { ...editPost },
     });
   };

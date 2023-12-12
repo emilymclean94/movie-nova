@@ -1,30 +1,33 @@
 import React from "react";
-import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../../utils/queries";
+import { Navigate, useParams } from "react-router-dom";
 import PostForm from "../../components/PostForm";
 import PostList from "../../components/PostList";
-import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 
 const Profile = () => {
   const { username: userParam } = useParams();
-  
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+
+  console.log("User param from useParams:", userParam);
+
+  const { loading, error, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
+  console.log("Loading:", loading);
+  console.log("Error:", error);
+  console.log("User data:", data);
+
   const user = data?.me || data?.user || {};
-console.log(user);
-  // navigate to personal profile page if username is yours
-  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/me" />;
-  }
+  console.log("User data:", user);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  // Check if userParam is defined before using it
+  if (!userParam || !user?.username) {
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to

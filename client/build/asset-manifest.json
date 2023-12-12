@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.ad1dba75.css",
-    "main.js": "/static/js/main.6fe3e009.js",
+    "main.css": "/static/css/main.b3925742.css",
+    "main.js": "/static/js/main.1868fb29.js",
     "static/media/24OD.gif": "/static/media/24OD.687494b29218cae2687c.gif",
-    "static/media/thumb.png": "/static/media/thumb.53bda07330bc24e8a6d4.png",
-    "static/media/top.png": "/static/media/top.c1a02fa5266cf2aefc3a.png",
-    "static/media/touch.png": "/static/media/touch.e834c12fbeabe3b3e494.png",
+    "static/media/keely_headshot.png": "/static/media/keely_headshot.1a065733dda27d085ad5.png",
+    "static/media/emily_headshot.jpg": "/static/media/emily_headshot.47340c914e9a4bf963ae.jpg",
+    "static/media/ashley_headshot.jpg": "/static/media/ashley_headshot.bd3dd18c9448c2bb6c99.jpg",
+    "static/media/ethan_headshot.jpg": "/static/media/ethan_headshot.c593554a2de760270b35.jpg",
     "static/media/Logogo.png": "/static/media/Logogo.b975e8a5554738fc7227.png",
-    "static/media/pre.svg": "/static/media/pre.d4812f51c8c80976eaab.svg",
+    "static/media/pre.svg": "/static/media/pre.4410c5baaa673cc131da.svg",
     "index.html": "/index.html",
-    "main.ad1dba75.css.map": "/static/css/main.ad1dba75.css.map",
-    "main.6fe3e009.js.map": "/static/js/main.6fe3e009.js.map"
+    "main.b3925742.css.map": "/static/css/main.b3925742.css.map",
+    "main.1868fb29.js.map": "/static/js/main.1868fb29.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad1dba75.css",
-    "static/js/main.6fe3e009.js"
+    "static/css/main.b3925742.css",
+    "static/js/main.1868fb29.js"
   ]
 }

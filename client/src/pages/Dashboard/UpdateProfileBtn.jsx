@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import ProfileEditForm from "./ProfileEditForm";
 import "./dashboard.css";
 
@@ -19,11 +18,7 @@ const EditFormButton = (props) => {
   return (
     <>
       {isButtonVisible && (
-        <span
-        className="edit-btn"
-          id="button"
-          onClick={handleButtonClick}
-        >
+        <span className="edit-btn" id="button" onClick={handleButtonClick}>
           (edit profile)
         </span>
       )}

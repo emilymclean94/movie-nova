@@ -4,19 +4,22 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 import { Container, Row, Col } from "react-bootstrap/";
-import SearchBar from "../../components/SearchBar";
+// import SearchBar from "../../components/SearchBar";
 import MyWatchList from "./MyWatchList";
 import MyProfile from "./MyProfile";
-import PostList from "../../components/PostList";
-import PostForm from "../../components/PostForm";
+// import PostList from "../../components/PostList";
+// import PostForm from "../../components/PostForm";
 import "./dashboard.css";
 
 const Dashboard = () => {
   const { username: userParam } = useParams();
 
-  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { data, error } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
+  if (error) {
+    console.error("Error fetching user data:", error);
+  }
 
   const user = data?.me || data?.user || {};
   const movies = user.movies || [];

@@ -19,31 +19,33 @@ const MyProfile = ({ user }) => {
 
   return (
     <Container className="profile-info-container">
-
-      <Row  className="m-3 profile-info">
+      <Row className="m-3 profile-info">
         <Col className="avatar-container">
-        <img className="user-avatar" src={Avatar} />
+          <img className="user-avatar" src={Avatar} alt="avatar" />
         </Col>
         <Col className="user-info">
-        <Row className="user-heading">
-        <h1 className="username" id="dash1">
-          <span style={{color: "#b279d8f5"}}>Username</span>{user.username}
-          <UpdateProfileBtn
-            username={user.username}
-            name={user.name}
-            genre={user.genre}
-            bio={user.bio}
-          />
-        </h1>
-        </Row>
-        <Row>
-        <p className="fav-genre" id="dash2">
-          <span style={{color: "#b279d8f5"}}>Favorite Genre:</span> Horror{user.genre}
-        </p>
-        <p className="bio" id="dash3">
-          <span style={{color: "#b279d8f5"}}>Bio:</span> I love watching movies!{user.bio}
-        </p>
-        </Row>
+          <Row className="user-heading">
+            <h1 className="username" id="dash1">
+              <span style={{ color: "#b279d8f5" }}>Username</span>
+              {user.username}
+              <UpdateProfileBtn
+                username={user.username}
+                name={user.name}
+                genre={user.genre}
+                bio={user.bio}
+              />
+            </h1>
+          </Row>
+          <Row>
+            <p className="fav-genre" id="dash2">
+              <span style={{ color: "#b279d8f5" }}>Favorite Genre:</span> Horror
+              {user.genre}
+            </p>
+            <p className="bio" id="dash3">
+              <span style={{ color: "#b279d8f5" }}>Bio:</span> I love watching
+              movies!{user.bio}
+            </p>
+          </Row>
         </Col>
       </Row>
     </Container>

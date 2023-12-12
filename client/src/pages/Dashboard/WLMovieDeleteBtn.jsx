@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { useMutation } from "@apollo/client";
 import { QUERY_MOVIES } from "../../utils/queries";
 import { REMOVE_MOVIE } from "../../utils/mutations";
