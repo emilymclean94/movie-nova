@@ -1,8 +1,22 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const ADD_USER = gql`
-  mutation addUser($name: String!, $username: String!, $email: String!, $password: String!, $genre: String, $bio: String) {
-    addUser(name: $name, username: $username, email: $email, password: $password, genre: $genre, bio: $bio) {
+  mutation addUser(
+    $name: String!
+    $username: String!
+    $email: String!
+    $password: String!
+    $genre: String
+    $bio: String
+  ) {
+    addUser(
+      name: $name
+      username: $username
+      email: $email
+      password: $password
+      genre: $genre
+      bio: $bio
+    ) {
       token
       user {
         _id
@@ -29,7 +43,12 @@ export const LOGIN_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-  mutation updateUser($name: String, $username: String, $genre: String, $bio: String) {
+  mutation updateUser(
+    $name: String
+    $username: String
+    $genre: String
+    $bio: String
+  ) {
     updateUser(name: $name, username: $username, genre: $genre, bio: $bio) {
       _id
       bio
@@ -41,8 +60,18 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_MOVIE = gql`
-  mutation addMovie($title: String!, $description: String!, $posterImg: String!, $releaseDate: String!) {
-    addMovie(posterImg: $posterImg, title: $title, releaseDate: $releaseDate, description: $description) {
+  mutation addMovie(
+    $title: String!
+    $description: String!
+    $posterImg: String!
+    $releaseDate: String!
+  ) {
+    addMovie(
+      posterImg: $posterImg
+      title: $title
+      releaseDate: $releaseDate
+      description: $description
+    ) {
       _id
       posterImg
       title
@@ -91,7 +120,7 @@ export const UPDATE_POST = gql`
 
 export const REMOVE_POST = gql`
   mutation removePost($postId: ID) {
-    removePost(postId: $postId){
+    removePost(postId: $postId) {
       _id
     }
   }

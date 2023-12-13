@@ -14,12 +14,9 @@ import "./dashboard.css";
 const Dashboard = () => {
   const { username: userParam } = useParams();
 
-  const { data, error } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
-  if (error) {
-    console.error("Error fetching user data:", error);
-  }
 
   const user = data?.me || data?.user || {};
   const movies = user.movies || [];

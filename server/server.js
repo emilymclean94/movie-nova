@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const {
@@ -14,6 +13,7 @@ const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const movieRoutes = require("./utils/movieRoutes");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -42,15 +42,24 @@ const startApolloServer = async () => {
     context: async ({ req, res }) => {
       // Get the user token from the headers.
       const token = req.headers.authorization || "";
+
       // Try to retrieve a user with the token
       const user = await getUser(token);
-      if (!user) throw new Error("User is not authenticated");
+
+      if (!user)
+        throw new GraphQLError("User is not authenticated", {
+          extensions: {
+            code: "UNAUTHENTICATED",
+            http: { status: 401 },
+          },
+        });
       // Add the user to the context
       return { user };
     },
   });
 
-  console.log(`Apollo Server listening at ${url}`);
+  console.log(`🚀 Server listening at: ${url}`);
+  // await server.start();
 
   app.use(
     express.urlencoded({ extended: false }),
@@ -62,7 +71,7 @@ const startApolloServer = async () => {
 
   db.once("open", async () => {
     new Promise((resolve) => httpServer.listen(PORT, resolve));
-    console.log(`API server running on port 3001`);
+    console.log(`API server running on port 3001!`);
     console.log(`Use GraphQL at http://localhost:3001/graphql`);
   });
 };

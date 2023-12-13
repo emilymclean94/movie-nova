@@ -23,18 +23,15 @@ const Login = () => {
       console.log(data);
       const token = data.login.token;
       Auth.login(token);
-
-      // Clear form state
-      setFormState({
-        username: "",
-        password: "",
-      });
-
-      // Redirect only after successful login
-      window.location.assign("/dashboard");
-    } catch (error) {
-      console.error("Error logging in:", error.message);
+    } catch (e) {
+      console.error(e);
     }
+
+    setFormState({
+      username: "",
+      password: "",
+    });
+    window.location.assign("/dashboard");
   };
 
   return (
