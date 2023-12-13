@@ -1,6 +1,5 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-
 import WLMovieInfoBtn from "./WLMovieInfoBtn";
 import WLMovieDeleteBtn from "./WLMovieDeleteBtn";
 import "./dashboard.css";

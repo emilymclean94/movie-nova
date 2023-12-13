@@ -2,10 +2,11 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 
-const key = "93d064eaaeea0b2a09e2e20af37a5993";
+const base = process.env.REACT_APP_TMDB_BASE_URL;
+const key = process.env.REACT_APP_TMDB_API_KEY;
 
 const apiConfig = {
-  baseUrl: "https://api.themoviedb.org/3/",
+  baseUrl: base,
   apiKey: key,
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
   w300Image: (imgPath) => `https://image.tmdb.org/t/p/w300/${imgPath}`,

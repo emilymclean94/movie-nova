@@ -1,25 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-// import { useQuery } from "@apollo/client";
-// import { QUERY_MOVIES } from "../../utils/queries";
-// import WLMovieDeleteBtn from "./WLMovieDeleteBtn";
-// import WLMovieInfoBtn from "./WLMovieInfoBtn";
+import { useQuery } from "@apollo/client";
+import { QUERY_MOVIES } from "../../utils/queries";
 import WatchListCard from "./WatchListCard";
 import axios from "axios";
 
 const MyWatchList = () => {
-  // const [movies, setMovies] = useState([]);
-  // const { data } = useQuery(QUERY_MOVIES);
+  const [movies, setMovies] = useState([]);
+  const { data } = useQuery(QUERY_MOVIES);
 
-  // useEffect(() => {
-  //   if (data && data.movies) {
-  //     setMovies(data.movies); // Check if data.movies is defined before setting the state
-  //   }
-  // }, [data]);
+  useEffect(() => {
+    if (data && data.movies) {
+      setMovies(data.movies); // Check if data.movies is defined before setting the state
+    }
+  }, [data]);
 
-  // // Log the data and current state of movies for debugging
-  // console.log("Data from server:", data);
-  // console.log("Current state of movies:", movies);
+  // Log the data and current state of movies for debugging
+  console.log("Data from server:", data);
+  console.log("Current state of movies:", movies);
   const [results] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
 
@@ -28,7 +26,7 @@ const MyWatchList = () => {
   }, []);
 
   const fetchPopularMovies = () => {
-    const apiKey = "93d064eaaeea0b2a09e2e20af37a5993";
+    const apiKey = process.env.REACT_APP_TMDB_API_KEY;
     const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 
     axios

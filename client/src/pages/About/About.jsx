@@ -47,14 +47,14 @@ const About = () => {
             headshot={Keely}
             name="Keely Sherman"
             ghLink="https://github.com/keelyybug"
-            liLink="https://www.linkedin.com/in/ashley-giraldo/"
+            liLink="https://www.linkedin.com/in/keelysherman/"
             bio="Bio coming soon."
           />
           <AboutCards
             headshot={Sami}
             name="Sami Sweet-Kloid"
             ghLink="https://github.com/sweetkloid"
-            // liLink="https://www.linkedin.com/in/keelysherman/"
+            liLink="https://www.linkedin.com/in/keelysherman/"
             bio="Bio coming soon."
           />
         </div>

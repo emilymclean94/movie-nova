@@ -9,6 +9,7 @@ const httpLink = new createHttpLink({
 const authLink = setContext((_, { headers }) => {
   // Get the JWT token from AuthService
   const token = Auth.getToken();
+  console.log("JWT Token:", token);
   return {
     headers: {
       ...headers,
@@ -16,7 +17,6 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
-
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),

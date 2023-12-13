@@ -62,7 +62,12 @@ const AddMovieButton = ({ username, movie }) => {
 
       {/* Mobile View */}
 
-      <MdAddBox id="add-icon" fill="#b279d8f5" size={26} onClick={handleAddMovie} />
+      <MdAddBox
+        id="add-icon"
+        fill="#b279d8f5"
+        size={26}
+        onClick={handleAddMovie}
+      />
     </>
   );
 };
