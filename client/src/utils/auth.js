@@ -3,6 +3,8 @@ import decode from "jwt-decode";
 const TOKEN_KEY = "my_app_token";
 
 class AuthService {
+  tokenKey = TOKEN_KEY;
+
   getProfile() {
     return decode(this.getToken());
   }

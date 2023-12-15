@@ -15,6 +15,11 @@
       "react-app/jest"
     ]
   },
+  "babel": {
+    "plugins": [
+      "dotenv"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

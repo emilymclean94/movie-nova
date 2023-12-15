@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const {
@@ -13,7 +14,8 @@ const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const movieRoutes = require("./utils/movieRoutes");
-require("dotenv").config();
+
+console.log("ENV VARIABLES:", process.env);
 
 const PORT = process.env.PORT || 3001;
 const app = express();

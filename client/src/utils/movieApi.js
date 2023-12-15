@@ -4,7 +4,7 @@ const app = express();
 
 const apiConfig = {
   baseUrl: "https://api.themoviedb.org/3/",
-  apiKey: "93d064eaaeea0b2a09e2e20af37a5993",
+  apiKey: process.env.REACT_APP_TMDB_API_KEY,
   originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
   w300Image: (imgPath) => `https://image.tmdb.org/t/p/w300/${imgPath}`,
   w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`,
@@ -29,7 +29,7 @@ app.post("/movies", (req, res) => {
   axios
     .post(`${apiConfig.baseUrl}movie`, movieData, {
       params: {
-        api_key: "93d064eaaeea0b2a09e2e20af37a5993",
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
       },
     })
     .then((response) => {
@@ -46,7 +46,7 @@ app.get("/movies/:id", (req, res) => {
   axios
     .get(`${apiConfig.baseUrl}find/${movieId}`, {
       params: {
-        api_key: "93d064eaaeea0b2a09e2e20af37a5993",
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
       },
     })
     .then((response) => {
@@ -64,7 +64,7 @@ app.delete("/movies/:id", (req, res) => {
   axios
     .delete(`${apiConfig.baseUrl}movie/${movieId}`, {
       params: {
-        api_key: "93d064eaaeea0b2a09e2e20af37a5993",
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
       },
     })
     .then((response) => {
@@ -83,7 +83,7 @@ app.get("/movies/:id/images", (req, res) => {
   axios
     .get(`${apiConfig.baseUrl}movie/${movieId}/images`, {
       params: {
-        api_key: "93d064eaaeea0b2a09e2e20af37a5993",
+        api_key: process.env.REACT_APP_TMDB_API_KEY,
       },
     })
     .then((response) => {

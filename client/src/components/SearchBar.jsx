@@ -3,11 +3,11 @@ import { Container, Form, Button, ListGroup } from "react-bootstrap";
 import axios from "axios";
 import MovieCard from "../pages/Movies/MovieCard";
 
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
-
-  const REACT_APP_TMDB_API_KEY = "93d064eaaeea0b2a09e2e20af37a5993";
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -25,7 +25,7 @@ const SearchBar = () => {
   };
 
   const searchMovies = () => {
-    const apiKey = REACT_APP_TMDB_API_KEY;
+    const apiKey = API_KEY;
 
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
 
