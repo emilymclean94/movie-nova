@@ -15,8 +15,6 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const movieRoutes = require("./utils/movieRoutes");
 
-console.log("ENV VARIABLES:", process.env);
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 const httpServer = http.createServer(app);
